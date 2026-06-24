@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Arutemika — Bangladesh genuine leather goods manufacturer & EU export partner. BSCI-audited. MOQ 200 pcs. FOB Chittagong. Est. 1998.">
+<meta property="og:title" content="Arutemika — Genuine Leather | EU Export Partner">
+<meta property="og:description" content="BSCI-audited Bangladesh leather goods factory. Laptop bags, tote bags, wallets, briefcases. MOQ 200 pcs. Serving Netherlands, Germany, UK & Spain.">
+<title>Arutemika — Genuine Leather Goods | EU Export Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080808;
+  --bg2: #101010;
+  --bg3: #161616;
+  --border: #1e1e1e;
+  --border2: #2a2a2a;
+  --text: #e8e8e8;
+  --muted: #666;
+  --muted2: #444;
+  --gold: #c4963a;
+  --gold2: #e0b050;
+  --green: #aaff00;
+  --red: #ff3c3c;
+  --white: #ffffff;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* TICKER */
+.ticker-wrap {
+  background: var(--gold);
+  overflow: hidden;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+.ticker-track {
+  display: flex;
+  animation: ticker 40s linear infinite;
+  white-space: nowrap;
+}
+.ticker-track span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: #0a0a0a;
+  letter-spacing: .08em;
+  padding: 0 2rem;
+}
+.ticker-track span::after { content: '◆'; margin-left: 2rem; opacity: .5; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,8,8,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: .12em;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.lang-toggle {
+  display: flex;
+  gap: .5rem;
+}
+.lang-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  padding: 4px 10px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .2s;
+  text-transform: uppercase;
+}
+.lang-btn.active, .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+.nav-cta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  padding: 8px 20px;
+  background: var(--gold);
+  color: #0a0a0a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background .2s;
+  text-transform: uppercase;
+}
+.nav-cta:hover { background: var(--gold2); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 1px; background: var(--text); display: block; }
+
+/* HERO */
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem 2rem;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(196,150,58,.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(196,150,58,.03) 0%, transparent 60%);
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(196,150,58,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196,150,58,.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.hero-tag::before { content: ''; width: 32px; height: 1px; background: var(--gold); display: inline-block; }
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 10vw, 130px);
+  line-height: .92;
+  letter-spacing: .02em;
+  color: var(--white);
+  position: relative;
+  margin-bottom: 2rem;
+}
+.hero-headline .accent { color: var(--gold); }
+.hero-headline .line-muted { color: var(--muted2); }
+.hero-sub {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: .06em;
+  max-width: 480px;
+  line-height: 1.8;
+  position: relative;
+  margin-bottom: 3rem;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.btn-primary {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  padding: 14px 32px;
+  background: var(--gold);
+  color: #0a0a0a;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background .2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--gold2); }
+.btn-secondary {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border2);
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .2s;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+.hero-flags {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .08em;
+}
+.flag { font-size: 18px; }
+.hero-badge {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .5rem;
+}
+.badge-item {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  padding: 6px 14px;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.badge-item.active { border-color: var(--green); color: var(--green); }
+
+/* STATS */
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--border);
+}
+.stat-item {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 52px;
+  line-height: 1;
+  color: var(--white);
+  letter-spacing: .02em;
+}
+.stat-num .unit { font-size: 28px; color: var(--gold); }
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.stat-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: .06em;
+}
+
+/* SECTION COMMONS */
+.section { padding: 5rem 2rem; border-bottom: 1px solid var(--border); }
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.section-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: .96;
+  letter-spacing: .02em;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.section-title .accent { color: var(--gold); }
+.section-sub {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .06em;
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+/* PRODUCTS */
+.products-filter {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  padding: 6px 16px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all .2s;
+}
+.filter-btn.active, .filter-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(196,150,58,.05); }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+.product-card {
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background .2s;
+}
+.product-card:hover { background: var(--bg3); }
+.product-card:hover .product-overlay { opacity: 1; }
+.product-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%);
+  transition: filter .3s;
+}
+.product-card:hover .product-img { filter: grayscale(0%); }
+.product-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--bg3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.product-placeholder .ph-icon {
+  font-size: 40px;
+  opacity: .2;
+}
+.product-placeholder .ph-text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: var(--muted2);
+  text-transform: uppercase;
+}
+.product-info {
+  padding: 1.25rem;
+}
+.product-cat {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+.product-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: .04em;
+  color: var(--white);
+  margin-bottom: .75rem;
+}
+.product-specs {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .06em;
+}
+.spec-key { color: var(--muted2); }
+.spec-val { color: var(--text); }
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(196,150,58,.06);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+  opacity: 0;
+  transition: opacity .2s;
+  pointer-events: none;
+}
+.product-overlay-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  padding: 8px 20px;
+  background: var(--gold);
+  color: #0a0a0a;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* WHY US */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  margin-top: 3rem;
+}
+.why-card {
+  background: var(--bg2);
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+.why-num {
+  font-family: var(--font-display);
+  font-size: 64px;
+  line-height: 1;
+  color: var(--border2);
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  letter-spacing: .04em;
+}
+.why-icon {
+  font-size: 28px;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+.why-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: .06em;
+  color: var(--white);
+  margin-bottom: .75rem;
+}
+.why-desc {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .05em;
+  line-height: 1.8;
+}
+.why-highlight {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: var(--gold);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-transform: uppercase;
+}
+
+/* EU MARKETS */
+.markets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  margin-top: 3rem;
+}
+.market-card {
+  background: var(--bg2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.market-flag { font-size: 36px; }
+.market-country {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: .06em;
+  color: var(--white);
+}
+.market-stats {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+.market-stat {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: var(--muted);
+  display: flex;
+  gap: .5rem;
+}
+.market-stat strong { color: var(--gold); }
+.market-focus {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .12em;
+  color: var(--green);
+  text-transform: uppercase;
+  padding-top: .75rem;
+  border-top: 1px solid var(--border);
+}
+
+/* COMPLIANCE */
+.compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  margin-top: 3rem;
+}
+.compliance-card {
+  background: var(--bg2);
+  padding: 2rem;
+}
+.compliance-badge {
+  font-family: var(--font-display);
+  font-size: 32px;
+  letter-spacing: .06em;
+  color: var(--gold);
+  margin-bottom: .5rem;
+}
+.compliance-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.compliance-desc {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .04em;
+  line-height: 1.7;
+}
+.compliance-status {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: var(--green);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.compliance-status::before {
+  content: '●';
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
+
+/* PROCESS */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0;
+  margin-top: 3rem;
+  position: relative;
+}
+.process-step {
+  padding: 2rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.step-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--border2);
+  line-height: 1;
+  margin-bottom: .75rem;
+}
+.step-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: .06em;
+  color: var(--white);
+  margin-bottom: .5rem;
+}
+.step-desc {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .05em;
+  line-height: 1.7;
+}
+.step-time {
+  margin-top: .75rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* TRACKER */
+.tracker-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  margin-top: 3rem;
+  overflow: hidden;
+}
+.tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg3);
+}
+.tracker-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .15em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.tracker-live {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.tracker-live::before {
+  content: '●';
+  animation: pulse 1.5s infinite;
+}
+.tracker-order {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+.order-field {}
+.order-key {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .12em;
+  color: var(--muted2);
+  text-transform: uppercase;
+  margin-bottom: .25rem;
+}
+.order-val {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--white);
+  letter-spacing: .04em;
+}
+.order-val.gold { color: var(--gold); }
+.order-val.green { color: var(--green); }
+.tracker-stages {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.stage-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.stage-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border2);
+  flex-shrink: 0;
+}
+.stage-dot.done { background: var(--gold); }
+.stage-dot.active { background: var(--green); animation: pulse 1.5s infinite; }
+.stage-line {
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  width: 1px;
+  height: calc(100% - 8px);
+  background: var(--border);
+}
+.stage-info { flex: 1; }
+.stage-name {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--text);
+}
+.stage-name.muted { color: var(--muted2); }
+.stage-date {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .06em;
+  color: var(--muted2);
+  margin-top: .15rem;
+}
+.stage-pct {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  color: var(--gold);
+}
+.stage-pct.muted { color: var(--muted2); }
+.progress-bar-wrap {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: var(--muted);
+}
+.progress-bar {
+  height: 3px;
+  background: var(--border2);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+  width: 72%;
+  transition: width 1s ease;
+}
+
+/* RFQ */
+.rfq-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+.rfq-info {}
+.rfq-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.rfq-point {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.rfq-point-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+.rfq-point-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .05em;
+  line-height: 1.7;
+}
+.rfq-point-text strong {
+  color: var(--gold);
+  display: block;
+  font-size: 12px;
+  margin-bottom: .25rem;
+  letter-spacing: .08em;
+}
+.rfq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+.form-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.form-input, .form-select, .form-textarea {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color .2s;
+  width: 100%;
+  letter-spacing: .04em;
+  -webkit-appearance: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+.form-select { cursor: pointer; }
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-submit {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .15em;
+  padding: 16px;
+  background: var(--gold);
+  color: #0a0a0a;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background .2s;
+  width: 100%;
+  margin-top: .5rem;
+}
+.form-submit:hover { background: var(--gold2); }
+.form-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: .05em;
+  text-align: center;
+  line-height: 1.7;
+}
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 3rem;
+  background: var(--bg3);
+  border: 1px solid var(--gold);
+}
+.form-success .success-icon { font-size: 40px; margin-bottom: 1rem; }
+.form-success h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--gold);
+  letter-spacing: .06em;
+  margin-bottom: .75rem;
+}
+.form-success p {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .06em;
+  line-height: 1.7;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  margin-top: 3rem;
+}
+.contact-card {
+  background: var(--bg2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-icon { font-size: 28px; }
+.contact-type {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .15em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.contact-value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--white);
+  letter-spacing: .04em;
+  word-break: break-all;
+}
+.contact-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: .05em;
+  line-height: 1.6;
+}
+.contact-action {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  padding: 8px 20px;
+  background: var(--gold);
+  color: #0a0a0a;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background .2s;
+  width: fit-content;
+}
+.contact-action:hover { background: var(--gold2); }
+
+/* FOOTER */
+footer {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: .1em;
+  color: var(--white);
+  margin-bottom: .5rem;
+}
+.footer-logo span { color: var(--gold); }
+.footer-tagline {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.footer-links-group {}
+.footer-links-title {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  list-style: none;
+}
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: .06em;
+  transition: color .2s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: .08em;
+}
+.footer-coords {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: .08em;
+}
+
+/* FLOATING WHATSAPP */
+.wa-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(37,211,102,.3);
+  z-index: 99;
+  transition: transform .2s, box-shadow .2s;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,.5); }
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* MOBILE NAV */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  position: fixed;
+  top: 88px;
+  left: 0;
+  right: 0;
+  background: rgba(8,8,8,.98);
+  border-bottom: 1px solid var(--border);
+  z-index: 99;
+  padding: 1rem 2rem 2rem;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: .1em;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-nav a:last-child { border: none; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-cta { display: none; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .stat-item:nth-child(odd) { border-right: 1px solid var(--border); }
+  .rfq-wrap { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-badge { display: none; }
+  .hero-headline { font-size: 52px; }
+}
+
+/* SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* LANGUAGE SWITCH */
+[data-lang] { display: none; }
+.lang-en [data-lang="en"] { display: inherit; }
+.lang-nl [data-lang="nl"] { display: inherit; }
+.lang-de [data-lang="de"] { display: inherit; }
+</style>
+</head>
+<body class="lang-en">
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack">
+    <span>EST. 1998</span>
+    <span>BSCI AUDITED FACTORY</span>
+    <span>MOQ FROM 200 PCS / STYLE</span>
+    <span>FOB CHITTAGONG</span>
+    <span>FULL GRAIN & PU LEATHER</span>
+    <span>30–45 DAY LEAD TIME</span>
+    <span>SAMPLE IN 10 DAYS</span>
+    <span>EU COMPLIANT</span>
+    <span>NETHERLANDS · GERMANY · UK · SPAIN</span>
+    <span>T/T · L/C · DP PAYMENT</span>
+    <span>24H RESPONSE TIME</span>
+    <span>EST. 1998</span>
+    <span>BSCI AUDITED FACTORY</span>
+    <span>MOQ FROM 200 PCS / STYLE</span>
+    <span>FOB CHITTAGONG</span>
+    <span>FULL GRAIN & PU LEATHER</span>
+    <span>30–45 DAY LEAD TIME</span>
+    <span>SAMPLE IN 10 DAYS</span>
+    <span>EU COMPLIANT</span>
+    <span>NETHERLANDS · GERMANY · UK · SPAIN</span>
+    <span>T/T · L/C · DP PAYMENT</span>
+    <span>24H RESPONSE TIME</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">ARUTE<span>MIKA</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#compliance">Compliance</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#tracker">Tracker</a></li>
+    <li><a href="#rfq">RFQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+      <button class="lang-btn" onclick="setLang('nl',this)">NL</button>
+      <button class="lang-btn" onclick="setLang('de',this)">DE</button>
+    </div>
+    <a href="#rfq" class="nav-cta">Request Quote</a>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#products" onclick="toggleMobileNav()">Products</a>
+  <a href="#compliance" onclick="toggleMobileNav()">Compliance</a>
+  <a href="#process" onclick="toggleMobileNav()">Process</a>
+  <a href="#tracker" onclick="toggleMobileNav()">Order Tracker</a>
+  <a href="#rfq" onclick="toggleMobileNav()">Request Quote</a>
+  <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-badge">
+    <div class="badge-item active">● EU EXPORT READY</div>
+    <div class="badge-item">BSCI AUDITED</div>
+    <div class="badge-item">EST. 1998</div>
+  </div>
+
+  <div class="hero-tag">
+    <span data-lang="en">Bangladesh Leather Manufacturer · EU Export Partner</span>
+    <span data-lang="nl">Bangladesh Lederproducent · EU Exportpartner</span>
+    <span data-lang="de">Bangladeschischer Lederhersteller · EU-Exportpartner</span>
+  </div>
+
+  <div class="hero-headline">
+    <div data-lang="en">GENUINE<br><span class="accent">LEATHER.</span><br><span class="line-muted">EUROPEAN</span><br>STANDARDS.</div>
+    <div data-lang="nl">ECHT<br><span class="accent">LEER.</span><br><span class="line-muted">EUROPESE</span><br>NORMEN.</div>
+    <div data-lang="de">ECHTES<br><span class="accent">LEDER.</span><br><span class="line-muted">EUROPÄISCHE</span><br>STANDARDS.</div>
+  </div>
+
+  <div class="hero-sub">
+    <span data-lang="en">Bangladesh-based leather goods manufacturer since 1998. Supplying EU wholesale buyers with BSCI-audited leather bags, laptop cases, wallets & accessories. MOQ 200 pcs. FOB Chittagong.</span>
+    <span data-lang="nl">Bangladeshse ledergoederenfabrikant since 1998. Levert EU-groothandelaren BSCI-gecertificeerde leren tassen, laptoptassen, portefeuilles en accessoires. MOQ 200 stuks. FOB Chittagong.</span>
+    <span data-lang="de">Bangladeschischer Lederwarenhersteller seit 1998. Liefert EU-Großhändlern BSCI-geprüfte Ledertaschen, Laptophüllen, Geldbörsen und Accessoires. MOQ 200 Stück. FOB Chittagong.</span>
+  </div>
+
+  <div class="hero-actions">
+    <a href="#rfq" class="btn-primary">
+      <span data-lang="en">Request Free Sample</span>
+      <span data-lang="nl">Gratis Monster Aanvragen</span>
+      <span data-lang="de">Kostenloses Muster Anfragen</span>
+    </a>
+    <a href="#products" class="btn-secondary">
+      <span data-lang="en">View Catalogue</span>
+      <span data-lang="nl">Catalogus Bekijken</span>
+      <span data-lang="de">Katalog Ansehen</span>
+    </a>
+  </div>
+
+  <div style="height:2rem;"></div>
+
+  <div class="hero-flags">
+    <span>Serving:</span>
+    <span class="flag">🇳🇱</span><span>Netherlands</span>
+    <span style="color:var(--border2)">·</span>
+    <span class="flag">🇩🇪</span><span>Germany</span>
+    <span style="color:var(--border2)">·</span>
+    <span class="flag">🇬🇧</span><span>United Kingdom</span>
+    <span style="color:var(--border2)">·</span>
+    <span class="flag">🇪🇸</span><span>Spain</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar reveal">
+  <div class="stat-item">
+    <div class="stat-num">28<span class="unit">+</span></div>
+    <div class="stat-label" data-lang="en">Years of Manufacturing</div>
+    <div class="stat-label" data-lang="nl">Jaar Productie</div>
+    <div class="stat-label" data-lang="de">Jahre Produktion</div>
+    <div class="stat-sub">Est. 1998 · Dhaka, Bangladesh</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">200<span class="unit">+</span></div>
+    <div class="stat-label" data-lang="en">MOQ Per Style</div>
+    <div class="stat-label" data-lang="nl">MOQ Per Stijl</div>
+    <div class="stat-label" data-lang="de">MOQ Pro Stil</div>
+    <div class="stat-sub">Full grain · PU · Suede options</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">30<span class="unit">d</span></div>
+    <div class="stat-label" data-lang="en">Standard Lead Time</div>
+    <div class="stat-label" data-lang="nl">Standaard Levertijd</div>
+    <div class="stat-label" data-lang="de">Standard Lieferzeit</div>
+    <div class="stat-sub">Sample in 10 days</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">24<span class="unit">h</span></div>
+    <div class="stat-label" data-lang="en">Response Time</div>
+    <div class="stat-label" data-lang="nl">Reactietijd</div>
+    <div class="stat-label" data-lang="de">Antwortzeit</div>
+    <div class="stat-sub">WhatsApp · Email · Video call</div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="section-eyebrow">Product Catalogue</div>
+  <div class="section-title reveal">
+    <span data-lang="en">OUR <span class="accent">LEATHER</span><br>CATEGORIES</span>
+    <span data-lang="nl">ONZE <span class="accent">LEDER</span><br>CATEGORIEËN</span>
+    <span data-lang="de">UNSERE <span class="accent">LEDER</span><br>KATEGORIEN</span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">All products available in full grain leather, genuine leather, PU leather & suede. Custom dimensions, hardware, lining & branding available. White-label & OEM accepted.</span>
+    <span data-lang="nl">Alle producten verkrijgbaar in volnerf leer, echt leer, PU-leer en suède. Aangepaste afmetingen, beslag, voering en branding beschikbaar. Wit-label & OEM geaccepteerd.</span>
+    <span data-lang="de">Alle Produkte in Vollnarbenleder, Echtleder, PU-Leder und Wildleder erhältlich. Individuelle Maße, Hardware, Futter & Branding verfügbar. White-Label & OEM akzeptiert.</span>
+  </div>
+
+  <div class="products-filter reveal">
+    <button class="filter-btn active" onclick="filterProducts('all',this)">
+      <span data-lang="en">All</span><span data-lang="nl">Alle</span><span data-lang="de">Alle</span>
+    </button>
+    <button class="filter-btn" onclick="filterProducts('bags',this)">
+      <span data-lang="en">Bags</span><span data-lang="nl">Tassen</span><span data-lang="de">Taschen</span>
+    </button>
+    <button class="filter-btn" onclick="filterProducts('business',this)">
+      <span data-lang="en">Business</span><span data-lang="nl">Zakelijk</span><span data-lang="de">Business</span>
+    </button>
+    <button class="filter-btn" onclick="filterProducts('accessories',this)">
+      <span data-lang="en">Accessories</span><span data-lang="nl">Accessoires</span><span data-lang="de">Accessoires</span>
+    </button>
+    <button class="filter-btn" onclick="filterProducts('footwear',this)">
+      <span data-lang="en">Footwear</span><span data-lang="nl">Schoeisel</span><span data-lang="de">Schuhwerk</span>
+    </button>
+  </div>
+
+  <div class="products-grid reveal" id="productsGrid">
+
+    <!-- Laptop Bag -->
+    <div class="product-card" data-category="business" onclick="openRFQ('Laptop Bag')">
+      <img src="laptop-bag.webp" alt="Leather Laptop Bag" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+      <div class="product-info">
+        <div class="product-cat">Business Series</div>
+        <div class="product-name">LAPTOP BAG</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain / PU</span></div>
+          <div class="spec-row"><span class="spec-key">Fits</span><span class="spec-val">13" · 15" · 17"</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–40 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- File Bag / Briefcase -->
+    <div class="product-card" data-category="business" onclick="openRFQ('File Bag / Briefcase')">
+      <img src="file-bag.webp" alt="Leather File Bag" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+      <div class="product-info">
+        <div class="product-cat">Business Series</div>
+        <div class="product-name">FILE BAG</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Genuine Leather</span></div>
+          <div class="spec-row"><span class="spec-key">Style</span><span class="spec-val">Slim · Expandable</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–40 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tote Bag -->
+    <div class="product-card" data-category="bags" onclick="openRFQ('Tote Bag')">
+      <img src="tote-bag.webp" alt="Leather Tote Bag" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+      <div class="product-info">
+        <div class="product-cat">Bag Series</div>
+        <div class="product-name">TOTE BAG</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain · PU</span></div>
+          <div class="spec-row"><span class="spec-key">Options</span><span class="spec-val">S · M · L sizes</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–40 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wallet -->
+    <div class="product-card" data-category="accessories" onclick="openRFQ('Wallet')">
+      <img src="wallet-macro.webp" alt="Leather Wallet" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+      <div class="product-info">
+        <div class="product-cat">Accessories</div>
+        <div class="product-name">WALLET</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain Leather</span></div>
+          <div class="spec-row"><span class="spec-key">Style</span><span class="spec-val">Bifold · Trifold · Card</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">25–35 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Handbag -->
+    <div class="product-card" data-category="bags" onclick="openRFQ('Handbag')">
+      <img src="https://handfilm.github.io/arutemika/p1.jpg" alt="Leather Handbag" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+      <div class="product-info">
+        <div class="product-cat">Bag Series</div>
+        <div class="product-name">HANDBAG</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Genuine · PU Leather</span></div>
+          <div class="spec-row"><span class="spec-key">Hardware</span><span class="spec-val">Gold · Silver · Black</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–45 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Crossbody -->
+    <div class="product-card" data-category="bags" onclick="openRFQ('Crossbody Bag')">
+      <img src="https://handfilm.github.io/arutemika/p5.jpg" alt="Crossbody Bag" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+      <div class="product-info">
+        <div class="product-cat">Bag Series</div>
+        <div class="product-name">CROSSBODY</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain · PU</span></div>
+          <div class="spec-row"><span class="spec-key">Strap</span><span class="spec-val">Adjustable · Detachable</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–40 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backpack -->
+    <div class="product-card" data-category="bags" onclick="openRFQ('Leather Backpack')">
+      <img src="https://handfilm.github.io/arutemika/p8.jpg" alt="Leather Backpack" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+      <div class="product-info">
+        <div class="product-cat">Bag Series</div>
+        <div class="product-name">BACKPACK</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Genuine · Suede</span></div>
+          <div class="spec-row"><span class="spec-key">Capacity</span><span class="spec-val">18L · 24L · 32L</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">35–45 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footwear -->
+    <div class="product-card" data-category="footwear" onclick="openRFQ('Leather Footwear')">
+      <img src="https://handfilm.github.io/arutemika/slide1.png" alt="Leather Footwear" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+      <div class="product-info">
+        <div class="product-cat">Footwear</div>
+        <div class="product-name">SNEAKERS</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Upper</span><span class="spec-val">Full Grain Leather</span></div>
+          <div class="spec-row"><span class="spec-key">Sole</span><span class="spec-val">Rubber · TPU</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">300 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">40–50 days</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why">
+  <div class="section-eyebrow">Why Arutemika</div>
+  <div class="section-title reveal">
+    <span data-lang="en">YOUR RELIABLE<br><span class="accent">SOURCING PARTNER</span></span>
+    <span data-lang="nl">UW BETROUWBARE<br><span class="accent">INKOOPPARTNER</span></span>
+    <span data-lang="de">IHR ZUVERLÄSSIGER<br><span class="accent">SOURCING PARTNER</span></span>
+  </div>
+
+  <div class="why-grid reveal">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <span class="why-icon">🏭</span>
+      <div class="why-title">FACTORY DIRECT</div>
+      <div class="why-desc">No middlemen. You deal directly with the manufacturer. Established 1998 — family-owned facility with full in-house production control from cutting to finishing.</div>
+      <div class="why-highlight">→ Lower prices · Faster decisions</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <span class="why-icon">📋</span>
+      <div class="why-title">COMPLIANCE READY</div>
+      <div class="why-desc">BSCI-audited factory. Full documentation provided: audit reports, test certificates, compliance declarations. Ready for EU buyer due diligence requirements.</div>
+      <div class="why-highlight">→ No compliance headaches</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <span class="why-icon">💰</span>
+      <div class="why-title">PRICE ADVANTAGE</div>
+      <div class="why-desc">Bangladesh manufacturing costs 30–40% below China at equivalent quality. Full grain leather goods competitive with Chinese PU pricing. Real cost savings on every order.</div>
+      <div class="why-highlight">→ Avg. 35% below China pricing</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <span class="why-icon">🎨</span>
+      <div class="why-title">OEM / WHITE LABEL</div>
+      <div class="why-desc">Your brand, our production. Custom logos, hardware, lining, packaging. Tech pack development. Pantone color matching. Private label from 200 pcs per style.</div>
+      <div class="why-highlight">→ Full custom production</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">05</div>
+      <span class="why-icon">📦</span>
+      <div class="why-title">RELIABLE DELIVERY</div>
+      <div class="why-desc">30–45 day production. Real-time order tracking via our buyer portal. Photo and video updates at each production stage. On-time delivery rate tracked and reported.</div>
+      <div class="why-highlight">→ Full visibility on your order</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">06</div>
+      <span class="why-icon">🤝</span>
+      <div class="why-title">EU EXPERIENCE</div>
+      <div class="why-desc">14+ years of international trade experience. Understanding of EU import requirements, incoterms, documentation. English-speaking management with direct WhatsApp contact.</div>
+      <div class="why-highlight">→ No communication barriers</div>
+    </div>
+  </div>
+</section>
+
+<!-- EU MARKETS -->
+<section class="section" id="markets">
+  <div class="section-eyebrow">Target Markets</div>
+  <div class="section-title reveal">
+    <span data-lang="en">SERVING <span class="accent">EUROPE'S</span><br>TOP BUYERS</span>
+    <span data-lang="nl">VOOR EUROPA'S<br><span class="accent">TOPINKOPERS</span></span>
+    <span data-lang="de">FÜR EUROPAS<br><span class="accent">TOP EINKÄUFER</span></span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">Actively supplying wholesale importers, private label brands, and sourcing agents across Europe's key leather goods markets.</span>
+    <span data-lang="nl">Actief leverend aan groothandelaren, private label merken en inkoopagenten in de belangrijkste Europese ledergoederenmarkten.</span>
+    <span data-lang="de">Aktive Belieferung von Großhändlern, Private-Label-Marken und Sourcing-Agenten auf den wichtigsten europäischen Lederwarenmärkten.</span>
+  </div>
+
+  <div class="markets-grid reveal">
+    <div class="market-card">
+      <div class="market-flag">🇳🇱</div>
+      <div class="market-country">NETHERLANDS</div>
+      <div class="market-stats">
+        <div class="market-stat"><strong>Rotterdam</strong> — EU distribution hub</div>
+        <div class="market-stat"><strong>47.3%</strong> of imports from developing countries</div>
+        <div class="market-stat"><strong>Gateway</strong> to all EU markets</div>
+        <div class="market-stat"><strong>Nike · Karl Lagerfeld</strong> HQ located here</div>
+      </div>
+      <div class="market-focus">● Primary Target Market</div>
+    </div>
+    <div class="market-card">
+      <div class="market-flag">🇩🇪</div>
+      <div class="market-country">GERMANY</div>
+      <div class="market-stats">
+        <div class="market-stat"><strong>€39.1B</strong> apparel import market</div>
+        <div class="market-stat"><strong>#2</strong> global leather footwear importer</div>
+        <div class="market-stat"><strong>BSCI</strong> compliance preferred</div>
+        <div class="market-stat"><strong>GDS Düsseldorf</strong> — key trade fair</div>
+      </div>
+      <div class="market-focus">● Primary Target Market</div>
+    </div>
+    <div class="market-card">
+      <div class="market-flag">🇬🇧</div>
+      <div class="market-country">UNITED KINGDOM</div>
+      <div class="market-stats">
+        <div class="market-stat"><strong>Post-Brexit</strong> sourcing diversification</div>
+        <div class="market-stat"><strong>8.3%</strong> luxury leather growth 2023</div>
+        <div class="market-stat"><strong>Bangladesh</strong> now top 2 UK supplier</div>
+        <div class="market-stat"><strong>London · Manchester</strong> buyer base</div>
+      </div>
+      <div class="market-focus">● Active Market</div>
+    </div>
+    <div class="market-card">
+      <div class="market-flag">🇪🇸</div>
+      <div class="market-country">SPAIN</div>
+      <div class="market-stats">
+        <div class="market-stat"><strong>€181M</strong> leather accessories imports</div>
+        <div class="market-stat"><strong>5th largest</strong> EU leather importer</div>
+        <div class="market-stat"><strong>China shift</strong> — alternative needed</div>
+        <div class="market-stat"><strong>Barcelona · Madrid</strong> buyer clusters</div>
+      </div>
+      <div class="market-focus">● Growing Market</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="section" id="compliance">
+  <div class="section-eyebrow">Compliance & Certifications</div>
+  <div class="section-title reveal">
+    <span data-lang="en">EU-READY <span class="accent">COMPLIANCE</span><br>DOCUMENTATION</span>
+    <span data-lang="nl">EU-KLARE <span class="accent">COMPLIANCE</span><br>DOCUMENTATIE</span>
+    <span data-lang="de">EU-BEREITE <span class="accent">COMPLIANCE</span><br>DOKUMENTATION</span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">All compliance documentation provided upfront. No waiting, no chasing. We understand what European buyers need.</span>
+    <span data-lang="nl">Alle nalevingsdocumentatie vooraf verstrekt. Geen wachten, geen achtervolgen. Wij begrijpen wat Europese kopers nodig hebben.</span>
+    <span data-lang="de">Alle Compliance-Dokumentation wird im Voraus bereitgestellt. Kein Warten, kein Hinterherlaufen. Wir verstehen, was europäische Käufer brauchen.</span>
+  </div>
+
+  <div class="compliance-grid reveal">
+    <div class="compliance-card">
+      <div class="compliance-badge">BSCI</div>
+      <div class="compliance-name">Business Social Compliance</div>
+      <div class="compliance-desc">Factory audited against BSCI standards covering labor rights, health & safety, environmental management and business ethics. Full audit report available on request.</div>
+      <div class="compliance-status">Available on Request</div>
+    </div>
+    <div class="compliance-card">
+      <div class="compliance-badge">SEDEX</div>
+      <div class="compliance-name">Supply Chain Ethics</div>
+      <div class="compliance-desc">SMETA audit-ready. Ethical trade assessment covering labor standards, health & safety, environment and business integrity across our supply chain.</div>
+      <div class="compliance-status">Audit Ready</div>
+    </div>
+    <div class="compliance-card">
+      <div class="compliance-badge">REACH</div>
+      <div class="compliance-name">EU Chemical Compliance</div>
+      <div class="compliance-desc">Products tested for REACH compliance. Chemical restrictions on finished leather goods met. Test reports from accredited labs provided per shipment on request.</div>
+      <div class="compliance-status">Compliant</div>
+    </div>
+    <div class="compliance-card">
+      <div class="compliance-badge">EUDR</div>
+      <div class="compliance-name">EU Deforestation Regulation</div>
+      <div class="compliance-desc">Due diligence statements provided for all leather inputs. Supply chain traceability documentation available. Prepared for 2025 EUDR requirements.</div>
+      <div class="compliance-status">Documentation Ready</div>
+    </div>
+    <div class="compliance-card">
+      <div class="compliance-badge">QC</div>
+      <div class="compliance-name">Quality Control</div>
+      <div class="compliance-desc">In-line and final inspection at factory. 3rd party QC inspection available (SGS, Bureau Veritas, Intertek) at buyer's request. AQL standard inspection protocol.</div>
+      <div class="compliance-status">Standard Process</div>
+    </div>
+    <div class="compliance-card">
+      <div class="compliance-badge">T/T</div>
+      <div class="compliance-name">Payment Terms</div>
+      <div class="compliance-desc">Flexible payment terms: T/T (30% deposit, 70% before shipment), L/C at sight, DP documents against payment. Negotiable for established buyers.</div>
+      <div class="compliance-status">Multiple Options</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-eyebrow">How It Works</div>
+  <div class="section-title reveal">
+    <span data-lang="en">FROM <span class="accent">INQUIRY</span><br>TO DELIVERY</span>
+    <span data-lang="nl">VAN <span class="accent">AANVRAAG</span><br>TOT LEVERING</span>
+    <span data-lang="de">VON <span class="accent">ANFRAGE</span><br>BIS LIEFERUNG</span>
+  </div>
+
+  <div class="process-steps reveal">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-title">RFQ</div>
+      <div class="step-desc">Submit your product requirements via our form or WhatsApp. Product type, quantity, material preference, target price if available.</div>
+      <div class="step-time">→ Response: 24 hours</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-title">QUOTE</div>
+      <div class="step-desc">We send a detailed FOB quotation with material specs, hardware options, packaging details and lead time. Itemised, clear, no hidden costs.</div>
+      <div class="step-time">→ Timeline: 1–2 days</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-title">SAMPLE</div>
+      <div class="step-desc">Pre-production sample produced and shipped to you. Sample fee applies, credited against first bulk order. DHL/FedEx express delivery available.</div>
+      <div class="step-time">→ Sample: 10–14 days</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-title">ORDER</div>
+      <div class="step-desc">Sample approved, PI issued, 30% deposit to start production. All compliance documents and packing list prepared in advance.</div>
+      <div class="step-time">→ PI within 24 hours</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">05</div>
+      <div class="step-title">PRODUCTION</div>
+      <div class="step-desc">Real-time production updates via our buyer portal. Photo/video at each stage: cutting, stitching, finishing, QC inspection. Full transparency.</div>
+      <div class="step-time">→ 30–45 days</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">06</div>
+      <div class="step-title">SHIPMENT</div>
+      <div class="step-desc">FOB Chittagong. Full shipping documents: BL, packing list, invoice, CO, test reports. 70% balance before goods release. Door-to-door freight assistance available.</div>
+      <div class="step-time">→ 20–28 days to EU</div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER TRACKER -->
+<section class="section" id="tracker">
+  <div class="section-eyebrow">Live Production Portal</div>
+  <div class="section-title reveal">
+    <span data-lang="en">REAL-TIME <span class="accent">ORDER</span><br>TRACKING</span>
+    <span data-lang="nl">REALTIME <span class="accent">ORDER</span><br>TRACKING</span>
+    <span data-lang="de">ECHTZEIT <span class="accent">AUFTRAGS</span><br>VERFOLGUNG</span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">Every buyer gets access to our production portal. Track your order live — from raw material to shipment. Full visibility, zero guesswork.</span>
+    <span data-lang="nl">Elke koper krijgt toegang tot ons productieportaal. Volg uw bestelling live — van grondstof tot verzending. Volledige zichtbaarheid, nul giswerk.</span>
+    <span data-lang="de">Jeder Käufer erhält Zugang zu unserem Produktionsportal. Verfolgen Sie Ihre Bestellung live — von der Rohware bis zur Lieferung. Volle Transparenz, kein Rätselraten.</span>
+  </div>
+
+  <div class="tracker-wrap reveal">
+    <div class="tracker-header">
+      <div class="tracker-title">NEXUS PRODUCTION PORTAL — DEMO VIEW</div>
+      <div class="tracker-live">LIVE SYSTEM</div>
+    </div>
+    <div class="tracker-order">
+      <div class="order-field">
+        <div class="order-key">Order ID</div>
+        <div class="order-val">ORD-2026-EU-047</div>
+      </div>
+      <div class="order-field">
+        <div class="order-key">Product</div>
+        <div class="order-val">Leather Tote Bag</div>
+      </div>
+      <div class="order-field">
+        <div class="order-key">Quantity</div>
+        <div class="order-val gold">500 pcs</div>
+      </div>
+      <div class="order-field">
+        <div class="order-key">Buyer</div>
+        <div class="order-val">NL Import Co.</div>
+      </div>
+      <div class="order-field">
+        <div class="order-key">Status</div>
+        <div class="order-val green">IN PRODUCTION</div>
+      </div>
+      <div class="order-field">
+        <div class="order-key">ETA Shipment</div>
+        <div class="order-val">15 Jul 2026</div>
+      </div>
+    </div>
+    <div class="tracker-stages">
+      <div class="stage-row">
+        <div class="stage-dot done"></div>
+        <div class="stage-info">
+          <div class="stage-name">Raw Material Received</div>
+          <div class="stage-date">2026-06-01 — Full grain leather, 450 sq ft</div>
+        </div>
+        <div class="stage-pct">100%</div>
+      </div>
+      <div class="stage-row">
+        <div class="stage-dot done"></div>
+        <div class="stage-info">
+          <div class="stage-name">Pattern Cutting</div>
+          <div class="stage-date">2026-06-05 — All panels cut, QC checked</div>
+        </div>
+        <div class="stage-pct">100%</div>
+      </div>
+      <div class="stage-row">
+        <div class="stage-dot active"></div>
+        <div class="stage-info">
+          <div class="stage-name">Stitching & Assembly</div>
+          <div class="stage-date">2026-06-10 — 340/500 pcs completed</div>
+        </div>
+        <div class="stage-pct" style="color:var(--green)">68%</div>
+      </div>
+      <div class="stage-row">
+        <div class="stage-dot"></div>
+        <div class="stage-info">
+          <div class="stage-name muted">Hardware & Finishing</div>
+          <div class="stage-date">Scheduled: 2026-06-20</div>
+        </div>
+        <div class="stage-pct muted">—</div>
+      </div>
+      <div class="stage-row">
+        <div class="stage-dot"></div>
+        <div class="stage-info">
+          <div class="stage-name muted">Final QC & Packing</div>
+          <div class="stage-date">Scheduled: 2026-06-28</div>
+        </div>
+        <div class="stage-pct muted">—</div>
+      </div>
+      <div class="stage-row">
+        <div class="stage-dot"></div>
+        <div class="stage-info">
+          <div class="stage-name muted">FOB Chittagong — Shipped</div>
+          <div class="stage-date">Target: 2026-07-05</div>
+        </div>
+        <div class="stage-pct muted">—</div>
+      </div>
+    </div>
+    <div class="progress-bar-wrap">
+      <div class="progress-label">
+        <span>Overall Production Progress</span>
+        <span style="color:var(--gold)">68%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width:68%"></div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-family:var(--font-mono);font-size:10px;color:var(--muted2);letter-spacing:.08em;margin-top:1rem;text-align:center;">
+    ↑ DEMO VIEW — All active buyers receive a private portal link with real-time photo/video updates
+  </p>
+</section>
+
+<!-- RFQ -->
+<section class="section" id="rfq" style="background:var(--bg2);">
+  <div class="section-eyebrow">Request For Quotation</div>
+  <div class="section-title reveal">
+    <span data-lang="en">START YOUR <span class="accent">SOURCING</span><br>TODAY</span>
+    <span data-lang="nl">BEGIN VANDAAG<br>MET <span class="accent">INKOPEN</span></span>
+    <span data-lang="de">STARTEN SIE HEUTE<br>MIT DEM <span class="accent">SOURCING</span></span>
+  </div>
+
+  <div class="rfq-wrap reveal">
+    <div class="rfq-info">
+      <div class="section-sub" style="margin-bottom:0;">
+        <span data-lang="en">Fill in the form and we'll respond within 24 hours with a detailed quotation. No obligations. No spam. Just business.</span>
+        <span data-lang="nl">Vul het formulier in en we reageren binnen 24 uur met een gedetailleerde offerte. Geen verplichtingen. Geen spam. Gewoon zaken doen.</span>
+        <span data-lang="de">Füllen Sie das Formular aus und wir antworten innerhalb von 24 Stunden mit einem detaillierten Angebot. Keine Verpflichtungen. Kein Spam. Nur Geschäft.</span>
+      </div>
+      <div class="rfq-points">
+        <div class="rfq-point">
+          <div class="rfq-point-icon">⚡</div>
+          <div class="rfq-point-text">
+            <strong>24-Hour Response</strong>
+            Every RFQ gets a personal response. Not a bot. Not an auto-reply. A real quotation.
+          </div>
+        </div>
+        <div class="rfq-point">
+          <div class="rfq-point-icon">📦</div>
+          <div class="rfq-point-text">
+            <strong>Sample in 10 Days</strong>
+            We ship pre-production samples via DHL/FedEx express. Sample fee credited against first order.
+          </div>
+        </div>
+        <div class="rfq-point">
+          <div class="rfq-point-icon">💬</div>
+          <div class="rfq-point-text">
+            <strong>WhatsApp Direct</strong>
+            Prefer to talk first? WhatsApp us directly. Video call available to show facility and current production.
+          </div>
+        </div>
+        <div class="rfq-point">
+          <div class="rfq-point-icon">🔒</div>
+          <div class="rfq-point-text">
+            <strong>NDA Available</strong>
+            Design confidentiality agreement available before sharing tech packs or proprietary designs.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="rfq-form" id="rfqForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name *</label>
+            <input type="text" class="form-input" id="firstName" placeholder="Jan">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name *</label>
+            <input type="text" class="form-input" id="lastName" placeholder="de Vries">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company Name *</label>
+          <input type="text" class="form-input" id="company" placeholder="Your Company B.V.">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Business Email *</label>
+          <input type="email" class="form-input" id="email" placeholder="jan@company.nl">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Country *</label>
+            <select class="form-select" id="country">
+              <option value="">Select Country</option>
+              <option value="NL">Netherlands 🇳🇱</option>
+              <option value="DE">Germany 🇩🇪</option>
+              <option value="UK">United Kingdom 🇬🇧</option>
+              <option value="ES">Spain 🇪🇸</option>
+              <option value="FR">France 🇫🇷</option>
+              <option value="BE">Belgium 🇧🇪</option>
+              <option value="IT">Italy 🇮🇹</option>
+              <option value="Other">Other EU</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Product Category *</label>
+            <select class="form-select" id="productCat">
+              <option value="">Select Category</option>
+              <option value="Laptop Bag">Laptop Bag</option>
+              <option value="File Bag">File Bag / Briefcase</option>
+              <option value="Tote Bag">Tote Bag</option>
+              <option value="Wallet">Wallet</option>
+              <option value="Handbag">Handbag</option>
+              <option value="Crossbody">Crossbody Bag</option>
+              <option value="Backpack">Backpack</option>
+              <option value="Footwear">Footwear / Sneakers</option>
+              <option value="Multiple">Multiple Categories</option>
+              <option value="Custom">Custom / Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Estimated Quantity</label>
+            <select class="form-select" id="quantity">
+              <option value="">Select Range</option>
+              <option value="200-500">200–500 pcs</option>
+              <option value="500-1000">500–1,000 pcs</option>
+              <option value="1000-3000">1,000–3,000 pcs</option>
+              <option value="3000+">3,000+ pcs</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Material Preference</label>
+            <select class="form-select" id="material">
+              <option value="">Select Material</option>
+              <option value="Full Grain">Full Grain Leather</option>
+              <option value="Genuine">Genuine Leather</option>
+              <option value="PU">PU Leather</option>
+              <option value="Suede">Suede</option>
+              <option value="Mixed">Mixed / Advise Me</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message / Requirements</label>
+          <textarea class="form-textarea" id="message" placeholder="Describe your product, target price, branding requirements, timeline or any specific details..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitRFQ()">
+          <span data-lang="en">SEND REQUEST — RESPONSE IN 24H →</span>
+          <span data-lang="nl">AANVRAAG VERSTUREN — REACTIE IN 24U →</span>
+          <span data-lang="de">ANFRAGE SENDEN — ANTWORT IN 24H →</span>
+        </button>
+        <div class="form-note">By submitting, you agree to be contacted by Arutemika regarding your sourcing request. No spam, ever.</div>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✅</div>
+        <h3>REQUEST RECEIVED</h3>
+        <p>Thank you. We've received your RFQ and will respond within 24 hours with a detailed quotation.<br><br>For urgent inquiries, WhatsApp us directly at <strong>+880 1974 518600</strong> or email <strong>himon@handsandhead.com</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-eyebrow">Contact</div>
+  <div class="section-title reveal">
+    <span data-lang="en">LET'S <span class="accent">TALK</span><br>BUSINESS</span>
+    <span data-lang="nl">LATEN WE <span class="accent">ZAKEN</span><br>DOEN</span>
+    <span data-lang="de">LASSEN SIE UNS<br><span class="accent">BUSINESS</span> MACHEN</span>
+  </div>
+
+  <div class="contact-grid reveal">
+    <div class="contact-card">
+      <div class="contact-icon">💬</div>
+      <div class="contact-type">WhatsApp — Fastest Response</div>
+      <div class="contact-value">+880 1974 518600</div>
+      <div class="contact-note">Available Mon–Sat, 9AM–8PM Bangladesh Time (UTC+6). English-speaking. Video call available.</div>
+      <a href="https://wa.me/8801974518600?text=Hi%20Arutemika%2C%20I%20am%20interested%20in%20sourcing%20leather%20goods." class="contact-action" target="_blank">Open WhatsApp →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-type">Email</div>
+      <div class="contact-value">himon@handsandhead.com</div>
+      <div class="contact-note">Send your RFQ, tech pack, or product reference. All emails responded within 24 hours on business days.</div>
+      <a href="mailto:himon@handsandhead.com" class="contact-action">Send Email →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">🏭</div>
+      <div class="contact-type">Factory Location</div>
+      <div class="contact-value">Dhaka, Bangladesh</div>
+      <div class="contact-note">Production facility operational since 1998. Virtual factory tours available via video call. Physical visits welcome by appointment.</div>
+      <a href="#rfq" class="contact-action">Book Video Tour →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">🚢</div>
+      <div class="contact-type">Shipping Origin</div>
+      <div class="contact-value">FOB Chittagong Port</div>
+      <div class="contact-note">Chittagong to Rotterdam: ~22 days. Freight forwarding assistance available. CIF and other incoterms negotiable.</div>
+      <a href="#rfq" class="contact-action">Get Freight Info →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">ARUTE<span>MIKA</span></div>
+      <div class="footer-tagline">Genuine Leather · Bangladesh · Est. 1998 · <a href="https://www.handsandhead.com" style="color:var(--gold);text-decoration:none;">www.handsandhead.com</a></div>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-links-title">Products</div>
+      <ul class="footer-links">
+        <li><a href="#products">Laptop Bags</a></li>
+        <li><a href="#products">File Bags</a></li>
+        <li><a href="#products">Tote Bags</a></li>
+        <li><a href="#products">Wallets</a></li>
+        <li><a href="#products">Handbags & Accessories</a></li>
+        <li><a href="#products">Footwear</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-links-title">Information</div>
+      <ul class="footer-links">
+        <li><a href="#compliance">Compliance & Certs</a></li>
+        <li><a href="#process">Ordering Process</a></li>
+        <li><a href="#tracker">Production Tracker</a></li>
+        <li><a href="#markets">EU Markets</a></li>
+        <li><a href="#why">Why Arutemika</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-links-title">Markets</div>
+      <ul class="footer-links">
+        <li><a href="#markets">🇳🇱 Netherlands</a></li>
+        <li><a href="#markets">🇩🇪 Germany</a></li>
+        <li><a href="#markets">🇬🇧 United Kingdom</a></li>
+        <li><a href="#markets">🇪🇸 Spain</a></li>
+        <li><a href="#rfq">Other EU Countries</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 ARUTEMIKA · Bangladesh Genuine Leather Goods · All Rights Reserved</div>
+    <div class="footer-coords">23.8103°N · 90.4125°E · DHAKA, BANGLADESH</div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/8801974518600?text=Hi%20Arutemika%2C%20I%20am%20interested%20in%20your%20leather%20goods." class="wa-float" target="_blank" title="WhatsApp Us">💬</a>
+
+<script>
+// LANGUAGE TOGGLE
+function setLang(lang, btn) {
+  document.body.className = 'lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// MOBILE NAV
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+// SCROLL REVEAL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// PRODUCT FILTER
+function filterProducts(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    if (cat === 'all' || card.dataset.category === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// OPEN RFQ WITH PRE-FILL
+function openRFQ(product) {
+  document.getElementById('productCat').value = product;
+  document.getElementById('rfq').scrollIntoView({ behavior: 'smooth' });
+}
+
+// SUBMIT RFQ
+function submitRFQ() {
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const country = document.getElementById('country').value;
+  const productCat = document.getElementById('productCat').value;
+  const quantity = document.getElementById('quantity').value;
+  const material = document.getElementById('material').value;
+  const message = document.getElementById('message').value;
+
+  if (!firstName || !email || !productCat) {
+    alert('Please fill in Name, Email and Product Category at minimum.');
+    return;
+  }
+
+  const submitBtn = document.querySelector('.form-submit');
+  submitBtn.textContent = 'SENDING...';
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = '0.6';
+
+  const payload = {
+    firstName, lastName, company, email, country,
+    productCat, quantity, material, message,
+    timestamp: new Date().toISOString(),
+    source: 'arutemika-eu-portal'
+  };
+
+  fetch('YOUR_MAKE_COM_WEBHOOK_URL_HERE', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(response => {
+    document.getElementById('rfqForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  })
+  .catch(error => {
+    console.error('Webhook Error:', error);
+    submitBtn.textContent = 'SEND REQUEST — RESPONSE IN 24H →';
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = '1';
+    alert('System error. Please contact directly: himon@handsandhead.com');
+  });
+}
+
+// PROGRESS BAR ANIMATE ON SCROLL
+const progressFill = document.querySelector('.progress-fill');
+const progressObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      progressFill.style.width = '68%';
+    }
+  });
+}, { threshold: 0.5 });
+if (progressFill) progressObserver.observe(progressFill.parentElement);
+
+// NAV ACTIVE STATE ON SCROLL
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+  });
+});
+</script>
+
+</body>
+</html>
