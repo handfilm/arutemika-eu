@@ -1105,7 +1105,70 @@ footer {
   .hero-headline { font-size: 52px; }
 }
 
-/* SCROLL REVEAL */
+/* STEP IMAGES */
+.step-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1.25rem;
+  filter: grayscale(15%) brightness(.9);
+  transition: filter .3s;
+}
+.process-step:hover .step-img { filter: grayscale(0%) brightness(1); }
+
+/* CRAFT GALLERY */
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--border);
+  margin-top: 3rem;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--bg2);
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) brightness(.85);
+  transition: filter .4s, transform .4s;
+}
+.gallery-item:hover img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.04);
+}
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: .6rem .75rem;
+  background: linear-gradient(transparent, rgba(0,0,0,.85));
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.gallery-item:hover .gallery-caption { opacity: 1; }
+.gallery-wide {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+@media (max-width: 768px) {
+  .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+  .gallery-wide { grid-column: span 1; aspect-ratio: 4/3; }
+  .step-img { height: 120px; }
+}
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -1615,36 +1678,42 @@ footer {
 
   <div class="process-steps reveal">
     <div class="process-step">
+      <img src="1000022131.jpeg" alt="CAD Tech Pack Specification" class="step-img">
       <div class="step-num">01</div>
       <div class="step-title">RFQ</div>
       <div class="step-desc">Submit your product requirements via our form or WhatsApp. Product type, quantity, material preference, target price if available.</div>
       <div class="step-time">→ Response: 24 hours</div>
     </div>
     <div class="process-step">
+      <img src="1000022129.jpeg" alt="Digital Caliper Quality Control" class="step-img">
       <div class="step-num">02</div>
       <div class="step-title">QUOTE</div>
       <div class="step-desc">We send a detailed FOB quotation with material specs, hardware options, packaging details and lead time. Itemised, clear, no hidden costs.</div>
       <div class="step-time">→ Timeline: 1–2 days</div>
     </div>
     <div class="process-step">
+      <img src="1000022137.jpeg" alt="Hot Stamp Branding on Leather" class="step-img">
       <div class="step-num">03</div>
       <div class="step-title">SAMPLE</div>
       <div class="step-desc">Pre-production sample produced and shipped to you. Sample fee applies, credited against first bulk order. DHL/FedEx express delivery available.</div>
       <div class="step-time">→ Sample: 10–14 days</div>
     </div>
     <div class="process-step">
+      <img src="1000022149.jpeg" alt="Leather Hardware Snap Button" class="step-img">
       <div class="step-num">04</div>
       <div class="step-title">ORDER</div>
       <div class="step-desc">Sample approved, PI issued, 30% deposit to start production. All compliance documents and packing list prepared in advance.</div>
       <div class="step-time">→ PI within 24 hours</div>
     </div>
     <div class="process-step">
+      <img src="1000022119.jpeg" alt="Industrial Leather Sewing Machine" class="step-img">
       <div class="step-num">05</div>
       <div class="step-title">PRODUCTION</div>
       <div class="step-desc">Real-time production updates via our buyer portal. Photo/video at each stage: cutting, stitching, finishing, QC inspection. Full transparency.</div>
       <div class="step-time">→ 30–45 days</div>
     </div>
     <div class="process-step">
+      <img src="1000022132.jpeg" alt="Export Ready Warehouse Shipping" class="step-img">
       <div class="step-num">06</div>
       <div class="step-title">SHIPMENT</div>
       <div class="step-desc">FOB Chittagong. Full shipping documents: BL, packing list, invoice, CO, test reports. 70% balance before goods release. Door-to-door freight assistance available.</div>
@@ -1653,9 +1722,27 @@ footer {
   </div>
 </section>
 
+
+<!-- CRAFT GALLERY -->
+<section class="section" id="craft" style="padding-bottom:0;">
+  <div class="section-eyebrow">Craftsmanship</div>
+  <div class="section-title reveal"><span>MADE WITH <span class="accent">PRECISION</span><br>NOT PROMISES</span></div>
+  <div class="section-sub reveal">Every stitch, every rivet, every edge — documented. This is what Bangladesh leather manufacturing looks like when done right.</div>
+  <div class="gallery-strip reveal">
+    <div class="gallery-item gallery-wide"><img src="1000022128.jpeg" alt="Raw leather hides"><div class="gallery-caption">Raw Material — Full Grain Hides</div></div>
+    <div class="gallery-item"><img src="1000022143.jpeg" alt="Brown leather zipper"><div class="gallery-caption">Hardware — YKK Grade Zipper</div></div>
+    <div class="gallery-item"><img src="1000022145.jpeg" alt="Corner stitching"><div class="gallery-caption">Stitching — Hand-reinforced Corner</div></div>
+    <div class="gallery-item"><img src="1000022136.jpeg" alt="Edge finishing"><div class="gallery-caption">Finishing — Edge Sealing Process</div></div>
+    <div class="gallery-item"><img src="1000022147.jpeg" alt="Edge seam closeup"><div class="gallery-caption">Quality — Clean Edge Profile</div></div>
+    <div class="gallery-item"><img src="1000022146.jpeg" alt="Tote handle rivets"><div class="gallery-caption">Hardware — Riveted Handle Mount</div></div>
+    <div class="gallery-item gallery-wide"><img src="1000022142.jpeg" alt="Metal clasp hardware"><div class="gallery-caption">Hardware — Grade Metal Clasp System</div></div>
+    <div class="gallery-item"><img src="1000022141.jpeg" alt="Black leather handle"><div class="gallery-caption">Build — Rolled Leather Handle</div></div>
+    <div class="gallery-item"><img src="1000022139.jpeg" alt="Briefcase combination lock"><div class="gallery-caption">Security — Optional Lock Hardware</div></div>
+    <div class="gallery-item"><img src="1000022130.jpeg" alt="Garment label"><div class="gallery-caption">Label — Custom Branding Available</div></div>
+  </div>
+</section>
 <!-- ORDER TRACKER -->
 <section class="section" id="tracker">
-  <div class="section-eyebrow">Live Production Portal</div>
   <div class="section-title reveal">
     <span data-lang="en">REAL-TIME <span class="accent">ORDER</span><br>TRACKING</span>
     <span data-lang="nl">REALTIME <span class="accent">ORDER</span><br>TRACKING</span>
