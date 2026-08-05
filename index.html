@@ -509,6 +509,61 @@ nav {
   text-transform: uppercase;
 }
 
+/* STORY / ORIGIN */
+.story-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+  letter-spacing: .02em;
+  max-width: 700px;
+  margin-bottom: 1.25rem;
+}
+.story-text strong { color: var(--gold); font-weight: 500; }
+.story-hubs { margin-top: 3rem; }
+.story-hubs .why-grid { margin-top: 1.5rem; }
+.name-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin: 3rem 0 .5rem;
+}
+.name-plate {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: .04em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.name-plate span { color: var(--gold); }
+.name-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+.name-card {
+  background: var(--bg2);
+  padding: 1.75rem;
+}
+.name-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+}
+.name-read {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.85;
+  letter-spacing: .02em;
+}
+
 /* EU MARKETS */
 .markets-grid {
   display: grid;
@@ -1219,6 +1274,7 @@ footer {
 <nav>
   <a href="#" class="nav-logo">ARUTE<span>MIKA</span></a>
   <ul class="nav-links">
+    <li><a href="#story">Story</a></li>
     <li><a href="#products">Products</a></li>
     <li><a href="#compliance">Compliance</a></li>
     <li><a href="#process">Process</a></li>
@@ -1356,6 +1412,126 @@ footer {
     <div class="stat-sub">WhatsApp · Email · Video call</div>
   </div>
 </div>
+
+<!-- STORY / ORIGIN -->
+<section class="section" id="story">
+  <div class="section-eyebrow">The Origin</div>
+  <div class="section-title reveal">
+    <span data-lang="en">FROM CHITTAGONG<br><span class="accent">TO TOKYO.</span></span>
+    <span data-lang="nl">VAN CHITTAGONG<br><span class="accent">NAAR TOKIO.</span></span>
+    <span data-lang="de">VON CHITTAGONG<br><span class="accent">NACH TOKIO.</span></span>
+    <span data-lang="bn">চট্টগ্রাম থেকে<br><span class="accent">টোকিও পর্যন্ত।</span></span>
+    <span data-lang="ja">チッタゴンから<br><span class="accent">東京へ。</span></span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">A Bangladesh–Japan partnership built shipment by shipment — and the story behind the name now taking shape.</span>
+    <span data-lang="nl">Een Bangladesh-Japan partnerschap, opgebouwd zending na zending — en het verhaal achter de naam die nu vorm krijgt.</span>
+    <span data-lang="de">Eine bangladeschisch-japanische Partnerschaft, Sendung für Sendung aufgebaut — und die Geschichte hinter dem Namen, der gerade Form annimmt.</span>
+    <span data-lang="bn">চালানের পর চালানে গড়ে ওঠা এক বাংলাদেশ-জাপান অংশীদারিত্ব — আর এখন যে নামের গল্প রূপ নিচ্ছে তার পেছনের কথা।</span>
+    <span data-lang="ja">一つの出荷ごとに築かれた、バングラデシュと日本のパートナーシップ——そして今かたちになりつつある名前の物語。</span>
+  </div>
+
+  <div class="reveal">
+    <div class="story-text">
+      <span data-lang="en">Arutemika began as a working relationship, not a marketing plan. <strong>Mr. Hiron</strong> ran production out of Dhaka. <strong>Oishi-san</strong>, an independent sourcing agent in Japan, carried samples between factories and buyers who had never dealt with Bangladesh directly. Every shipment built a little more trust, on both sides.</span>
+      <span data-lang="nl">Arutemika begon als een werkrelatie, niet als een marketingplan. <strong>De heer Hiron</strong> leidde de productie vanuit Dhaka. <strong>Oishi-san</strong>, een onafhankelijke sourcing agent in Japan, bracht monsters tussen fabrieken en kopers die nooit eerder rechtstreeks met Bangladesh hadden gewerkt. Elke zending bouwde iets meer vertrouwen op, aan beide kanten.</span>
+      <span data-lang="de">Arutemika begann als Arbeitsbeziehung, nicht als Marketingplan. <strong>Herr Hiron</strong> leitete die Produktion in Dhaka. <strong>Oishi-san</strong>, ein unabhängiger Sourcing-Agent in Japan, brachte Muster zwischen Fabriken und Käufern, die zuvor nie direkt mit Bangladesch gehandelt hatten. Jede Sendung schuf etwas mehr Vertrauen, auf beiden Seiten.</span>
+      <span data-lang="bn">আরুতেমিকা শুরু হয়েছিল একটি কর্মসম্পর্ক হিসেবে, কোনো মার্কেটিং পরিকল্পনা হিসেবে নয়। <strong>জনাব হিরন</strong> ঢাকা থেকে উৎপাদন পরিচালনা করতেন। জাপানের একজন স্বাধীন সোর্সিং এজেন্ট <strong>ওইশি-সান</strong>, এমন কারখানা ও ক্রেতাদের মধ্যে নমুনা আদান-প্রদান করতেন যারা আগে কখনো সরাসরি বাংলাদেশের সাথে ব্যবসা করেননি। প্রতিটি চালান দুই পক্ষের মধ্যেই একটু একটু করে বিশ্বাস তৈরি করেছে।</span>
+      <span data-lang="ja">アルテミカは、マーケティング戦略としてではなく、実務上の関係として始まりました。<strong>ヒロン氏</strong>はダッカで生産を担い、日本の独立系ソーシングエージェントである<strong>オイシさん</strong>は、バングラデシュと直接取引したことのない工場とバイヤーの間でサンプルを運び続けました。一つひとつの出荷が、双方に少しずつ信頼を築いていきました。</span>
+    </div>
+    <div class="story-text">
+      <span data-lang="en">That trust is now bringing in more people. Oishi-san has introduced a small group of enthusiastic Japanese leather trade partners — sourcing houses and brand-minded buyers — who want more than a supplier relationship. The plan now taking shape: a Japan-side business and brand hub, working alongside a Bangladesh-side production and creation hub, under one name.</span>
+      <span data-lang="nl">Dat vertrouwen brengt nu meer mensen samen. Oishi-san heeft een kleine groep enthousiaste Japanse leerhandelspartners geïntroduceerd — sourcingbedrijven en merkgerichte kopers — die meer willen dan alleen een leverancier. Het plan dat nu vorm krijgt: een Japanse business- en merkhub, naast een Bangladese productie- en creatiehub, onder één naam.</span>
+      <span data-lang="de">Dieses Vertrauen bringt jetzt weitere Partner ins Spiel. Oishi-san hat eine kleine Gruppe begeisterter japanischer Lederhandelspartner vorgestellt — Sourcing-Häuser und markenorientierte Käufer —, die mehr als nur eine Lieferbeziehung wollen. Der Plan, der gerade Form annimmt: ein japanischer Business- und Markenhub neben einem bangladeschischen Produktions- und Kreativhub, unter einem gemeinsamen Namen.</span>
+      <span data-lang="bn">সেই বিশ্বাস এখন আরও মানুষকে একত্র করছে। ওইশি-সান জাপানের চামড়া ব্যবসার একদল উৎসাহী অংশীদার — সোর্সিং প্রতিষ্ঠান ও ব্র্যান্ড-সচেতন ক্রেতাদের — পরিচয় করিয়ে দিয়েছেন, যারা শুধু সরবরাহকারীর সম্পর্কের চেয়ে বেশি কিছু চান। যে পরিকল্পনা এখন রূপ নিচ্ছে: একটি নামের অধীনে জাপান-পক্ষের ব্যবসা ও ব্র্যান্ড হাব, এবং বাংলাদেশ-পক্ষের উৎপাদন ও সৃজন হাব।</span>
+      <span data-lang="ja">その信頼は、今、新しい人々を引き寄せています。オイシさんは、単なる仕入れ先以上の関係を求める、日本の革製品業界の熱心なパートナーたち——ソーシング会社やブランド志向のバイヤー——を紹介してくれました。今かたちになりつつある計画は、日本側のビジネス・ブランドハブと、バングラデシュ側の生産・制作ハブを、一つの名前のもとに結びつけることです。</span>
+    </div>
+  </div>
+
+  <div class="story-hubs reveal">
+    <div class="why-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      <div class="why-card">
+        <span class="why-icon">🇯🇵</span>
+        <div class="why-title">
+          <span data-lang="en">JAPAN — BUSINESS HUB</span>
+          <span data-lang="nl">JAPAN — BUSINESS HUB</span>
+          <span data-lang="de">JAPAN — BUSINESS HUB</span>
+          <span data-lang="bn">জাপান — বিজনেস হাব</span>
+          <span data-lang="ja">日本 — ビジネスハブ</span>
+        </div>
+        <div class="why-desc">
+          <span data-lang="en">Sales, buyer relationships, brand direction and market presence in Japan — led by Oishi-san and partners.</span>
+          <span data-lang="nl">Verkoop, koperrelaties, merkrichting en marktaanwezigheid in Japan — geleid door Oishi-san en partners.</span>
+          <span data-lang="de">Vertrieb, Käuferbeziehungen, Markenführung und Marktpräsenz in Japan — geleitet von Oishi-san und Partnern.</span>
+          <span data-lang="bn">ওইশি-সান ও অংশীদারদের নেতৃত্বে বিক্রয়, ক্রেতা সম্পর্ক, ব্র্যান্ড দিকনির্দেশনা এবং জাপানে বাজার উপস্থিতি।</span>
+          <span data-lang="ja">オイシさんとパートナーが率いる、営業・バイヤー関係・ブランド戦略・日本市場でのプレゼンス。</span>
+        </div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🇧🇩</span>
+        <div class="why-title">
+          <span data-lang="en">BANGLADESH — PRODUCTION & CREATION HUB</span>
+          <span data-lang="nl">BANGLADESH — PRODUCTIE- & CREATIEHUB</span>
+          <span data-lang="de">BANGLADESCH — PRODUKTIONS- & KREATIVHUB</span>
+          <span data-lang="bn">বাংলাদেশ — উৎপাদন ও সৃজন হাব</span>
+          <span data-lang="ja">バングラデシュ — 生産・制作ハブ</span>
+        </div>
+        <div class="why-desc">
+          <span data-lang="en">Manufacturing, sampling, design and visual production — led by Mr. Hiron from Dhaka.</span>
+          <span data-lang="nl">Productie, sampling, design en visuele productie — geleid door de heer Hiron vanuit Dhaka.</span>
+          <span data-lang="de">Fertigung, Musterentwicklung, Design und visuelle Produktion — geleitet von Herrn Hiron aus Dhaka.</span>
+          <span data-lang="bn">জনাব হিরনের নেতৃত্বে ঢাকা থেকে উৎপাদন, নমুনা তৈরি, ডিজাইন ও ভিজ্যুয়াল প্রোডাকশন।</span>
+          <span data-lang="ja">ヒロン氏がダッカから率いる、製造・サンプル制作・デザイン・映像制作。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="name-label">
+      <span data-lang="en">On the name</span>
+      <span data-lang="nl">Over de naam</span>
+      <span data-lang="de">Über den Namen</span>
+      <span data-lang="bn">নাম প্রসঙ্গে</span>
+      <span data-lang="ja">名前について</span>
+    </div>
+    <div class="name-plate">ARU·TE·<span>MIKA</span></div>
+    <div class="name-grid">
+      <div class="name-card">
+        <div class="name-tag">
+          <span data-lang="en">Reading 1 — Craft</span>
+          <span data-lang="nl">Lezing 1 — Vakmanschap</span>
+          <span data-lang="de">Lesart 1 — Handwerk</span>
+          <span data-lang="bn">পাঠ ১ — কারুকাজ</span>
+          <span data-lang="ja">解釈 1 — 職人技</span>
+        </div>
+        <div class="name-read">
+          <span data-lang="en">ARU (在る, "to exist") + TE (手, "hand") + MIKA ("light"). Read together — the hand that brings light into being. A name that puts craftsmanship at the center, in line with the Hands &amp; Head lineage this brand grew out of.</span>
+          <span data-lang="nl">ARU (bestaan) + TE (hand) + MIKA (licht). Samen gelezen — de hand die licht brengt aan wat bestaat. Een naam die vakmanschap centraal stelt, passend bij de Hands &amp; Head-afkomst van dit merk.</span>
+          <span data-lang="de">ARU (Existenz) + TE (Hand) + MIKA (Licht). Zusammen gelesen — die Hand, die dem Sein Licht bringt. Ein Name, der Handwerkskunst in den Mittelpunkt stellt, passend zur Hands &amp; Head-Herkunft dieser Marke.</span>
+          <span data-lang="bn">আরু (অস্তিত্ব) + তে (হাত) + মিকা (আলো)। একসাথে পড়লে — যে হাত অস্তিত্বে আলো নিয়ে আসে। এমন একটি নাম যা কারুকাজকে কেন্দ্রে রাখে, এই ব্র্যান্ডের Hands &amp; Head শিকড়ের সাথে মিলে যায়।</span>
+          <span data-lang="ja">ARU（在る）＋ TE（手）＋ MIKA（光）。合わせて読むと——存在に光をもたらす手。職人技を中心に置く読み方で、このブランドが生まれたHands &amp; Headの系譜と重なります。</span>
+        </div>
+      </div>
+      <div class="name-card">
+        <div class="name-tag">
+          <span data-lang="en">Reading 2 — Bridge</span>
+          <span data-lang="nl">Lezing 2 — Brug</span>
+          <span data-lang="de">Lesart 2 — Brücke</span>
+          <span data-lang="bn">পাঠ ২ — সেতু</span>
+          <span data-lang="ja">解釈 2 — 架け橋</span>
+        </div>
+        <div class="name-read">
+          <span data-lang="en">ARTE (craft, art — familiar across Europe) + MIKA (a warm, familiar sound in Japanese). Read together, a name that sits comfortably in an EU buyer's inbox and in a Japanese sourcing meeting, without translating either side away.</span>
+          <span data-lang="nl">ARTE (kunst/vakmanschap, herkenbaar in Europa) + MIKA (vertrouwd klinkend in het Japans). Samen gelezen, een naam die past in zowel een EU-koperspostvak als een Japanse sourcingvergadering, zonder een van beide kanten te verliezen.</span>
+          <span data-lang="de">ARTE (Kunst/Handwerk, in Europa vertraut) + MIKA (im Japanischen vertraut klingend). Zusammen gelesen ein Name, der sowohl im Posteingang eines EU-Käufers als auch in einem japanischen Sourcing-Meeting zu Hause ist, ohne eine der beiden Seiten zu verwässern.</span>
+          <span data-lang="bn">আর্তে (শিল্প/কারুকাজ, ইউরোপে পরিচিত) + মিকা (জাপানি ভাষায় পরিচিত ও উষ্ণ শোনায়)। একসাথে পড়লে, এমন একটি নাম যা EU ক্রেতার ইনবক্সে এবং জাপানি সোর্সিং মিটিং উভয় জায়গাতেই স্বচ্ছন্দে মানানসই, কোনো পক্ষকে না হারিয়ে।</span>
+          <span data-lang="ja">ARTE（技巧・芸術、欧州で馴染みのある語）＋ MIKA（日本語で親しみのある響き）。合わせて読むと、EUバイヤーの受信箱にも日本のソーシングの場にも、どちらの文化も薄めることなく馴染む名前です。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PRODUCTS -->
 <section class="section" id="products">
