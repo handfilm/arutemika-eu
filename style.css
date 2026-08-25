@@ -136,6 +136,40 @@ nav {
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
+/* HERO — full-width 6-slide background slider */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: grayscale(35%);
+  animation: heroSlideFade 30s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 5s; }
+.hero-slide:nth-child(3) { animation-delay: 10s; }
+.hero-slide:nth-child(4) { animation-delay: 15s; }
+.hero-slide:nth-child(5) { animation-delay: 20s; }
+.hero-slide:nth-child(6) { animation-delay: 25s; }
+@keyframes heroSlideFade {
+  0%          { opacity: 0;   transform: scale(1.04); }
+  3%, 13%     { opacity: .5;  transform: scale(1.1); }
+  17%, 100%   { opacity: 0;   transform: scale(1.1); }
+}
+.hero-slider::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(231,236,245,.5) 0%, rgba(231,236,245,.72) 55%, rgba(231,236,245,.92) 100%);
+}
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -1163,8 +1197,8 @@ footer {
 /* CRAFT GALLERY — PHOTO GRID */
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 2px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
   background: var(--border);
   margin-top: 3rem;
 }
@@ -1228,7 +1262,7 @@ footer {
 }
 .photo-wa-btn:hover { transform: scale(1.12); }
 @media (max-width: 768px) {
-  .photo-gallery { grid-template-columns: repeat(3, 1fr); }
+  .photo-gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .photo-item-overlay { opacity: 1; background: linear-gradient(transparent 40%, rgba(0,0,0,.8)); }
   .photo-zoom-hint { display: none; }
   .step-img { height: 120px; }
@@ -1503,7 +1537,7 @@ footer .muted, footer .footer-tagline, footer .footer-copy { color: #B6ACD9 !imp
   box-shadow: 8px 8px 16px var(--shadow-d), -8px -8px 16px var(--shadow-l);
   background: var(--surf);
 }
-.photo-gallery { background: transparent; gap: 14px; }
+.photo-gallery { background: transparent; gap: 18px; }
 .photo-wa-btn { background: var(--wa-green) !important; }
 .lightbox { background: rgba(42,36,56,.92) !important; }
 .lightbox-img-wrap img { border-radius: var(--radius-sm); border: none; }
@@ -1641,3 +1675,47 @@ img { border-radius: var(--radius-sm); }
   .why-card, .compliance-card, .market-card, .process-step, .contact-card { padding: 1.4rem; }
   .stat-item { padding: 1rem; }
 }
+
+/* ---------- Per-card hover color accents (product cards, why cards, gallery photos) ---------- */
+:root {
+  --acc-1: #FF2D87;
+  --acc-2: #7C4DFF;
+  --acc-3: #17B890;
+  --acc-4: #FF8A3D;
+  --acc-5: #2D9CFF;
+  --acc-6: #E0B050;
+}
+.product-card:nth-child(6n+1), .why-card:nth-child(6n+1), .photo-item:nth-child(6n+1) { --card-accent: var(--acc-1); }
+.product-card:nth-child(6n+2), .why-card:nth-child(6n+2), .photo-item:nth-child(6n+2) { --card-accent: var(--acc-2); }
+.product-card:nth-child(6n+3), .why-card:nth-child(6n+3), .photo-item:nth-child(6n+3) { --card-accent: var(--acc-3); }
+.product-card:nth-child(6n+4), .why-card:nth-child(6n+4), .photo-item:nth-child(6n+4) { --card-accent: var(--acc-4); }
+.product-card:nth-child(6n+5), .why-card:nth-child(6n+5), .photo-item:nth-child(6n+5) { --card-accent: var(--acc-5); }
+.product-card:nth-child(6n),   .why-card:nth-child(6n),   .photo-item:nth-child(6n)   { --card-accent: var(--acc-6); }
+
+.product-card { transition: box-shadow .3s ease, transform .3s ease, background .3s ease; }
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 10px 10px 22px var(--shadow-d), -10px -10px 22px var(--shadow-l), 0 0 0 2px var(--card-accent);
+}
+.product-card:hover .product-name { color: var(--card-accent) !important; transition: color .25s ease; }
+.product-card:hover .product-cat { color: var(--card-accent) !important; }
+.product-card:hover .product-overlay { background: color-mix(in srgb, var(--card-accent) 20%, transparent) !important; opacity: 1; }
+.product-card:hover .product-overlay-btn { background: var(--card-accent) !important; }
+
+.why-card { transition: box-shadow .3s ease, transform .3s ease; }
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 10px 10px 22px var(--shadow-d), -10px -10px 22px var(--shadow-l), 0 0 0 2px var(--card-accent);
+}
+.why-card:hover .why-icon { filter: none; }
+.why-card:hover .why-title,
+.why-card:hover .why-highlight { color: var(--card-accent) !important; }
+
+.photo-item { transition: box-shadow .3s ease, transform .3s ease; }
+.photo-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 0 3px var(--card-accent), 8px 8px 18px var(--shadow-d);
+  z-index: 2;
+}
+.photo-item:hover .photo-zoom-hint { color: var(--card-accent) !important; }
+.photo-item:hover .photo-wa-btn { background: var(--card-accent) !important; }
