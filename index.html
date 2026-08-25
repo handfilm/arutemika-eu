@@ -725,7 +725,7 @@
   <div class="section-eyebrow">Craftsmanship</div>
   <div class="section-title reveal"><span>MADE WITH <span class="accent">PRECISION</span><br>NOT PROMISES</span></div>
   <div class="section-sub reveal">Every stitch, every rivet, every edge — documented. This is what Bangladesh leather manufacturing looks like when done right.</div>
-  <div class="photo-gallery reveal" id="photoGallery"><!-- Populated with 70 photos from images/gallery/ by the inline script at the bottom of this page --></div>
+  <div class="photo-gallery reveal" id="photoGallery"><!-- Populated with 70 photos from images/gallery/ by script.js (galleryPhotos array) --></div>
 </section>
 
 <!-- LIGHTBOX (shared, populated by JS) -->
@@ -1102,71 +1102,5 @@
   window.MULTI_AI_STREAM = true;
 </script>
 <script src="https://bot.handsandhead.com/chat-widget.js"></script>
-
-<!-- CRAFT GALLERY: renders 70 photos from images/gallery/ and drives the lightbox -->
-<script>
-(function () {
-  var TOTAL_PHOTOS = 70;
-  var photos = [];
-  for (var i = 1; i <= TOTAL_PHOTOS; i++) {
-    var num = String(i).padStart(2, '0');
-    photos.push('images/gallery/gallery-' + num + '.jpg');
-  }
-
-  var grid = document.getElementById('photoGallery');
-  if (grid) {
-    grid.innerHTML = photos.map(function (src, i) {
-      return '' +
-        '<div class="photo-item" onclick="openPhotoLightbox(' + i + ')" tabindex="0">' +
-          '<img src="' + src + '" alt="Arutemika leather craftsmanship photo ' + (i + 1) + '" loading="lazy">' +
-          '<div class="photo-item-overlay">' +
-            '<span class="photo-zoom-hint">VIEW</span>' +
-            '<a class="photo-wa-btn" href="https://wa.me/8801974518600?text=Hi%20Arutemika%2C%20I%27m%20interested%20in%20this%20product%20photo%20(%23' + (i + 1) + ')." target="_blank" onclick="event.stopPropagation()">💬</a>' +
-          '</div>' +
-        '</div>';
-    }).join('');
-  }
-
-  var lightbox = document.getElementById('lightbox');
-  var lightboxImg = document.getElementById('lightboxImg');
-  var lightboxCounter = document.getElementById('lightboxCounter');
-  var lightboxWaBtn = document.getElementById('lightboxWaBtn');
-  var currentIdx = 0;
-
-  function updateLightbox() {
-    if (!lightboxImg) return;
-    lightboxImg.src = photos[currentIdx];
-    lightboxImg.alt = 'Arutemika leather craftsmanship photo ' + (currentIdx + 1);
-    if (lightboxCounter) lightboxCounter.textContent = (currentIdx + 1) + ' / ' + photos.length;
-    if (lightboxWaBtn) lightboxWaBtn.href = 'https://wa.me/8801974518600?text=Hi%20Arutemika%2C%20I%27m%20interested%20in%20photo%20%23' + (currentIdx + 1);
-  }
-
-  window.openPhotoLightbox = function (i) {
-    currentIdx = i;
-    updateLightbox();
-    if (lightbox) lightbox.classList.add('open');
-  };
-  window.closeLightbox = function () {
-    if (lightbox) lightbox.classList.remove('open');
-  };
-  window.navLightbox = function (dir) {
-    currentIdx = (currentIdx + dir + photos.length) % photos.length;
-    updateLightbox();
-  };
-
-  document.addEventListener('keydown', function (e) {
-    if (!lightbox || !lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') window.closeLightbox();
-    if (e.key === 'ArrowLeft') window.navLightbox(-1);
-    if (e.key === 'ArrowRight') window.navLightbox(1);
-  });
-
-  if (lightbox) {
-    lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) window.closeLightbox();
-    });
-  }
-})();
-</script>
 </body>
 </html>
