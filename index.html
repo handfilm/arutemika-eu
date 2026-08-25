@@ -80,6 +80,14 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-slider" id="heroSlider" aria-hidden="true">
+    <div class="hero-slide" style="background-image:url('images/gallery/gallery-01.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/gallery/gallery-02.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/gallery/gallery-03.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/gallery/gallery-04.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/gallery/gallery-05.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/gallery/gallery-06.jpg')"></div>
+  </div>
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
 
@@ -344,7 +352,7 @@
 
     <!-- Laptop Bag -->
     <div class="product-card" data-category="business" onclick="openRFQ('Laptop Bag')">
-      <img src="images/products/laptop-bag.webp" alt="Leather Laptop Bag" class="product-img">
+      <img src="images/gallery/laptop-bag.jpg" alt="Leather Laptop Bag" class="product-img">
       <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
       <div class="product-info">
         <div class="product-cat">Business Series</div>
@@ -360,7 +368,7 @@
 
     <!-- File Bag / Briefcase -->
     <div class="product-card" data-category="business" onclick="openRFQ('File Bag / Briefcase')">
-      <img src="images/products/file-bag.webp" alt="Leather File Bag" class="product-img">
+      <img src="images/gallery/file-bag.jpg" alt="Leather File Bag" class="product-img">
       <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
       <div class="product-info">
         <div class="product-cat">Business Series</div>
@@ -376,7 +384,7 @@
 
     <!-- Tote Bag -->
     <div class="product-card" data-category="bags" onclick="openRFQ('Tote Bag')">
-      <img src="images/products/tote-bag.webp" alt="Leather Tote Bag" class="product-img">
+      <img src="images/gallery/tote-bag.jpg" alt="Leather Tote Bag" class="product-img">
       <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
       <div class="product-info">
         <div class="product-cat">Bag Series</div>
@@ -392,7 +400,7 @@
 
     <!-- Wallet -->
     <div class="product-card" data-category="accessories" onclick="openRFQ('Wallet')">
-      <img src="images/products/wallet-macro.webp" alt="Leather Wallet" class="product-img">
+      <img src="images/gallery/wallet.jpg" alt="Leather Wallet" class="product-img">
       <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
       <div class="product-info">
         <div class="product-cat">Accessories</div>
@@ -408,7 +416,7 @@
 
     <!-- Handbag -->
     <div class="product-card" data-category="bags" onclick="openRFQ('Handbag')">
-      <img src="https://handfilm.github.io/arutemika/p1.jpg" alt="Leather Handbag" class="product-img">
+      <img src="images/gallery/handbag.jpg" alt="Leather Handbag" class="product-img">
       <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
       <div class="product-info">
         <div class="product-cat">Bag Series</div>
@@ -424,7 +432,7 @@
 
     <!-- Crossbody -->
     <div class="product-card" data-category="bags" onclick="openRFQ('Crossbody Bag')">
-      <img src="https://handfilm.github.io/arutemika/p5.jpg" alt="Crossbody Bag" class="product-img">
+      <img src="images/gallery/crossbody.jpg" alt="Crossbody Bag" class="product-img">
       <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
       <div class="product-info">
         <div class="product-cat">Bag Series</div>
@@ -440,7 +448,7 @@
 
     <!-- Backpack -->
     <div class="product-card" data-category="bags" onclick="openRFQ('Leather Backpack')">
-      <img src="https://handfilm.github.io/arutemika/p8.jpg" alt="Leather Backpack" class="product-img">
+      <img src="images/gallery/backpack.jpg" alt="Leather Backpack" class="product-img">
       <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
       <div class="product-info">
         <div class="product-cat">Bag Series</div>
@@ -456,7 +464,7 @@
 
     <!-- Footwear -->
     <div class="product-card" data-category="footwear" onclick="openRFQ('Leather Footwear')">
-      <img src="https://handfilm.github.io/arutemika/slide1.png" alt="Leather Footwear" class="product-img">
+      <img src="images/gallery/sneakers.jpg" alt="Leather Footwear" class="product-img">
       <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
       <div class="product-info">
         <div class="product-cat">Footwear</div>
@@ -717,7 +725,7 @@
   <div class="section-eyebrow">Craftsmanship</div>
   <div class="section-title reveal"><span>MADE WITH <span class="accent">PRECISION</span><br>NOT PROMISES</span></div>
   <div class="section-sub reveal">Every stitch, every rivet, every edge — documented. This is what Bangladesh leather manufacturing looks like when done right.</div>
-  <div class="photo-gallery reveal" id="photoGallery"><!-- JS populates 68 photos here from galleryPhotos in script.js --></div>
+  <div class="photo-gallery reveal" id="photoGallery"><!-- Populated with 70 photos from images/gallery/ by the inline script at the bottom of this page --></div>
 </section>
 
 <!-- LIGHTBOX (shared, populated by JS) -->
@@ -1094,5 +1102,71 @@
   window.MULTI_AI_STREAM = true;
 </script>
 <script src="https://bot.handsandhead.com/chat-widget.js"></script>
+
+<!-- CRAFT GALLERY: renders 70 photos from images/gallery/ and drives the lightbox -->
+<script>
+(function () {
+  var TOTAL_PHOTOS = 70;
+  var photos = [];
+  for (var i = 1; i <= TOTAL_PHOTOS; i++) {
+    var num = String(i).padStart(2, '0');
+    photos.push('images/gallery/gallery-' + num + '.jpg');
+  }
+
+  var grid = document.getElementById('photoGallery');
+  if (grid) {
+    grid.innerHTML = photos.map(function (src, i) {
+      return '' +
+        '<div class="photo-item" onclick="openPhotoLightbox(' + i + ')" tabindex="0">' +
+          '<img src="' + src + '" alt="Arutemika leather craftsmanship photo ' + (i + 1) + '" loading="lazy">' +
+          '<div class="photo-item-overlay">' +
+            '<span class="photo-zoom-hint">VIEW</span>' +
+            '<a class="photo-wa-btn" href="https://wa.me/8801974518600?text=Hi%20Arutemika%2C%20I%27m%20interested%20in%20this%20product%20photo%20(%23' + (i + 1) + ')." target="_blank" onclick="event.stopPropagation()">💬</a>' +
+          '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxCounter = document.getElementById('lightboxCounter');
+  var lightboxWaBtn = document.getElementById('lightboxWaBtn');
+  var currentIdx = 0;
+
+  function updateLightbox() {
+    if (!lightboxImg) return;
+    lightboxImg.src = photos[currentIdx];
+    lightboxImg.alt = 'Arutemika leather craftsmanship photo ' + (currentIdx + 1);
+    if (lightboxCounter) lightboxCounter.textContent = (currentIdx + 1) + ' / ' + photos.length;
+    if (lightboxWaBtn) lightboxWaBtn.href = 'https://wa.me/8801974518600?text=Hi%20Arutemika%2C%20I%27m%20interested%20in%20photo%20%23' + (currentIdx + 1);
+  }
+
+  window.openPhotoLightbox = function (i) {
+    currentIdx = i;
+    updateLightbox();
+    if (lightbox) lightbox.classList.add('open');
+  };
+  window.closeLightbox = function () {
+    if (lightbox) lightbox.classList.remove('open');
+  };
+  window.navLightbox = function (dir) {
+    currentIdx = (currentIdx + dir + photos.length) % photos.length;
+    updateLightbox();
+  };
+
+  document.addEventListener('keydown', function (e) {
+    if (!lightbox || !lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') window.closeLightbox();
+    if (e.key === 'ArrowLeft') window.navLightbox(-1);
+    if (e.key === 'ArrowRight') window.navLightbox(1);
+  });
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) window.closeLightbox();
+    });
+  }
+})();
+</script>
 </body>
 </html>
