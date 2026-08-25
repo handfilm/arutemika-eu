@@ -1324,3 +1324,323 @@ footer {
 .lang-ja .hero-headline, .lang-ja .section-title { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(32px,6vw,80px); letter-spacing:.02em; line-height:1.2; }
 .lang-bn .stat-label, .lang-bn .section-sub, .lang-bn .hero-sub { font-family: 'Hind Siliguri', sans-serif; letter-spacing:0; }
 .lang-ja .stat-label, .lang-ja .section-sub, .lang-ja .hero-sub { font-family: 'Noto Sans JP', sans-serif; }
+
+/* ============================================================
+   NEOMORPHISM REDESIGN — SUPER COLORED
+   Soft-UI extruded surfaces, each section its own vivid hue.
+   Every shadow pair is derived from that section's own base
+   color so the emboss/deboss effect reads correctly.
+   ============================================================ */
+
+:root {
+  --radius: 28px;
+  --radius-sm: 16px;
+  --radius-pill: 999px;
+  --ink: #2A2438;
+  --ink-muted: #6E6680;
+  --accent: #FF2D87;
+  --accent2: #7C4DFF;
+  --wa-green: #25D366;
+  --font-display: 'Space Grotesk', sans-serif;
+  /* Repoint the original theme vars to the new light palette —
+     this cascades dark ink text through every rule in the base
+     stylesheet above that references var(--text)/var(--white)/var(--muted) */
+  --text: #2A2438;
+  --white: #2A2438;
+  --muted: #6E6680;
+  --muted2: #6E6680;
+  --gold: #FF2D87;
+  --gold2: #7C4DFF;
+  --green: #25D366;
+  --border: transparent;
+  --border2: transparent;
+}
+
+/* Global text/ink override — cascades through every var(--text)/var(--muted) usage */
+body { color: var(--ink); background: #EFF1F8; }
+.muted { color: var(--ink-muted) !important; }
+.hero-headline { color: var(--ink) !important; }
+.line-muted { color: var(--ink-muted) !important; opacity: 1; }
+
+/* Neutral zone (header, ticker track, footer) tokens */
+body {
+  --surf: #EFF1F8;
+  --shadow-d: #C7CBE0;
+  --shadow-l: #FFFFFF;
+}
+
+/* Kill flat hairlines everywhere by default; components below re-add soft shadows */
+* { border-color: transparent !important; }
+
+.section-eyebrow, .name-tag, .form-label, .step-time,
+.tracker-title, .lightbox-counter, .photo-zoom-hint, .zoom-hint,
+.market-stat, .compliance-badge, .stat-label, .footer-links-title {
+  font-family: var(--font-mono);
+}
+
+h1, h2, h3, .section-title, .hero-headline, .name-plate, .stat-num,
+.product-name, .why-title, .market-country, .tracker-title, .step-title {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Reusable neomorphic surface mixins (via utility classes) ---------- */
+.nm-raised {
+  background: var(--surf);
+  border-radius: var(--radius);
+  box-shadow: 10px 10px 20px var(--shadow-d), -10px -10px 20px var(--shadow-l);
+}
+.nm-pressed {
+  background: var(--surf);
+  border-radius: var(--radius);
+  box-shadow: inset 6px 6px 12px var(--shadow-d), inset -6px -6px 12px var(--shadow-l);
+}
+
+/* ---------- Header / Nav ---------- */
+header, .nav-wrap, nav {
+  background: #EFF1F8 !important;
+  box-shadow: 0 8px 24px -4px rgba(42,36,56,0.15);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.nav-links a { color: var(--ink) !important; font-weight: 500; }
+.nav-links a:hover { color: var(--accent) !important; }
+.nav-logo { color: var(--ink) !important; }
+.nav-cta, .nav-cta a {
+  background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+  color: #fff !important;
+  border-radius: var(--radius-pill) !important;
+  padding: 10px 22px;
+  box-shadow: 6px 6px 14px #C7CBE0, -6px -6px 14px #FFFFFF;
+  border: none !important;
+}
+.hamburger span { background: var(--ink) !important; }
+
+/* language buttons */
+[onclick*="setLang"] {
+  background: var(--surf) !important;
+  color: var(--ink) !important;
+  border-radius: var(--radius-pill) !important;
+  box-shadow: 4px 4px 8px var(--shadow-d), -4px -4px 8px var(--shadow-l);
+}
+[onclick*="setLang"].active {
+  box-shadow: inset 3px 3px 6px var(--shadow-d), inset -3px -3px 6px var(--shadow-l);
+  color: var(--accent) !important;
+}
+
+/* ---------- Ticker ---------- */
+.ticker-wrap {
+  background: linear-gradient(90deg, var(--accent), var(--accent2)) !important;
+}
+.ticker-track { color: #fff !important; font-family: var(--font-mono); }
+
+/* ---------- Section base backgrounds (rainbow, one hue each) ---------- */
+#story        { --surf:#FFD9CC; --shadow-d:#E0AC98; --shadow-l:#FFFFFF; background:var(--surf); }
+#products     { --surf:#C7F5DE; --shadow-d:#9ED4B7; --shadow-l:#FFFFFF; background:var(--surf); }
+#why          { --surf:#FFEDAD; --shadow-d:#E0C979; --shadow-l:#FFFFFF; background:var(--surf); }
+#markets      { --surf:#C2E4FF; --shadow-d:#98BEDD; --shadow-l:#FFFFFF; background:var(--surf); }
+#compliance   { --surf:#DAF29A; --shadow-d:#B3CC72; --shadow-l:#FFFFFF; background:var(--surf); }
+#process      { --surf:#FFC9EC; --shadow-d:#E0A0CB; --shadow-l:#FFFFFF; background:var(--surf); }
+#craft        { --surf:#B9EFFF; --shadow-d:#8FC9DD; --shadow-l:#FFFFFF; background:var(--surf); }
+#tracker      { --surf:#FFD3A6; --shadow-d:#DDA976; --shadow-l:#FFFFFF; background:var(--surf); }
+#rfq          { --surf:#D6D2FF; --shadow-d:#ADA6E0; --shadow-l:#FFFFFF; background:var(--surf); }
+#contact      { --surf:#FFD3E6; --shadow-d:#E0A9C2; --shadow-l:#FFFFFF; background:var(--surf); }
+.hero         { --surf:#DAD3FF; --shadow-d:#B0A6E0; --shadow-l:#FFFFFF; background:var(--surf) !important; }
+footer, .footer { --surf:#2A2450; --shadow-d:#1B1738; --shadow-l:#3D3670; background: var(--surf) !important; color: #EFE9FF; }
+footer .footer-links-title, footer .footer-brand, footer a { color: #EFE9FF !important; }
+footer .muted, footer .footer-tagline, footer .footer-copy { color: #B6ACD9 !important; }
+
+.hero-bg, .hero-grid { opacity: .15; }
+
+/* ---------- Cards: why / compliance / market / product / name / contact ---------- */
+.why-card, .compliance-card, .market-card, .product-card, .name-card,
+.contact-card, .process-step, .rfq-info, .rfq-wrap, .tracker-wrap,
+.form-group, .badge-item, .hero-badge {
+  background: var(--surf);
+  border-radius: var(--radius);
+  box-shadow: 10px 10px 22px var(--shadow-d), -10px -10px 22px var(--shadow-l);
+  border: none;
+}
+.why-card, .compliance-card, .market-card, .contact-card, .process-step { padding: 2rem; }
+.why-card:hover, .compliance-card:hover, .market-card:hover, .process-step:hover {
+  transform: translateY(-4px);
+  transition: transform .3s;
+}
+.why-icon, .stat-num {
+  color: var(--accent) !important;
+}
+.step-num, .contact-icon {
+  color: var(--accent2) !important;
+}
+.why-num { color: var(--ink-muted) !important; opacity: .5; }
+.compliance-status.gold, .compliance-status { color: var(--accent2) !important; }
+.compliance-status.green { color: var(--wa-green) !important; }
+
+.product-card { background: var(--surf); border-radius: var(--radius); overflow: hidden;
+  box-shadow: 10px 10px 22px var(--shadow-d), -10px -10px 22px var(--shadow-l); }
+.product-img { border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+.product-overlay-btn, .btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+  color: #fff !important; border: none !important; border-radius: var(--radius-pill) !important;
+  box-shadow: 6px 6px 14px rgba(0,0,0,.15);
+}
+.btn-secondary {
+  background: var(--surf) !important; color: var(--ink) !important; border: none !important;
+  border-radius: var(--radius-pill) !important;
+  box-shadow: 6px 6px 14px var(--shadow-d), -6px -6px 14px var(--shadow-l);
+}
+.products-filter .filter-btn {
+  background: var(--surf); color: var(--ink); border: none; border-radius: var(--radius-pill);
+  box-shadow: 5px 5px 10px var(--shadow-d), -5px -5px 10px var(--shadow-l);
+}
+.filter-btn.active {
+  box-shadow: inset 4px 4px 8px var(--shadow-d), inset -4px -4px 8px var(--shadow-l);
+  color: var(--accent);
+}
+
+.step-img { border-radius: var(--radius-sm); }
+.market-flag, .flag { filter: none; }
+
+/* ---------- Photo Gallery + Lightbox ---------- */
+.photo-item {
+  border-radius: var(--radius-sm);
+  box-shadow: 8px 8px 16px var(--shadow-d), -8px -8px 16px var(--shadow-l);
+  background: var(--surf);
+}
+.photo-gallery { background: transparent; gap: 14px; }
+.photo-wa-btn { background: var(--wa-green) !important; }
+.lightbox { background: rgba(42,36,56,.92) !important; }
+.lightbox-img-wrap img { border-radius: var(--radius-sm); border: none; }
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  background: #EFF1F8 !important; color: var(--ink) !important; border: none !important;
+  box-shadow: 6px 6px 14px rgba(0,0,0,.3);
+}
+.lightbox-wa { background: var(--wa-green) !important; border-radius: var(--radius-pill) !important; color: #fff !important; }
+
+/* ---------- Forms ---------- */
+.form-input, .form-select, .form-textarea {
+  background: var(--surf) !important; border: none !important; border-radius: var(--radius-sm) !important;
+  box-shadow: inset 5px 5px 10px var(--shadow-d), inset -5px -5px 10px var(--shadow-l);
+  color: var(--ink) !important;
+}
+.form-submit {
+  background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+  border: none !important; border-radius: var(--radius-pill) !important; color: #fff !important;
+  box-shadow: 8px 8px 18px rgba(0,0,0,.2);
+}
+.form-label { color: var(--ink) !important; }
+
+/* ---------- WhatsApp float ---------- */
+.wa-float {
+  background: var(--wa-green) !important;
+  box-shadow: 8px 8px 18px rgba(0,0,0,.25), -4px -4px 12px rgba(255,255,255,.5) !important;
+  border-radius: 50% !important;
+}
+
+/* ---------- Stats bar / badges ---------- */
+.stats-bar { gap: 1.25rem; }
+.stat-item {
+  background: var(--surf); border-radius: var(--radius); padding: 1.5rem;
+  box-shadow: 8px 8px 18px var(--shadow-d), -8px -8px 18px var(--shadow-l);
+}
+
+/* ---------- Hero ---------- */
+.hero-badge, .badge-item {
+  border-radius: var(--radius-pill) !important;
+  box-shadow: 5px 5px 12px var(--shadow-d), -5px -5px 12px var(--shadow-l);
+  color: var(--ink) !important;
+}
+.hero-tag, .accent { color: var(--accent) !important; }
+.hero-headline .accent {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; background-clip: text; color: transparent !important;
+}
+.hero-sub { color: var(--ink-muted) !important; }
+.hero-flags { color: var(--ink-muted) !important; }
+.hero-actions .btn-primary, .hero-actions .btn-secondary { padding: 14px 30px; }
+
+/* ---------- Name breakdown (ARU TE MIKA cards) ---------- */
+.name-card {
+  padding: 2rem;
+}
+.name-plate { color: var(--accent2) !important; }
+.name-label, .name-read { color: var(--ink-muted) !important; }
+
+/* ---------- Process steps ---------- */
+.process-steps { gap: 1.5rem; }
+.step-num {
+  background: var(--surf); width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 4px 4px 10px var(--shadow-d), -4px -4px 10px var(--shadow-l);
+}
+
+/* ---------- Tracker: signature neomorphic progress ---------- */
+.tracker-wrap { padding: 2rem; }
+.tracker-order { background: transparent; }
+.order-field {
+  background: var(--surf); border-radius: var(--radius-sm); padding: .85rem 1rem;
+  box-shadow: inset 4px 4px 8px var(--shadow-d), inset -4px -4px 8px var(--shadow-l);
+}
+.order-key { color: var(--ink-muted) !important; }
+.order-val { color: var(--ink) !important; }
+.tracker-live {
+  background: var(--wa-green) !important; color: #fff !important; border-radius: var(--radius-pill) !important;
+}
+.stage-row { background: transparent; }
+.stage-dot {
+  background: var(--surf); border-radius: 50%;
+  box-shadow: 3px 3px 6px var(--shadow-d), -3px -3px 6px var(--shadow-l);
+}
+.stage-dot.done { background: var(--wa-green) !important; box-shadow: 0 0 0 4px rgba(37,211,102,.25); }
+.stage-name { color: var(--ink) !important; }
+.stage-date { color: var(--ink-muted) !important; }
+.stage-pct { color: var(--accent2) !important; font-family: var(--font-mono); }
+
+.progress-bar-wrap {
+  background: var(--surf) !important;
+  border-radius: var(--radius-pill) !important;
+  box-shadow: inset 5px 5px 10px var(--shadow-d), inset -5px -5px 10px var(--shadow-l);
+  height: 22px; overflow: hidden; padding: 3px;
+}
+.progress-bar { height: 100%; border-radius: var(--radius-pill); overflow: hidden; }
+.progress-fill {
+  background: linear-gradient(90deg, var(--accent), var(--accent2)) !important;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 12px rgba(255,45,135,.5);
+}
+.progress-label { color: var(--ink) !important; font-family: var(--font-mono); }
+
+/* ---------- RFQ points / success ---------- */
+.rfq-point {
+  background: var(--surf); border-radius: var(--radius-sm); padding: 1rem;
+  box-shadow: 6px 6px 14px var(--shadow-d), -6px -6px 14px var(--shadow-l);
+}
+.rfq-point-icon { color: var(--accent) !important; }
+.success-icon {
+  background: var(--wa-green) !important; color: #fff !important; border-radius: 50% !important;
+}
+
+/* ---------- Contact ---------- */
+.contact-action, .contact-action a {
+  background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+  color: #fff !important; border-radius: var(--radius-pill) !important; border: none !important;
+}
+.contact-value { color: var(--ink) !important; }
+
+/* ---------- Footer ---------- */
+.footer-top { border-top: none !important; }
+.footer-links a { color: #C9C2E8 !important; }
+.footer-links a:hover { color: var(--accent) !important; }
+.footer-coords { color: #8A82AD !important; }
+
+/* ---------- Misc rounding for images generally ---------- */
+img { border-radius: var(--radius-sm); }
+.hero-bg img, .lightbox-img-wrap img { border-radius: var(--radius-sm); }
+
+/* Reveal animation stays as-is (opacity/transform), untouched */
+
+/* Mobile tweak: slightly smaller radius + shadow so cards don't look oversized on small screens */
+@media (max-width: 768px) {
+  :root { --radius: 20px; }
+  .why-card, .compliance-card, .market-card, .process-step, .contact-card { padding: 1.4rem; }
+  .stat-item { padding: 1rem; }
+}
