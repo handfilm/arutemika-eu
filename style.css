@@ -1357,15 +1357,15 @@ footer {
 }
 
 /* Global text/ink override — cascades through every var(--text)/var(--muted) usage */
-body { color: var(--ink); background: #EFF1F8; }
+body { color: var(--ink); background: #E7ECF5; }
 .muted { color: var(--ink-muted) !important; }
 .hero-headline { color: var(--ink) !important; }
 .line-muted { color: var(--ink-muted) !important; opacity: 1; }
 
-/* Neutral zone (header, ticker track, footer) tokens */
+/* Single tone zone (header, ticker track, footer) tokens */
 body {
-  --surf: #EFF1F8;
-  --shadow-d: #C7CBE0;
+  --surf: #E7ECF5;
+  --shadow-d: #C3CADC;
   --shadow-l: #FFFFFF;
 }
 
@@ -1398,7 +1398,7 @@ h1, h2, h3, .section-title, .hero-headline, .name-plate, .stat-num,
 
 /* ---------- Header / Nav ---------- */
 header, .nav-wrap, nav {
-  background: #EFF1F8 !important;
+  background: #E7ECF5 !important;
   box-shadow: 0 8px 24px -4px rgba(42,36,56,0.15);
   border-radius: 0 0 var(--radius) var(--radius);
 }
@@ -1433,18 +1433,15 @@ header, .nav-wrap, nav {
 }
 .ticker-track { color: #fff !important; font-family: var(--font-mono); }
 
-/* ---------- Section base backgrounds (rainbow, one hue each) ---------- */
-#story        { --surf:#FFD9CC; --shadow-d:#E0AC98; --shadow-l:#FFFFFF; background:var(--surf); }
-#products     { --surf:#C7F5DE; --shadow-d:#9ED4B7; --shadow-l:#FFFFFF; background:var(--surf); }
-#why          { --surf:#FFEDAD; --shadow-d:#E0C979; --shadow-l:#FFFFFF; background:var(--surf); }
-#markets      { --surf:#C2E4FF; --shadow-d:#98BEDD; --shadow-l:#FFFFFF; background:var(--surf); }
-#compliance   { --surf:#DAF29A; --shadow-d:#B3CC72; --shadow-l:#FFFFFF; background:var(--surf); }
-#process      { --surf:#FFC9EC; --shadow-d:#E0A0CB; --shadow-l:#FFFFFF; background:var(--surf); }
-#craft        { --surf:#B9EFFF; --shadow-d:#8FC9DD; --shadow-l:#FFFFFF; background:var(--surf); }
-#tracker      { --surf:#FFD3A6; --shadow-d:#DDA976; --shadow-l:#FFFFFF; background:var(--surf); }
-#rfq          { --surf:#D6D2FF; --shadow-d:#ADA6E0; --shadow-l:#FFFFFF; background:var(--surf); }
-#contact      { --surf:#FFD3E6; --shadow-d:#E0A9C2; --shadow-l:#FFFFFF; background:var(--surf); }
-.hero         { --surf:#DAD3FF; --shadow-d:#B0A6E0; --shadow-l:#FFFFFF; background:var(--surf) !important; }
+/* ---------- Single unified neumorphic surface (classic soft-UI) ----------
+   One base tone for the whole page — every card/button/input is "carved"
+   from this same surface. Color lives only in small accents: buttons,
+   icons, chart segments, status dots — never whole section backgrounds. */
+#story, #products, #why, #markets, #compliance,
+#process, #craft, #tracker, #rfq, #contact, .hero {
+  --surf: #E7ECF5; --shadow-d: #C3CADC; --shadow-l: #FFFFFF;
+  background: var(--surf) !important;
+}
 footer, .footer { --surf:#2A2450; --shadow-d:#1B1738; --shadow-l:#3D3670; background: var(--surf) !important; color: #EFE9FF; }
 footer .footer-links-title, footer .footer-brand, footer a { color: #EFE9FF !important; }
 footer .muted, footer .footer-tagline, footer .footer-copy { color: #B6ACD9 !important; }
@@ -1511,7 +1508,7 @@ footer .muted, footer .footer-tagline, footer .footer-copy { color: #B6ACD9 !imp
 .lightbox { background: rgba(42,36,56,.92) !important; }
 .lightbox-img-wrap img { border-radius: var(--radius-sm); border: none; }
 .lightbox-close, .lightbox-prev, .lightbox-next {
-  background: #EFF1F8 !important; color: var(--ink) !important; border: none !important;
+  background: #E7ECF5 !important; color: var(--ink) !important; border: none !important;
   box-shadow: 6px 6px 14px rgba(0,0,0,.3);
 }
 .lightbox-wa { background: var(--wa-green) !important; border-radius: var(--radius-pill) !important; color: #fff !important; }
