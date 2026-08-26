@@ -853,33 +853,78 @@ const bigCollectionsData = {
   }
 })();
 
+// Helper to build a clean, unified, responsive product card HTML (Maximum Photo Dominance)
+function buildProductCardHTML(item) {
+  let specsList = [];
+  if (typeof item.specs === 'string') {
+    specsList = item.specs.split('·').map(s => s.trim()).filter(Boolean);
+  } else if (Array.isArray(item.specs)) {
+    specsList = item.specs;
+  }
+  if (specsList.length === 0) specsList = ["Full-Grain Leather", "Export Quality"];
+
+  const chipsHtml = specsList.slice(0, 2).map(spec => `<span class="product-spec-chip" title="${spec}">${spec}</span>`).join('');
+  const badgeLabel = item.badge || 'ODM READY';
+  const priceDisplay = item.price || '$24.00 – $28.00';
+  const moqDisplay = item.moq || '200 pcs';
+  const refDisplay = item.ref || `REF: ${item.id}`;
+  const titleDisplay = item.title || 'Genuine Leather Style';
+  const categoryDisplay = item.category || 'Leather Goods';
+  const sanitizedTitle = titleDisplay.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
+  return `
+    <div class="product-card" data-category="${categoryDisplay}" id="card-${item.id}">
+      <div class="product-img-wrap" onclick="openSpecModal('${item.id}')" title="Click to inspect photo & technical specs">
+        <span class="product-badge ${item.badgeClass || ''}">${badgeLabel}</span>
+        <span class="product-fob-tag">${priceDisplay}</span>
+        <img src="${item.img}" alt="${titleDisplay}" loading="lazy" onerror="this.onerror=null;this.src='1000022131.jpeg';">
+        <div class="product-overlay-cue">
+          <span class="cue-btn">🔍 View Tech Blueprint</span>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-header-row">
+          <span class="product-cat">${categoryDisplay}</span>
+          <span class="product-ref-pill">${refDisplay}</span>
+        </div>
+        <h4 class="product-name" title="${titleDisplay}">${titleDisplay}</h4>
+        <div class="product-specs-chips">
+          ${chipsHtml}
+        </div>
+        <div class="product-price-row">
+          <div class="product-price-col">
+            <span class="price-tier-label">EST. FOB DHAKA</span>
+            <span class="price-tier-val">${priceDisplay}</span>
+          </div>
+          <div class="product-moq-col">
+            <span class="moq-tier-label">MOQ</span>
+            <span class="moq-tier-val">${moqDisplay}</span>
+          </div>
+        </div>
+        <div class="product-actions-bar">
+          <div class="product-tools-row">
+            <button type="button" class="card-tool-btn" onclick="openSpecModal('${item.id}')" title="Specs Blueprint">
+              <span>🔍 Specs</span>
+            </button>
+            <button type="button" class="card-tool-btn" onclick="open3DCustomizer('${item.id}')" title="3D Customizer">
+              <span>⚡ 3D Studio</span>
+            </button>
+          </div>
+          <button type="button" class="card-rfq-btn" id="rfqBtn-${item.id}" onclick="addToBatchRFQ('${item.id}', '${sanitizedTitle}', '${priceDisplay}')" title="Add to Batch Sample RFQ">
+            <span>+ Add to Batch RFQ</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 // Helper to render product cards into a container
 function renderBigCollectionCards(containerId, items) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  container.innerHTML = items.map(item => `
-    <div class="product-card" data-category="${item.category}" id="card-${item.id}">
-      <span class="product-badge ${item.badgeClass || ''}">${item.badge || 'ODM READY'}</span>
-      <div class="product-img-wrap" onclick="openSpecModal('${item.id}')" style="cursor:pointer;">
-        <img src="${item.img}" alt="${item.title}" loading="lazy" onerror="this.src='1000022131.jpeg'">
-      </div>
-      <div class="product-info">
-        <div class="product-cat">${item.category} · <span style="color:var(--accent);">${item.ref}</span></div>
-        <div class="product-name">${item.title}</div>
-        <div class="product-specs">${item.specs}</div>
-        <div class="product-price-row">
-          <div class="product-price">${item.price}</div>
-          <div class="product-moq">MOQ: ${item.moq}</div>
-        </div>
-        <div class="product-actions" style="margin-top:0.75rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
-          <button class="stage-tool-btn" onclick="openSpecModal('${item.id}')" style="flex:1;min-width:90px;font-size:11px;">🔍 Specs</button>
-          <button class="stage-tool-btn" onclick="open3DCustomizer('${item.id}')" style="flex:1;min-width:90px;font-size:11px;">⚡ 3D Studio</button>
-          <button class="btn-primary" onclick="addToBatchRFQ('${item.id}', '${item.title.replace(/'/g, "\\'")}', '${item.price}')" style="width:100%;padding:0.45rem 0.6rem;font-size:11px;margin-top:0.25rem;">+ Add to Batch RFQ</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
+  container.innerHTML = items.map(item => buildProductCardHTML(item)).join('');
 }
 
 // Render all individual big collections
@@ -947,29 +992,7 @@ function loadMoreInfiniteStyles(batchSize = 30) {
 
   currentStreamCount += batchSize;
 
-  const htmlChunk = nextBatch.map(item => `
-    <div class="product-card" data-category="${item.category}">
-      <span class="product-badge">${item.badge}</span>
-      <div class="product-img-wrap" onclick="openSpecModal('${item.id}')" style="cursor:pointer;">
-        <img src="${item.img}" alt="${item.title}" loading="lazy" onerror="this.src='1000022131.jpeg'">
-      </div>
-      <div class="product-info">
-        <div class="product-cat">${item.category} · <span style="color:var(--accent);">${item.ref}</span></div>
-        <div class="product-name">${item.title}</div>
-        <div class="product-specs">${item.specs}</div>
-        <div class="product-price-row">
-          <div class="product-price">${item.price}</div>
-          <div class="product-moq">MOQ: ${item.moq}</div>
-        </div>
-        <div class="product-actions" style="margin-top:0.75rem;display:flex;gap:0.4rem;flex-wrap:wrap;">
-          <button class="stage-tool-btn" onclick="openSpecModal('${item.id}')" style="flex:1;min-width:90px;font-size:11px;">🔍 Specs</button>
-          <button class="stage-tool-btn" onclick="open3DCustomizer('${item.id}')" style="flex:1;min-width:90px;font-size:11px;">⚡ 3D Studio</button>
-          <button class="btn-primary" onclick="addToBatchRFQ('${item.id}', '${item.title.replace(/'/g, "\\'")}', '${item.price}')" style="width:100%;padding:0.45rem 0.6rem;font-size:11px;margin-top:0.25rem;">+ Add to Batch RFQ</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-
+  const htmlChunk = nextBatch.map(item => buildProductCardHTML(item)).join('');
   streamContainer.insertAdjacentHTML('beforeend', htmlChunk);
 
   const countDisplay = document.getElementById('infiniteCountDisplay');
@@ -988,10 +1011,39 @@ function activateColNav(pill) {
 // =====================================================
 let selectedBatchRFQ = [];
 
+function showToastNotification(msg) {
+  let toast = document.getElementById('toastNotice');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toastNotice';
+    toast.className = 'toast-notification';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2500);
+}
+
 function addToBatchRFQ(id, title, price) {
   const existing = selectedBatchRFQ.find(item => item.id === id);
   if (!existing) {
     selectedBatchRFQ.push({ id, title, price, qty: 200 });
+    showToastNotification(`✓ Added "${title.length > 25 ? title.substring(0, 22) + '...' : title}" to Batch RFQ`);
+  } else {
+    showToastNotification(`ℹ️ "${title.length > 25 ? title.substring(0, 22) + '...' : title}" is already in Batch RFQ`);
+  }
+
+  const rfqBtn = document.getElementById(`rfqBtn-${id}`);
+  if (rfqBtn) {
+    rfqBtn.innerHTML = '<span>✓ Added to RFQ</span>';
+    rfqBtn.classList.add('btn-added');
+    setTimeout(() => {
+      rfqBtn.innerHTML = '<span>+ Add to Batch RFQ</span>';
+      rfqBtn.classList.remove('btn-added');
+    }, 1800);
   }
 
   updateBatchDrawer();
@@ -1473,23 +1525,80 @@ function setTrackerOrder(code) {
 }
 
 // =====================================================
-// 10. PHOTO GALLERIES & LIGHTBOX
+// 10. PHOTO GALLERIES & LIGHTBOX (70+ AUTHENTIC ATELIER SHOTS)
 // =====================================================
-const galleryPhotos = [];
-for (let i = 1; i <= 70; i++) {
-  const numStr = (1787550810891 + i * 400000).toString();
-  galleryPhotos.push({
-    src: `images/gallery/${numStr}.jpg`,
-    alt: `Arutemika leather craftsmanship detail ${i}`,
-    caption: `Factory Craftsmanship Shot #${i}`
-  });
-}
+const realFactoryPhotosList = [
+  "images/gallery/1787550810891.jpg", "images/gallery/1787551269477.jpg", "images/gallery/1787551605652.jpg",
+  "images/gallery/1787551672194.jpg", "images/gallery/1787551717581.jpg", "images/gallery/1787551830347.jpg",
+  "images/gallery/1787551969487.jpg", "images/gallery/1787552013314.jpg", "images/gallery/1787552073876.jpg",
+  "images/gallery/1787553258401.jpg", "images/gallery/1787557025434.jpg", "images/gallery/1787557173371.jpg",
+  "images/gallery/1787557369321.jpg", "images/gallery/1787557416857.jpg", "images/gallery/1787557544868.jpg",
+  "images/gallery/1787557594549.jpg", "images/gallery/1787557652729.jpg", "images/gallery/1787557707461.jpg",
+  "images/gallery/1787561311966.jpg", "images/gallery/1787561410420.jpg", "images/gallery/1787561462248.jpg",
+  "images/gallery/1787561525859.jpg", "images/gallery/1787561599325.jpg", "images/gallery/1787561677651.jpg",
+  "images/gallery/1787561758761.jpg", "images/gallery/1787564870422.jpg", "images/gallery/1787565013745.jpg",
+  "images/gallery/1787565140109.jpg", "images/gallery/1787565223331.jpg", "images/gallery/1787565346234.jpg",
+  "images/gallery/1787565452471.jpg", "images/gallery/1787565530184.jpg", "images/gallery/1787565728682.jpg",
+  "images/gallery/1787574408352.jpg", "images/gallery/1787574484439.jpg", "images/gallery/1787575027407.jpg",
+  "images/gallery/1787575083348.jpg", "images/gallery/1787575154943.jpg", "images/gallery/1787575216064.jpg",
+  "images/gallery/1787575348067.jpg", "images/gallery/1787575514691.jpg", "images/gallery/1787575574325.jpg",
+  "images/gallery/1787577181709.jpg", "images/gallery/1787577332631.jpg", "images/gallery/1787577403532.jpg",
+  "images/gallery/1787577609195.jpg", "images/gallery/1787577782894.jpg", "images/gallery/1787577893123.jpg",
+  "images/gallery/1787578055688.jpg", "images/gallery/1787578308773.jpg", "images/gallery/1787578378987.jpg",
+  "images/gallery/1787578638969.jpg", "images/gallery/1787578740302.jpg", "images/gallery/1787578815200.jpg",
+  "images/gallery/1787578885386.jpg", "images/gallery/1787578945102.jpg", "images/gallery/1787579023213.jpg",
+  "images/gallery/1787579145119.jpg", "images/gallery/1787579231739.jpg",
+  "1787573171171.jpg", "1787573265365.jpg", "1787573404119.jpg", "1787573622537.jpg",
+  "1787573861268.jpg", "1787573950184.jpg", "1787574036435.jpg", "1787574154554.jpg",
+  "1000022117.jpeg", "1000022118.jpeg", "1000022119.jpeg", "1000022128.jpeg",
+  "1000022129.jpeg", "1000022130.jpeg", "1000022131.jpeg", "1000022132.jpeg",
+  "1000022136.jpeg", "1000022137.jpeg", "1000022138.jpeg", "1000022141.jpeg",
+  "1000022144.jpeg", "1000022147.jpeg", "1000022148.jpeg", "1000022149.jpeg"
+];
+
+const photoTitles = [
+  "French Box Calfhide Cutting Precision", "Hand-Lasted Penny Loafer Vamp Shaping", "Blake Stitch Rapid Outsole Machine",
+  "Edge Dye Hand Burnishing Process", "Anatomic Last Fitting & Toe Spring", "Full-Grain Veg-Tan Hide Grading",
+  "Solid Cast Brass Buckle Hardware", "Goodyear Channeled Leather Sole", "Custom Embossed Logo Stamping",
+  "Seamless Tote One-Piece Construction", "Executive Briefcase Padded Sleeve", "Margom Rubber Cupsole Sidewall Stitch",
+  "Hand-Braided Collar & Tassels", "AirTag Leather Pocket Molding", "Ortholite Memory Cushion Insole",
+  "Microfiber Velvet Lining Assembly", "Dual-Compartment File Bag Stitch", "Italian Vegetable Crust Patina Finish",
+  "Retro Court Trainer Suede Patchwork", "Doctor's Bag Cast Iron Frame Lock", "YKK Excella Brass Zipper Fitting",
+  "Double Monk Strap Polished Hardware", "Waterproof Bonded Seam Testing", "Commando Lug Sole Pressure Bonding",
+  "Passport Holder SIM Slot Stitching", "Waxed Canvas & Bridle Leather Trim", "Custom Drawer Box Packaging Line",
+  "Export Quality Final Inspection Bench", "Natural Gum Rubber Sole Casting", "Belgian Suede Tassel Slip-On Build",
+  "Sovereign Horsebit Hardware Setting", "Pull-Up Vintage Leather Tannage", "RFID Shield Fabric Lamination",
+  "High-Density Reinforcement Stitch", "Chit-Tagong Export Port Dispatch", "Craftsman Hand skiving Calf Edge",
+  "Pre-Production Gold Foil Emboss Sample", "Laser Cutting Template Precision", "Saddle Stitch Waxed Thread Finish",
+  "D-Ring Solid Brass Anchor Attachment", "Telescopic Cigar Leather Case", "Trolley Pass-Through Sleeve Assembly",
+  "Master Pattern Grading Desk", "BSCI Ethical Workshop Floor Overview", "Vamp Perforation Brogue Punching",
+  "Suede Dust Bag Ribbon Finishing", "Corner Metal Protective Feet Riveting", "Burnished Edge Waxing Station",
+  "Aniline Leather Dye Bath Check", "Hand-Turned Leather Handle Core", "Shoe Tree Cedar Last Insertion",
+  "Bespoke ODM Client Tech Spec Review", "Key Carabiner 6-Hook Assembly", "Magnetic Snap Clasp Precision Seating",
+  "Luggage Leather ID Tag Hot-Stamp", "Triple Gusset Accordion Fold Assembly", "Handbag Structure Piping Insert",
+  "Commuter Backpack Breathable Mesh", "Foldable Travel Loafer Heel Construction", "Fine Grain Swatch Selection Bench",
+  "Artisanal Workshop Bench - Dhaka Hub", "Full Grain Calf Leather Hide Selection", "Footwear Lasting & Pattern Making",
+  "Hand Stitched Edge Details", "Leather Cutting Precision Station", "Premium Leather Goods Workshop",
+  "Finished Footwear Quality Check", "Master Craftsman Finishing Table", "Export Crate Packing Station",
+  "Custom Metal Logo Casting", "Vegetable Tanning Drum Inspection", "Waxed Thread Spool Selection",
+  "Leather Burnishing Machine", "Sample Prototyping Room", "Leather Thickness Calibration"
+];
+
+const galleryPhotos = realFactoryPhotosList.map((imgSrc, idx) => ({
+  src: imgSrc,
+  alt: photoTitles[idx] || `Arutemika leather craftsmanship detail ${idx + 1}`,
+  caption: photoTitles[idx] || `Factory Craftsmanship Shot #${idx + 1}`
+}));
 
 const galleries = {
   craft: galleryPhotos,
   loafers: bigCollectionsData.loafers,
-  sneakers: bigCollectionsData.sneakers
+  sneakers: bigCollectionsData.sneakers,
+  bags: bigCollectionsData.briefcases.concat(bigCollectionsData.totes),
+  wallets: bigCollectionsData.wallets
 };
+
+let currentGalleryLimit = 28;
 
 function switchGalleryView(view, btn) {
   document.querySelectorAll('.gallery-pill-btn').forEach(b => b.classList.remove('active'));
@@ -1503,33 +1612,47 @@ function switchGalleryView(view, btn) {
     if (photoGal) photoGal.style.display = 'grid';
     if (loaferGal) loaferGal.style.display = 'none';
     if (sneakerGal) sneakerGal.style.display = 'none';
+    renderPhotoGrid('photoGallery', 'craft');
   } else if (view === 'loafers') {
     if (photoGal) photoGal.style.display = 'none';
     if (loaferGal) loaferGal.style.display = 'grid';
     if (sneakerGal) sneakerGal.style.display = 'none';
+    renderPhotoGrid('loaferGallery', 'loafers');
   } else if (view === 'sneakers') {
     if (photoGal) photoGal.style.display = 'none';
     if (loaferGal) loaferGal.style.display = 'none';
     if (sneakerGal) sneakerGal.style.display = 'grid';
+    renderPhotoGrid('sneakerGallery', 'sneakers');
   }
+}
+
+function loadAllGalleryPhotos() {
+  currentGalleryLimit = galleryPhotos.length;
+  renderPhotoGrid('photoGallery', 'craft');
+  const loadBtnWrap = document.getElementById('galleryLoadMoreWrap');
+  if (loadBtnWrap) loadBtnWrap.style.display = 'none';
 }
 
 function renderPhotoGrid(containerId, galleryKey) {
   const grid = document.getElementById(containerId);
-  const photos = galleries[galleryKey];
+  const photos = galleries[galleryKey] || galleryPhotos;
   if (!grid || !photos) return;
 
-  grid.innerHTML = photos.slice(0, 32).map((photo, i) => {
+  const displayLimit = galleryKey === 'craft' ? currentGalleryLimit : photos.length;
+  const itemsToRender = photos.slice(0, displayLimit);
+
+  grid.innerHTML = itemsToRender.map((photo, i) => {
     let sizeClass = '';
-    if (i % 7 === 3) sizeClass = ' lg';
-    else if (i % 4 === 1) sizeClass = ' tall';
+    if (i % 8 === 2) sizeClass = ' lg';
+    else if (i % 6 === 1) sizeClass = ' tall';
     const imgSrc = photo.src || photo.img;
+    const titleText = photo.caption || photo.title || `Craft Detail #${i+1}`;
     return `
       <div class="photo-item${sizeClass}" data-index="${i}" onclick="openLightbox('${galleryKey}', ${i})">
-        <img src="${imgSrc}" alt="${photo.alt || photo.title}" loading="lazy" onerror="this.src='1000022131.jpeg'">
+        <img src="${imgSrc}" alt="${titleText}" loading="lazy" onerror="this.src='1000022131.jpeg'">
         <div class="photo-item-overlay">
-          <span class="photo-zoom-hint">🔍 Zoom</span>
-          <a class="photo-wa-btn" href="https://wa.me/${WA_NUMBER}?text=Hi%20Arutemika%2C%20inquiry%20regarding%20photo%20%23${i+1}" target="_blank" onclick="event.stopPropagation()" title="Ask about this on WhatsApp">💬</a>
+          <span class="photo-zoom-hint">${titleText}</span>
+          <a class="photo-wa-btn" href="https://wa.me/${WA_NUMBER}?text=Hi%20Arutemika%2C%20inquiry%20regarding%20photo%20%23${i+1}%20(${encodeURIComponent(titleText)})" target="_blank" onclick="event.stopPropagation()" title="Ask about this on WhatsApp">💬</a>
         </div>
       </div>
     `;
@@ -1590,7 +1713,7 @@ document.addEventListener('keydown', (e) => {
 function filterProducts(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
-  document.querySelectorAll('#productGrid .product-card').forEach(card => {
+  document.querySelectorAll('#productsGrid .product-card, #productGrid .product-card').forEach(card => {
     if (cat === 'all' || card.dataset.category === cat) {
       card.style.display = '';
     } else {

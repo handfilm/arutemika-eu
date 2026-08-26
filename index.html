@@ -40,13 +40,14 @@
 <nav>
   <a href="#" class="nav-logo">ARUTE<span>MIKA</span></a>
   <ul class="nav-links">
-    <li><a href="#story">Story</a></li>
+    <li><a href="#craft" style="color:var(--accent);font-weight:700;">📸 70+ Photos</a></li>
     <li><a href="#collections">30 Styles/Wk</a></li>
     <li><a href="#footwear">Footwear</a></li>
     <li><a href="#products">Catalogue</a></li>
     <li><a href="#customizer">3D Studio</a></li>
     <li><a href="#calculator">Cost Calc</a></li>
     <li><a href="#chinese-b2b">中文B2B</a></li>
+    <li><a href="#story">Story</a></li>
     <li><a href="#compliance">Compliance</a></li>
     <li><a href="#tracker">Tracker</a></li>
     <li><a href="#rfq">RFQ</a></li>
@@ -77,18 +78,19 @@
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#story" onclick="toggleMobileNav()">Heritage &amp; Story</a>
+  <a href="#craft" onclick="toggleMobileNav()" style="color:var(--accent);font-weight:700;">📸 70+ Authentic Factory &amp; Craft Album</a>
   <a href="#collections" onclick="toggleMobileNav()">Weekly 30 Styles &amp; Big Collections</a>
-  <a href="#footwear" onclick="toggleMobileNav()">Sneakers &amp; Loafers</a>
-  <a href="#products" onclick="toggleMobileNav()">Full Catalogue</a>
+  <a href="#footwear" onclick="toggleMobileNav()">Sneakers &amp; Loafers Showroom</a>
+  <a href="#products" onclick="toggleMobileNav()">Full Product Catalogue</a>
   <a href="#customizer" onclick="toggleMobileNav()">3D Studio Customizer</a>
-  <a href="#calculator" onclick="toggleMobileNav()">EU Landed Cost Calc</a>
+  <a href="#calculator" onclick="toggleMobileNav()">EU Landed Cost Calculator</a>
   <a href="#chinese-b2b" onclick="toggleMobileNav()">中文B2B采购通道 · 微信对接</a>
-  <a href="#compliance" onclick="toggleMobileNav()">Compliance &amp; BSCI</a>
+  <a href="#story" onclick="toggleMobileNav()">Heritage &amp; Story</a>
+  <a href="#compliance" onclick="toggleMobileNav()">Compliance &amp; BSCI Audit</a>
   <a href="#process" onclick="toggleMobileNav()">Production Process</a>
   <a href="#tracker" onclick="toggleMobileNav()">Order Tracker</a>
-  <a href="#rfq" onclick="toggleMobileNav()">Request Quote</a>
-  <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+  <a href="#rfq" onclick="toggleMobileNav()">Request Sample / Quote</a>
+  <a href="#contact" onclick="toggleMobileNav()">Contact Direct</a>
 </div>
 </div>
 
@@ -152,8 +154,6 @@
     </a>
   </div>
 
-  <div style="height:2rem;"></div>
-
   <div class="hero-flags">
     <span>Serving:</span>
     <span class="flag">🇳🇱</span><span>Netherlands</span>
@@ -205,6 +205,33 @@
     <div class="stat-sub">WhatsApp · Email · Video call</div>
   </div>
 </div>
+
+<!-- 70+ PHOTOS FACTORY & CRAFTSMANSHIP ATELIER (TOP POSITION) -->
+<section class="section" id="craft">
+  <div class="section-eyebrow">Direct From Our Dhaka Atelier</div>
+  <div class="section-title reveal">
+    <span>70+ AUTHENTIC <span class="accent">CRAFTSMANSHIP</span><br>FACTORY PHOTOS</span>
+  </div>
+  <div class="section-sub reveal">
+    Every hide graded, every stitch tested, every edge burnished. Explore 70+ authentic live photos documenting our Dhaka manufacturing facility, shoe lasting benches, bag stitching lines, and finished goods ready for export.
+  </div>
+  
+  <div class="gallery-category-nav reveal">
+    <button class="gallery-pill-btn active" onclick="switchGalleryView('all', this)">📸 All 70+ Atelier Photos</button>
+    <button class="gallery-pill-btn" onclick="switchGalleryView('loafers', this)">👞 Loafers Lookbook</button>
+    <button class="gallery-pill-btn" onclick="switchGalleryView('sneakers', this)">👟 Sneakers Lookbook</button>
+  </div>
+
+  <div class="photo-gallery reveal" id="photoGallery"></div>
+  <div class="photo-gallery reveal" id="loaferGallery" style="display:none;margin-top:1rem;"></div>
+  <div class="photo-gallery reveal" id="sneakerGallery" style="display:none;margin-top:1rem;"></div>
+
+  <div class="reveal" id="galleryLoadMoreWrap" style="text-align:center;margin-top:2rem;">
+    <button class="btn-secondary" onclick="loadAllGalleryPhotos()" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 2rem;">
+      <span>Load All 70+ High-Res Factory Photos ↓</span>
+    </button>
+  </div>
+</section>
 
 <!-- STORY / ORIGIN -->
 <section class="section" id="story">
@@ -1174,23 +1201,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- CRAFT GALLERY -->
-<section class="section" id="craft" style="padding-bottom:0;">
-  <div class="section-eyebrow">Craftsmanship Atelier</div>
-  <div class="section-title reveal"><span>MADE WITH <span class="accent">PRECISION</span><br>NOT PROMISES</span></div>
-  <div class="section-sub reveal">Every stitch, every rivet, every edge — documented. This is what authentic Bangladesh leather manufacturing looks like when done right.</div>
-  
-  <div class="gallery-category-nav reveal">
-    <button class="gallery-pill-btn active" onclick="switchGalleryView('all', this)">All Factory &amp; Craft (70+ Shots)</button>
-    <button class="gallery-pill-btn" onclick="switchGalleryView('loafers', this)">👞 Loafers Lookbook</button>
-    <button class="gallery-pill-btn" onclick="switchGalleryView('sneakers', this)">👟 Sneakers Lookbook</button>
-  </div>
-
-  <div class="photo-gallery reveal" id="photoGallery"></div>
-  <div class="photo-gallery reveal" id="loaferGallery" style="display:none;margin-top:1.5rem;"></div>
-  <div class="photo-gallery reveal" id="sneakerGallery" style="display:none;margin-top:1.5rem;"></div>
 </section>
 
 <!-- LIGHTBOX (shared, populated by JS) -->
