@@ -46,7 +46,10 @@
   <a href="#" class="nav-logo">ARUTE<span>MIKA</span></a>
   <ul class="nav-links">
     <li><a href="#story">Story</a></li>
-    <li><a href="#products">Products</a></li>
+    <li><a href="#footwear">Footwear</a></li>
+    <li><a href="#products">Catalogue</a></li>
+    <li><a href="#customizer">3D Studio</a></li>
+    <li><a href="#calculator">Cost Calc</a></li>
     <li><a href="#compliance">Compliance</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#tracker">Tracker</a></li>
@@ -70,9 +73,13 @@
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#products" onclick="toggleMobileNav()">Products</a>
-  <a href="#compliance" onclick="toggleMobileNav()">Compliance</a>
-  <a href="#process" onclick="toggleMobileNav()">Process</a>
+  <a href="#story" onclick="toggleMobileNav()">Heritage & Story</a>
+  <a href="#footwear" onclick="toggleMobileNav()">Sneakers & Loafers</a>
+  <a href="#products" onclick="toggleMobileNav()">Full Catalogue</a>
+  <a href="#customizer" onclick="toggleMobileNav()">3D Studio Customizer</a>
+  <a href="#calculator" onclick="toggleMobileNav()">EU Landed Cost Calc</a>
+  <a href="#compliance" onclick="toggleMobileNav()">Compliance & BSCI</a>
+  <a href="#process" onclick="toggleMobileNav()">Production Process</a>
   <a href="#tracker" onclick="toggleMobileNav()">Order Tracker</a>
   <a href="#rfq" onclick="toggleMobileNav()">Request Quote</a>
   <a href="#contact" onclick="toggleMobileNav()">Contact</a>
@@ -312,172 +319,430 @@
   </div>
 </section>
 
+<!-- FOOTWEAR SPOTLIGHT: SNEAKERS & LOAFERS -->
+<section class="section" id="footwear">
+  <div class="section-eyebrow">Footwear Atelier</div>
+  <div class="section-title reveal">
+    <span data-lang="en">LEATHER <span class="accent">SNEAKERS</span> &amp;<br><span class="accent">LOAFERS</span> COLLECTION</span>
+    <span data-lang="nl">LEDEREN <span class="accent">SNEAKERS</span> &amp;<br><span class="accent">LOAFERS</span> COLLECTIE</span>
+    <span data-lang="de">LEDER <span class="accent">SNEAKER</span> &amp;<br><span class="accent">LOAFER</span> KOLLEKTION</span>
+    <span data-lang="bn">লেদার <span class="accent">স্নিকার্স</span> ও<br><span class="accent">লোফার্স</span> কালেকশন</span>
+    <span data-lang="ja">レザー<span class="accent">スニーカー</span>＆<br><span class="accent">ローファー</span> コレクション</span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">Engineered for European wholesale brands, department stores, and independent labels. Handcrafted with full-grain calfskin, Blake-stitched Italian leather soles, and vulcanized Margom-grade cupsoles. Low MOQ from 200 pairs per style.</span>
+    <span data-lang="nl">Ontworpen voor Europese groothandelsmerken, warenhuizen en onafhankelijke labels. Handgemaakt met volnerf kalfssuède, Blake-gestikte leren zolen en Margom-kwaliteit cupsoles. Lage MOQ vanaf 200 paar per stijl.</span>
+    <span data-lang="de">Entwickelt für europäische Großhandelsmarken, Warenhäuser und unabhängige Labels. Handgefertigt mit Vollnarben-Kalbsleder, Blake-genähten Ledersohlen und Margom-Cupsohlen. Niedrige MOQ ab 200 Paar pro Stil.</span>
+    <span data-lang="bn">ইউরোপীয় পাইকারি ব্র্যান্ড ও ডিপার্টমেন্টাল স্টোরের জন্য বিশেষায়িত। ফুল গ্রেইন কাফ লেদার, ব্লেক-স্টিচড লেদার সোল ও মারগম কাপসোলে হাতে তৈরি। প্রতি স্টাইলে ২০০ জোড়া থেকে MOQ।</span>
+    <span data-lang="ja">欧州の卸売ブランド、百貨店、インディペンデントブランド向けに設計。フルグレインカーフスキン、ブレイク製法レザーソール、Margom級カップソールを採用。1型200足からの小ロット対応。</span>
+  </div>
+
+  <!-- Footwear Toggle Tabs -->
+  <div class="footwear-nav-pills reveal">
+    <button class="fw-pill-btn active" onclick="switchFootwearTab('sneakers', this)">
+      <span class="fw-pill-icon">👟</span>
+      <span>Sneakers Studio</span>
+    </button>
+    <button class="fw-pill-btn" onclick="switchFootwearTab('loafers', this)">
+      <span class="fw-pill-icon">👞</span>
+      <span>Master Loafers</span>
+    </button>
+    <button class="fw-pill-btn" onclick="switchFootwearTab('construction', this)">
+      <span class="fw-pill-icon">📐</span>
+      <span>Last &amp; Construction</span>
+    </button>
+  </div>
+
+  <!-- Footwear Tab: Sneakers -->
+  <div class="footwear-tab-pane active" id="fwTabSneakers">
+    <div class="footwear-highlight-grid">
+      <div class="fw-highlight-card">
+        <div class="fw-badge">BESTSELLER · EU RETAIL</div>
+        <img src="images/gallery/1787565013745.jpg" alt="Minimalist Calfskin Sneaker" class="fw-img">
+        <div class="fw-content">
+          <div class="fw-cat">Minimalist Series</div>
+          <div class="fw-title">LOW-TOP CALFSKIN SNEAKER</div>
+          <p class="fw-desc">Ultra-clean silhouette crafted from 1.4mm Italian-finished box calf leather. Stitched rubber cupsole, full calfskin lining, and high-density Ortholite memory footbed.</p>
+          <div class="fw-spec-grid">
+            <div><span class="fw-k">Upper</span><span class="fw-v">French Calfskin</span></div>
+            <div><span class="fw-k">Outsole</span><span class="fw-v">Margom-style Cupsole</span></div>
+            <div><span class="fw-k">MOQ</span><span class="fw-v">200 pairs</span></div>
+            <div><span class="fw-k">Lead Time</span><span class="fw-v">35–45 days</span></div>
+          </div>
+          <div class="fw-actions">
+            <button class="btn-primary" onclick="openRFQ('Minimalist Low-Top Sneaker')">Request Sample</button>
+            <button class="btn-secondary" onclick="openSpecModal('sneaker-minimal')">View Blueprint</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fw-highlight-card">
+        <div class="fw-badge">VINTAGE HERITAGE</div>
+        <img src="images/gallery/1787565140109.jpg" alt="Retro Court Sneaker" class="fw-img">
+        <div class="fw-content">
+          <div class="fw-cat">Court Series</div>
+          <div class="fw-title">RETRO COURT TRAINER</div>
+          <p class="fw-desc">80s inspired court silhouette with perforated vamp detailing, suede toe overlay, and vulcanized natural gum rubber sole for exceptional grip and durability.</p>
+          <div class="fw-spec-grid">
+            <div><span class="fw-k">Upper</span><span class="fw-v">Nappa &amp; Silk Suede</span></div>
+            <div><span class="fw-k">Outsole</span><span class="fw-v">Natural Gum Rubber</span></div>
+            <div><span class="fw-k">MOQ</span><span class="fw-v">200 pairs</span></div>
+            <div><span class="fw-k">Lead Time</span><span class="fw-v">35–45 days</span></div>
+          </div>
+          <div class="fw-actions">
+            <button class="btn-primary" onclick="openRFQ('Retro Court Trainer')">Request Sample</button>
+            <button class="btn-secondary" onclick="openSpecModal('sneaker-court')">View Blueprint</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fw-highlight-card">
+        <div class="fw-badge">CONTEMPORARY LUXURY</div>
+        <img src="images/gallery/1787565223331.jpg" alt="Luxury Leather Runner" class="fw-img">
+        <div class="fw-content">
+          <div class="fw-cat">Runner Series</div>
+          <div class="fw-title">LUXURY LEATHER RUNNER</div>
+          <p class="fw-desc">Multi-layered architectural upper featuring vegetable-tanned leather panels, ventilated mesh inserts, and ultra-lightweight sculpted dual-density EVA midsole.</p>
+          <div class="fw-spec-grid">
+            <div><span class="fw-k">Upper</span><span class="fw-v">Veg-Tan &amp; Nubuck</span></div>
+            <div><span class="fw-k">Midsole</span><span class="fw-v">Dual-Density EVA</span></div>
+            <div><span class="fw-k">MOQ</span><span class="fw-v">250 pairs</span></div>
+            <div><span class="fw-k">Lead Time</span><span class="fw-v">40–50 days</span></div>
+          </div>
+          <div class="fw-actions">
+            <button class="btn-primary" onclick="openRFQ('Luxury Leather Runner')">Request Sample</button>
+            <button class="btn-secondary" onclick="openSpecModal('sneaker-runner')">View Blueprint</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footwear Tab: Loafers -->
+  <div class="footwear-tab-pane" id="fwTabLoafers">
+    <div class="footwear-highlight-grid">
+      <div class="fw-highlight-card">
+        <div class="fw-badge">TIMELESS SARTORIAL</div>
+        <img src="images/gallery/1787565346234.jpg" alt="Heritage Penny Loafer" class="fw-img">
+        <div class="fw-content">
+          <div class="fw-cat">Sartorial Line</div>
+          <div class="fw-title">HERITAGE PENNY LOAFER</div>
+          <p class="fw-desc">Traditional beefroll penny loafer built with hand-stitched apron detailing, stacked leather heel with rubber dovetail protector, and premium calfskin sockliner.</p>
+          <div class="fw-spec-grid">
+            <div><span class="fw-k">Upper</span><span class="fw-v">Burnished Box Calf</span></div>
+            <div><span class="fw-k">Construction</span><span class="fw-v">Blake Stitched</span></div>
+            <div><span class="fw-k">MOQ</span><span class="fw-v">200 pairs</span></div>
+            <div><span class="fw-k">Lead Time</span><span class="fw-v">35–45 days</span></div>
+          </div>
+          <div class="fw-actions">
+            <button class="btn-primary" onclick="openRFQ('Heritage Penny Loafer')">Request Sample</button>
+            <button class="btn-secondary" onclick="openSpecModal('loafer-penny')">View Blueprint</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fw-highlight-card">
+        <div class="fw-badge">GOLD BRIDLE HARDWARE</div>
+        <img src="images/gallery/1787565452471.jpg" alt="Horsebit Metal Loafer" class="fw-img">
+        <div class="fw-content">
+          <div class="fw-cat">Elegance Series</div>
+          <div class="fw-title">SOVEREIGN HORSEBIT LOAFER</div>
+          <p class="fw-desc">Refined almond toe silhouette accented with custom solid brass or polished nickel horsebit bridle hardware. Hand-burnished deep brown and obsidian black finishes.</p>
+          <div class="fw-spec-grid">
+            <div><span class="fw-k">Hardware</span><span class="fw-v">Solid Brass / Nickel</span></div>
+            <div><span class="fw-k">Sole</span><span class="fw-v">Full Leather Channeled</span></div>
+            <div><span class="fw-k">MOQ</span><span class="fw-v">200 pairs</span></div>
+            <div><span class="fw-k">Lead Time</span><span class="fw-v">35–45 days</span></div>
+          </div>
+          <div class="fw-actions">
+            <button class="btn-primary" onclick="openRFQ('Sovereign Horsebit Loafer')">Request Sample</button>
+            <button class="btn-secondary" onclick="openSpecModal('loafer-horsebit')">View Blueprint</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fw-highlight-card">
+        <div class="fw-badge">CHUNKY COMMANDO SOLE</div>
+        <img src="images/gallery/1787565728682.jpg" alt="Chunky Lug Sole Loafer" class="fw-img">
+        <div class="fw-content">
+          <div class="fw-cat">Modern Sartorial</div>
+          <div class="fw-title">COMMANDO LUG LOAFER</div>
+          <p class="fw-desc">Modern chunky lug sole penny loafer engineered with storm welt protection and Vibram-grade lightweight commando rubber outsoles for superior all-weather traction.</p>
+          <div class="fw-spec-grid">
+            <div><span class="fw-k">Upper</span><span class="fw-v">Polished Brush-Off Calf</span></div>
+            <div><span class="fw-k">Outsole</span><span class="fw-v">Lightweight Lug Rubber</span></div>
+            <div><span class="fw-k">MOQ</span><span class="fw-v">200 pairs</span></div>
+            <div><span class="fw-k">Lead Time</span><span class="fw-v">35–45 days</span></div>
+          </div>
+          <div class="fw-actions">
+            <button class="btn-primary" onclick="openRFQ('Commando Lug Loafer')">Request Sample</button>
+            <button class="btn-secondary" onclick="openSpecModal('loafer-lug')">View Blueprint</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footwear Tab: Construction & Lasts -->
+  <div class="footwear-tab-pane" id="fwTabConstruction">
+    <div class="fw-tech-grid">
+      <div class="fw-tech-card">
+        <div class="fw-tech-num">01</div>
+        <h4>BLAKE &amp; GOODYEAR STITCHING</h4>
+        <p>In-house computerized and artisanal Blake sole stitching machines attaching uppers directly to mid-soles for exceptional flexibility, slim profile, and full resolability.</p>
+        <div class="fw-tech-tag">✓ Resolable · 100% Waterproof Bond</div>
+      </div>
+      <div class="fw-tech-card">
+        <div class="fw-tech-num">02</div>
+        <h4>ANATOMIC LAST GRADING</h4>
+        <p>Dedicated European lasts (F &amp; G fittings) designed with precise heel clip and toe spring. Sizing range EU 38–47 (UK 5–13, US 6–14) with consistent millimeter tolerance.</p>
+        <div class="fw-tech-tag">✓ EU Standard &amp; Wide Fittings</div>
+      </div>
+      <div class="fw-tech-card">
+        <div class="fw-tech-num">03</div>
+        <h4>CUSTOM OUTSOLE MOLDS</h4>
+        <p>Ability to cast private-label rubber cupsoles, branded tread patterns, dual-density EVA, and stacked leather heel plates with custom buyer logos debossed.</p>
+        <div class="fw-tech-tag">✓ Custom Outsole Tooling Available</div>
+      </div>
+      <div class="fw-tech-card">
+        <div class="fw-tech-num">04</div>
+        <h4>LUXURY PACKAGING READY</h4>
+        <p>Complete custom shoe packaging service: rigid drawer shoeboxes, organic cotton dust bags with drawstring, spare waxed laces, and embossed shoe trees.</p>
+        <div class="fw-tech-tag">✓ Retail-Ready Export Packing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRODUCTS -->
 <section class="section" id="products">
   <div class="section-eyebrow">Product Catalogue</div>
   <div class="section-title reveal">
-    <span data-lang="en">OUR <span class="accent">LEATHER</span><br>CATEGORIES</span>
-    <span data-lang="nl">ONZE <span class="accent">LEDER</span><br>CATEGORIEËN</span>
-    <span data-lang="de">UNSERE <span class="accent">LEDER</span><br>KATEGORIEN</span>
-    <span data-lang="bn">আমাদের <span class="accent">চামড়া</span><br>পণ্য বিভাগ</span>
-    <span data-lang="ja"><span class="accent">革製品</span><br>カテゴリー</span>
+    <span data-lang="en">COMPREHENSIVE <span class="accent">LEATHER</span><br>CATALOGUE</span>
+    <span data-lang="nl">VOLLEDIGE <span class="accent">LEDER</span><br>CATALOGUS</span>
+    <span data-lang="de">VOLLSTÄNDIGER <span class="accent">LEDER</span><br>KATALOG</span>
+    <span data-lang="bn">সম্পূর্ণ <span class="accent">চামড়া</span><br>পণ্য ক্যাটালগ</span>
+    <span data-lang="ja">総合<span class="accent">革製品</span><br>カタログ</span>
   </div>
   <div class="section-sub reveal">
-    <span data-lang="en">All products available in full grain leather, genuine leather, PU leather & suede. Custom dimensions, hardware, lining & branding available. White-label & OEM accepted.</span>
-    <span data-lang="nl">Alle producten verkrijgbaar in volnerf leer, echt leer, PU-leer en suède. Aangepaste afmetingen, beslag, voering en branding beschikbaar. Wit-label & OEM geaccepteerd.</span>
-    <span data-lang="de">Alle Produkte in Vollnarbenleder, Echtleder, PU-Leder und Wildleder erhältlich. Individuelle Maße, Hardware, Futter & Branding verfügbar. White-Label & OEM akzeptiert.</span>
-    <span data-lang="bn">সকল পণ্য ফুল গ্রেইন লেদার, জেনুইন লেদার, PU লেদার ও সুয়েডে পাওয়া যায়। কাস্টম মাত্রা, হার্ডওয়্যার, ব্র্যান্ডিং উপলব্ধ। White-label ও OEM গ্রহণযোগ্য।</span>
-    <span data-lang="ja">全製品はフルグレインレザー、本革、PUレザー、スエードで対応。カスタム仕様、金具、ブランディング可能。OEM対応。</span>
+    <span data-lang="en">All collections available in full grain calfskin, veg-tan leather, suede &amp; PU. Custom hardware, custom branding, and private label packaging from 200 pcs / style.</span>
+    <span data-lang="nl">Alle collecties verkrijgbaar in volnerf kalfsleer, plantaardig gelooid leer, suède &amp; PU. Aangepast beslag, merklogo's en private label verpakking vanaf 200 stuks / stijl.</span>
+    <span data-lang="de">Alle Kollektionen in Vollnarben-Kalbsleder, pflanzlich gegerbtem Leder, Wildleder &amp; PU erhältlich. Individuelle Hardware, Markenlogos und Private-Label-Verpackung ab 200 Stück / Stil.</span>
+    <span data-lang="bn">সকল পণ্য ফুল গ্রেইন কাফ লেদার, ভেজ-ট্যান লেদার, সুয়েড ও PU লেদারে প্রস্তুত করা যায়। কাস্টম ব্র্যান্ডিং ও প্যাকেজিং সহ।</span>
+    <span data-lang="ja">全コレクションはフルグレインカーフ、ベジタブルタンニン革、スエード、PUで対応。OEM / ODM可能。</span>
   </div>
 
   <div class="products-filter reveal">
     <button class="filter-btn active" onclick="filterProducts('all',this)">
-      <span data-lang="en">All</span><span data-lang="nl">Alle</span><span data-lang="de">Alle</span><span data-lang="bn">সব</span><span data-lang="ja">全て</span>
+      <span data-lang="en">All Products</span><span data-lang="nl">Alle Producten</span><span data-lang="de">Alle Produkte</span><span data-lang="bn">সকল পণ্য</span><span data-lang="ja">全製品</span>
+    </button>
+    <button class="filter-btn" onclick="filterProducts('sneakers',this)">
+      <span data-lang="en">👟 Sneakers</span><span data-lang="nl">👟 Sneakers</span><span data-lang="de">👟 Sneaker</span><span data-lang="bn">👟 স্নিকার্স</span><span data-lang="ja">👟 スニーカー</span>
+    </button>
+    <button class="filter-btn" onclick="filterProducts('loafers',this)">
+      <span data-lang="en">👞 Loafers</span><span data-lang="nl">👞 Loafers</span><span data-lang="de">👞 Loafer</span><span data-lang="bn">👞 লোফার্স</span><span data-lang="ja">👞 ローファー</span>
     </button>
     <button class="filter-btn" onclick="filterProducts('bags',this)">
-      <span data-lang="en">Bags</span><span data-lang="nl">Tassen</span><span data-lang="de">Taschen</span><span data-lang="bn">ব্যাগ</span><span data-lang="ja">バッグ</span>
+      <span data-lang="en">👜 Bags</span><span data-lang="nl">👜 Tassen</span><span data-lang="de">👜 Taschen</span><span data-lang="bn">👜 ব্যাগ</span><span data-lang="ja">👜 バッグ</span>
     </button>
     <button class="filter-btn" onclick="filterProducts('business',this)">
-      <span data-lang="en">Business</span><span data-lang="nl">Zakelijk</span><span data-lang="de">Business</span><span data-lang="bn">ব্যবসায়িক</span><span data-lang="ja">ビジネス</span>
+      <span data-lang="en">💼 Business</span><span data-lang="nl">💼 Zakelijk</span><span data-lang="de">💼 Business</span><span data-lang="bn">💼 অফিসিয়াল</span><span data-lang="ja">💼 ビジネス</span>
     </button>
     <button class="filter-btn" onclick="filterProducts('accessories',this)">
-      <span data-lang="en">Accessories</span><span data-lang="nl">Accessoires</span><span data-lang="de">Accessoires</span><span data-lang="bn">আনুষঙ্গিক</span><span data-lang="ja">アクセサリー</span>
-    </button>
-    <button class="filter-btn" onclick="filterProducts('footwear',this)">
-      <span data-lang="en">Footwear</span><span data-lang="nl">Schoeisel</span><span data-lang="de">Schuhwerk</span><span data-lang="bn">পাদুকা</span><span data-lang="ja">靴</span>
+      <span data-lang="en">👛 Accessories</span><span data-lang="nl">👛 Accessoires</span><span data-lang="de">👛 Accessoires</span><span data-lang="bn">👛 আনুষঙ্গিক</span><span data-lang="ja">👛 アクセサリー</span>
     </button>
   </div>
 
   <div class="products-grid reveal" id="productsGrid">
 
-    <!-- Laptop Bag -->
-    <div class="product-card" data-category="business" onclick="openRFQ('Laptop Bag')">
-      <img src="laptop-bag.webp" alt="Leather Laptop Bag" class="product-img">
-      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+    <!-- Sneaker: Minimalist Low-Top -->
+    <div class="product-card" data-category="sneakers" onclick="openSpecModal('sneaker-minimal')">
+      <img src="images/gallery/1787565013745.jpg" alt="Minimalist Leather Sneaker" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
       <div class="product-info">
-        <div class="product-cat">Business Series</div>
-        <div class="product-name">LAPTOP BAG</div>
+        <div class="product-cat">Footwear · Sneakers</div>
+        <div class="product-name">MINIMALIST LOW-TOP SNEAKER</div>
         <div class="product-specs">
-          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain / PU</span></div>
-          <div class="spec-row"><span class="spec-key">Fits</span><span class="spec-val">13" · 15" · 17"</span></div>
-          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
-          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–40 days</span></div>
+          <div class="spec-row"><span class="spec-key">Leather</span><span class="spec-val">Full-Grain Box Calf</span></div>
+          <div class="spec-row"><span class="spec-key">Sole</span><span class="spec-val">Stitched Margom Cupsole</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pairs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$22–$28 / pair</span></div>
         </div>
       </div>
     </div>
 
-    <!-- File Bag / Briefcase -->
-    <div class="product-card" data-category="business" onclick="openRFQ('File Bag / Briefcase')">
-      <img src="file-bag.webp" alt="Leather File Bag" class="product-img">
-      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+    <!-- Sneaker: Retro Court Trainer -->
+    <div class="product-card" data-category="sneakers" onclick="openSpecModal('sneaker-court')">
+      <img src="images/gallery/1787565140109.jpg" alt="Retro Court Trainer" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
+      <div class="product-info">
+        <div class="product-cat">Footwear · Sneakers</div>
+        <div class="product-name">RETRO COURT TRAINER</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Leather</span><span class="spec-val">Nappa &amp; Suede Panels</span></div>
+          <div class="spec-row"><span class="spec-key">Sole</span><span class="spec-val">Natural Gum Rubber</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pairs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$24–$30 / pair</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sneaker: Luxury Runner -->
+    <div class="product-card" data-category="sneakers" onclick="openSpecModal('sneaker-runner')">
+      <img src="images/gallery/1787565223331.jpg" alt="Luxury Leather Runner" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
+      <div class="product-info">
+        <div class="product-cat">Footwear · Sneakers</div>
+        <div class="product-name">LUXURY LEATHER RUNNER</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Leather</span><span class="spec-val">Veg-Tan &amp; Nubuck</span></div>
+          <div class="spec-row"><span class="spec-key">Midsole</span><span class="spec-val">Lightweight Sculpted EVA</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">250 pairs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$26–$34 / pair</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loafer: Classic Penny Loafer -->
+    <div class="product-card" data-category="loafers" onclick="openSpecModal('loafer-penny')">
+      <img src="images/gallery/1787565346234.jpg" alt="Heritage Penny Loafer" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
+      <div class="product-info">
+        <div class="product-cat">Footwear · Loafers</div>
+        <div class="product-name">HERITAGE PENNY LOAFER</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Leather</span><span class="spec-val">Aniline Calfskin</span></div>
+          <div class="spec-row"><span class="spec-key">Construction</span><span class="spec-val">Blake Stitched / Leather</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pairs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$28–$36 / pair</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loafer: Sovereign Horsebit Loafer -->
+    <div class="product-card" data-category="loafers" onclick="openSpecModal('loafer-horsebit')">
+      <img src="images/gallery/1787565452471.jpg" alt="Sovereign Horsebit Loafer" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
+      <div class="product-info">
+        <div class="product-cat">Footwear · Loafers</div>
+        <div class="product-name">SOVEREIGN HORSEBIT LOAFER</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Hardware</span><span class="spec-val">Gold / Silver Horsebit</span></div>
+          <div class="spec-row"><span class="spec-key">Sole</span><span class="spec-val">Channeled Leather Sole</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pairs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$30–$38 / pair</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loafer: Belgian Suede Tassel Loafer -->
+    <div class="product-card" data-category="loafers" onclick="openSpecModal('loafer-tassel')">
+      <img src="images/gallery/1787565530184.jpg" alt="Belgian Suede Tassel Loafer" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
+      <div class="product-info">
+        <div class="product-cat">Footwear · Loafers</div>
+        <div class="product-name">BELGIAN TASSEL LOAFER</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Leather</span><span class="spec-val">Silk Calf Suede</span></div>
+          <div class="spec-row"><span class="spec-key">Details</span><span class="spec-val">Braided Collar &amp; Tassels</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pairs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$29–$37 / pair</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loafer: Commando Lug Sole Loafer -->
+    <div class="product-card" data-category="loafers" onclick="openSpecModal('loafer-lug')">
+      <img src="images/gallery/1787565728682.jpg" alt="Commando Lug Sole Loafer" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
+      <div class="product-info">
+        <div class="product-cat">Footwear · Loafers</div>
+        <div class="product-name">COMMANDO LUG LOAFER</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Leather</span><span class="spec-val">Polished Brush-Off</span></div>
+          <div class="spec-row"><span class="spec-key">Outsole</span><span class="spec-val">Vibram-Grade Commando Lug</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pairs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$31–$39 / pair</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laptop Bag -->
+    <div class="product-card" data-category="business" onclick="openSpecModal('laptop-bag')">
+      <img src="images/gallery/1787550810891.jpg" alt="Executive Leather Laptop Bag" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
       <div class="product-info">
         <div class="product-cat">Business Series</div>
-        <div class="product-name">FILE BAG</div>
+        <div class="product-name">EXECUTIVE LAPTOP BAG</div>
         <div class="product-specs">
-          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Genuine Leather</span></div>
-          <div class="spec-row"><span class="spec-key">Style</span><span class="spec-val">Slim · Expandable</span></div>
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full-Grain / PU</span></div>
+          <div class="spec-row"><span class="spec-key">Fits</span><span class="spec-val">13" · 15.6" · 17"</span></div>
           <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
-          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–40 days</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$18–$26 / pc</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive Briefcase -->
+    <div class="product-card" data-category="business" onclick="openSpecModal('file-bag')">
+      <img src="images/gallery/1787552013314.jpg" alt="Leather File Bag Briefcase" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
+      <div class="product-info">
+        <div class="product-cat">Business Series</div>
+        <div class="product-name">SLIM ATTACHE BRIEFCASE</div>
+        <div class="product-specs">
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Top Grain Cowhide</span></div>
+          <div class="spec-row"><span class="spec-key">Hardware</span><span class="spec-val">YKK Excella Zippers</span></div>
+          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$21–$29 / pc</span></div>
         </div>
       </div>
     </div>
 
     <!-- Tote Bag -->
-    <div class="product-card" data-category="bags" onclick="openRFQ('Tote Bag')">
-      <img src="tote-bag.webp" alt="Leather Tote Bag" class="product-img">
-      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+    <div class="product-card" data-category="bags" onclick="openSpecModal('tote-bag')">
+      <img src="images/gallery/1787557025434.jpg" alt="Leather Tote Bag" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
       <div class="product-info">
         <div class="product-cat">Bag Series</div>
-        <div class="product-name">TOTE BAG</div>
+        <div class="product-name">ARTISANAL LEATHER TOTE</div>
         <div class="product-specs">
-          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain · PU</span></div>
-          <div class="spec-row"><span class="spec-key">Options</span><span class="spec-val">S · M · L sizes</span></div>
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain · Suede Base</span></div>
+          <div class="spec-row"><span class="spec-key">Capacity</span><span class="spec-val">S · M · L (Structured)</span></div>
           <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
-          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–40 days</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$16–$24 / pc</span></div>
         </div>
       </div>
     </div>
 
     <!-- Wallet -->
-    <div class="product-card" data-category="accessories" onclick="openRFQ('Wallet')">
-      <img src="wallet-macro.webp" alt="Leather Wallet" class="product-img">
-      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+    <div class="product-card" data-category="accessories" onclick="openSpecModal('wallet-bifold')">
+      <img src="images/gallery/1787574036435.jpg" alt="Leather Wallet" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
       <div class="product-info">
         <div class="product-cat">Accessories</div>
-        <div class="product-name">WALLET</div>
+        <div class="product-name">BIFOLD RFID WALLET</div>
         <div class="product-specs">
-          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain Leather</span></div>
-          <div class="spec-row"><span class="spec-key">Style</span><span class="spec-val">Bifold · Trifold · Card</span></div>
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full-Grain Italian Calf</span></div>
+          <div class="spec-row"><span class="spec-key">Features</span><span class="spec-val">RFID Shield · 8 Card Slots</span></div>
           <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
-          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">25–35 days</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$6–$11 / pc</span></div>
         </div>
       </div>
     </div>
 
-    <!-- Handbag -->
-    <div class="product-card" data-category="bags" onclick="openRFQ('Handbag')">
-      <!-- TEMP: no dedicated handbag product photo exists yet — using a craft gallery shot as placeholder -->
-      <img src="images/gallery/1787551605652.jpg" alt="Leather Handbag" class="product-img">
-      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
+    <!-- Leather Backpack -->
+    <div class="product-card" data-category="bags" onclick="openSpecModal('backpack')">
+      <img src="images/gallery/1787561410420.jpg" alt="Urban Leather Backpack" class="product-img">
+      <div class="product-overlay"><div class="product-overlay-btn">Inspect Specs →</div></div>
       <div class="product-info">
         <div class="product-cat">Bag Series</div>
-        <div class="product-name">HANDBAG</div>
+        <div class="product-name">URBAN LEATHER BACKPACK</div>
         <div class="product-specs">
-          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Genuine · PU Leather</span></div>
-          <div class="spec-row"><span class="spec-key">Hardware</span><span class="spec-val">Gold · Silver · Black</span></div>
+          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Water-Resistant Cowhide</span></div>
+          <div class="spec-row"><span class="spec-key">Laptop Sleeve</span><span class="spec-val">Padded 16" Compartment</span></div>
           <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
-          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–45 days</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Crossbody -->
-    <div class="product-card" data-category="bags" onclick="openRFQ('Crossbody Bag')">
-      <!-- TEMP: no dedicated crossbody product photo exists yet — using a craft gallery shot as placeholder -->
-      <img src="images/gallery/1787557173371.jpg" alt="Crossbody Bag" class="product-img">
-      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
-      <div class="product-info">
-        <div class="product-cat">Bag Series</div>
-        <div class="product-name">CROSSBODY</div>
-        <div class="product-specs">
-          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Full Grain · PU</span></div>
-          <div class="spec-row"><span class="spec-key">Strap</span><span class="spec-val">Adjustable · Detachable</span></div>
-          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
-          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">30–40 days</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Backpack -->
-    <div class="product-card" data-category="bags" onclick="openRFQ('Leather Backpack')">
-      <!-- TEMP: no dedicated backpack product photo exists yet — using a craft gallery shot as placeholder -->
-      <img src="images/gallery/1787561410420.jpg" alt="Leather Backpack" class="product-img">
-      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
-      <div class="product-info">
-        <div class="product-cat">Bag Series</div>
-        <div class="product-name">BACKPACK</div>
-        <div class="product-specs">
-          <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">Genuine · Suede</span></div>
-          <div class="spec-row"><span class="spec-key">Capacity</span><span class="spec-val">18L · 24L · 32L</span></div>
-          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">200 pcs/style</span></div>
-          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">35–45 days</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footwear -->
-    <div class="product-card" data-category="footwear" onclick="openRFQ('Leather Footwear')">
-      <!-- TEMP: no dedicated footwear product photo exists yet — using a craft gallery shot as placeholder -->
-      <img src="images/gallery/1787565013745.jpg" alt="Leather Footwear" class="product-img">
-      <div class="product-overlay"><div class="product-overlay-btn">Request Quote</div></div>
-      <div class="product-info">
-        <div class="product-cat">Footwear</div>
-        <div class="product-name">SNEAKERS</div>
-        <div class="product-specs">
-          <div class="spec-row"><span class="spec-key">Upper</span><span class="spec-val">Full Grain Leather</span></div>
-          <div class="spec-row"><span class="spec-key">Sole</span><span class="spec-val">Rubber · TPU</span></div>
-          <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">300 pcs/style</span></div>
-          <div class="spec-row"><span class="spec-key">Lead Time</span><span class="spec-val">40–50 days</span></div>
+          <div class="spec-row"><span class="spec-key">Est. FOB</span><span class="spec-val" style="color:var(--accent);font-weight:bold;">$25–$35 / pc</span></div>
         </div>
       </div>
     </div>
@@ -485,12 +750,277 @@
   </div>
 </section>
 
+<!-- 3D STUDIO CRAFT & BESPOKE CUSTOMIZER -->
+<section class="section" id="customizer">
+  <div class="section-eyebrow">Interactive 3D Studio</div>
+  <div class="section-title reveal">
+    <span data-lang="en">BESPOKE <span class="accent">3D STUDIO</span> &amp;<br>SPEC CUSTOMIZER</span>
+    <span data-lang="nl">MAATWERK <span class="accent">3D STUDIO</span> &amp;<br>SPEC CONFIGURATOR</span>
+    <span data-lang="de">INDIVIDUELLES <span class="accent">3D STUDIO</span> &amp;<br>SPEZIFIKATIONS-PLANER</span>
+    <span data-lang="bn">ইন্টারেক্টিভ <span class="accent">৩ডি স্টুডিও</span> ও<br>কাস্টমাইজেশন টুল</span>
+    <span data-lang="ja">オーダーメイド<span class="accent">3Dスタジオ</span>＆<br>仕様カスタマイザー</span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">Configure your footwear and leather goods in real time. Select materials, colors, soles, hardware, and custom branding to generate an instant FOB pricing estimate and downloadable tech pack.</span>
+    <span data-lang="nl">Configureer uw schoenen en lederwaren in realtime. Kies materialen, kleuren, zolen, beslag en eigen logo voor een directe FOB-prijsschatting en downloadbare tech pack.</span>
+    <span data-lang="de">Konfigurieren Sie Schuhe und Lederwaren in Echtzeit. Wählen Sie Materialien, Farben, Sohlen, Beschläge und Branding für eine sofortige FOB-Preisschätzung und ein Tech-Pack.</span>
+    <span data-lang="bn">রিয়েল-টাইমে আপনার পছন্দের জুতা ও চামড়া পণ্য ডিজাইন করুন। উপাদান, রঙ, সোল ও ব্র্যান্ডিং নির্বাচন করে তাৎক্ষণিক FOB মূল্য জানুন।</span>
+    <span data-lang="ja">リアルタイムでフットウェアや革製品をカスタマイズ。素材、カラー、ソール、金具、ブランドロゴを選択し、即時にFOB見積と仕様書を生成できます。</span>
+  </div>
+
+  <div class="customizer-container reveal">
+    <!-- Left: 3D Visualizer Canvas Stage -->
+    <div class="customizer-stage-card">
+      <div class="stage-top-bar">
+        <div class="stage-status">● REAL-TIME 3D RENDER</div>
+        <div class="stage-controls">
+          <button class="stage-tool-btn" onclick="reset3DView()" title="Reset Camera View">↺ Reset View</button>
+          <button class="stage-tool-btn" id="wireframeToggleBtn" onclick="toggleWireframe()" title="Toggle Stitch Blueprint">⚡ Stitches</button>
+        </div>
+      </div>
+      
+      <div class="canvas-viewport" id="canvasViewport">
+        <canvas id="customizerCanvas" width="600" height="420"></canvas>
+        <div class="canvas-drag-hint">⇄ Drag horizontally to rotate 360° · Scroll to Zoom</div>
+        <div class="model-floating-badge" id="currentModelBadge">Sneaker — Minimal Low-Top</div>
+      </div>
+
+      <div class="stage-rotation-slider-wrap">
+        <span class="slider-label">360° Orbit</span>
+        <input type="range" id="orbitSlider" min="0" max="360" value="35" oninput="onOrbitSliderChange(this.value)" class="orbit-slider">
+        <span class="slider-val" id="orbitDegText">35°</span>
+      </div>
+    </div>
+
+    <!-- Right: Bespoke Configuration Controls -->
+    <div class="customizer-panel-card">
+      <!-- 1. Product Model -->
+      <div class="custom-control-group">
+        <label class="custom-label">1. Select Silhouette / Model</label>
+        <div class="model-pill-grid">
+          <button class="model-btn active" onclick="selectCustomModel('sneaker-minimal', this)">👟 Low-Top Sneaker</button>
+          <button class="model-btn" onclick="selectCustomModel('sneaker-court', this)">👟 Retro Court</button>
+          <button class="model-btn" onclick="selectCustomModel('loafer-penny', this)">👞 Penny Loafer</button>
+          <button class="model-btn" onclick="selectCustomModel('loafer-horsebit', this)">👞 Horsebit Loafer</button>
+          <button class="model-btn" onclick="selectCustomModel('laptop-bag', this)">💼 Laptop Bag</button>
+          <button class="model-btn" onclick="selectCustomModel('tote-bag', this)">👜 Leather Tote</button>
+        </div>
+      </div>
+
+      <!-- 2. Leather Material -->
+      <div class="custom-control-group">
+        <label class="custom-label">2. Leather Grade &amp; Texture</label>
+        <select class="form-select" id="customLeatherSelect" onchange="onCustomizerMaterialChange(this.value)">
+          <option value="calfskin">French Full-Grain Box Calf (Premium Smooth)</option>
+          <option value="vegtan">Italian Vegetable-Tanned Cowhide (Rich Patina)</option>
+          <option value="suede">Silk Suede / Velvety Roughout</option>
+          <option value="pebble">Pebbled Grain Scratch-Resistant Leather</option>
+          <option value="pullup">Vintage Pull-Up Waxed Leather</option>
+          <option value="pu">Eco Microfiber Vegan Leather</option>
+        </select>
+      </div>
+
+      <!-- 3. Color Swatches -->
+      <div class="custom-control-group">
+        <label class="custom-label">3. Primary Colorway</label>
+        <div class="swatch-grid">
+          <div class="swatch-btn active" style="background:#80461b;" onclick="selectColor('#80461b', 'Cognac Tan', this)" title="Cognac Tan"></div>
+          <div class="swatch-btn" style="background:#1a1818;" onclick="selectColor('#1a1818', 'Obsidian Black', this)" title="Obsidian Black"></div>
+          <div class="swatch-btn" style="background:#5a1824;" onclick="selectColor('#5a1824', 'Oxblood Burgundy', this)" title="Oxblood Burgundy"></div>
+          <div class="swatch-btn" style="background:#3a4b3d;" onclick="selectColor('#3a4b3d', 'Olive Cypress', this)" title="Olive Cypress"></div>
+          <div class="swatch-btn" style="background:#ebe7df;" onclick="selectColor('#ebe7df', 'Bone Chalk White', this)" title="Bone Chalk White"></div>
+          <div class="swatch-btn" style="background:#1d293d;" onclick="selectColor('#1d293d', 'Midnight Navy', this)" title="Midnight Navy"></div>
+        </div>
+        <div class="selected-color-name" id="selectedColorName">Selected: <strong>Cognac Tan</strong></div>
+      </div>
+
+      <!-- 4. Sole & Outsole -->
+      <div class="custom-control-group">
+        <label class="custom-label">4. Sole / Bottom Construction</label>
+        <div class="sole-pill-grid">
+          <button class="sole-btn active" onclick="selectSole('cupsole', this)">Margom Cupsole</button>
+          <button class="sole-btn" onclick="selectSole('leather', this)">Channeled Leather</button>
+          <button class="sole-btn" onclick="selectSole('lug', this)">Commando Lug</button>
+          <button class="sole-btn" onclick="selectSole('gum', this)">Vintage Gum Sole</button>
+        </div>
+      </div>
+
+      <!-- 5. Hardware & Branding -->
+      <div class="custom-control-group">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="custom-label">5. Hardware Finish</label>
+            <select class="form-select" id="customHardwareSelect" onchange="onCustomizerHardwareChange(this.value)">
+              <option value="gold">Solid Polished Brass (Gold)</option>
+              <option value="silver">Polished Nickel (Silver)</option>
+              <option value="gunmetal">Matte Gunmetal</option>
+              <option value="antique">Antique Bronze</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="custom-label">6. Brand Stamping</label>
+            <select class="form-select" id="customBrandingSelect" onchange="onCustomizerBrandingChange(this.value)">
+              <option value="blind">Blind Deep Debossing</option>
+              <option value="goldfoil">24k Gold Hot Stamp</option>
+              <option value="silverfoil">Silver Foil Stamping</option>
+              <option value="metalbadge">Custom Cast Metal Badge</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live FOB Pricing & Action Bar -->
+      <div class="customizer-summary-box">
+        <div class="summary-price-row">
+          <div>
+            <div class="summary-sub">ESTIMATED FOB CHITTAGONG</div>
+            <div class="summary-price" id="calcPriceDisplay">$24.50 <span class="summary-unit">/ pair</span></div>
+          </div>
+          <div style="text-align:right;">
+            <div class="summary-sub">MINIMUM ORDER</div>
+            <div class="summary-moq" id="calcMoqDisplay">200 pairs</div>
+          </div>
+        </div>
+        <div class="summary-details-list">
+          <div>• Base Production Lead Time: <strong>35–40 Days</strong></div>
+          <div>• Sample Prototyping: <strong>10–12 Days via DHL</strong></div>
+          <div>• BSCI-Audited Facility · EU REACH Compliant</div>
+        </div>
+        <div class="summary-cta-grid">
+          <button class="btn-primary" onclick="transferCustomizerToRFQ()">Transfer Specs to RFQ →</button>
+          <button class="btn-secondary" onclick="downloadTechPackSummary()">Download Tech Pack PDF</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EU LANDED COST & FREIGHT CALCULATOR -->
+<section class="section" id="calculator">
+  <div class="section-eyebrow">Financial Sourcing Tool</div>
+  <div class="section-title reveal">
+    <span data-lang="en">EU LANDED COST &amp;<br><span class="accent">FREIGHT ESTIMATOR</span></span>
+    <span data-lang="nl">EU LANDED COST &amp;<br><span class="accent">VRACHT CALCULATOR</span></span>
+    <span data-lang="de">EU LANDED COST &amp;<br><span class="accent">FRACHT KALKULATOR</span></span>
+    <span data-lang="bn">ইউরোপ ল্যান্ডেড কস্ট ও<br><span class="accent">ভাড়া ক্যালকুলেটর</span></span>
+    <span data-lang="ja">欧州着地原価＆<br><span class="accent">運賃シミュレーター</span></span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">Calculate your all-in landed cost per unit including ocean freight, container volume, and European GSP+ preferential duty exemption (0% import duty for Bangladesh leather goods!).</span>
+    <span data-lang="nl">Bereken uw totale landed cost per stuk inclusief zeevracht, containervolume en Europese GSP+ preferentiële vrijstelling (0% invoerrechten voor leer uit Bangladesh!).</span>
+    <span data-lang="de">Berechnen Sie Ihre Gesamtkosten pro Einheit inkl. Seefracht, Containervolumen und EU-GSP+ Zollbefreiung (0% Importzoll für Lederwaren aus Bangladesch!).</span>
+    <span data-lang="bn">সমুদ্রপথে পণ্য পরিবহন ভাড়া, কন্টেইনার আয়তন এবং ইউরোপীয় GSP+ শুল্কমুক্ত সুবিধা (০% শুল্ক) সহ মোট খরচ গণনা করুন।</span>
+    <span data-lang="ja">海上運賃、コンテナ積載量、バングラデシュ特恵関税GSP+（関税0%）を考慮した総着地原価（Landed Cost）を即座に試算できます。</span>
+  </div>
+
+  <div class="calculator-grid reveal">
+    <!-- Calculator Form Inputs -->
+    <div class="calc-inputs-card">
+      <div class="form-group">
+        <label class="form-label">Product Category</label>
+        <select class="form-select" id="calcProductType" onchange="recalculateLandedCost()">
+          <option value="sneakers" selected>Leather Sneakers (Pairs)</option>
+          <option value="loafers">Leather Loafers &amp; Shoes (Pairs)</option>
+          <option value="laptop-bag">Executive Laptop Bags (Pcs)</option>
+          <option value="tote-bag">Leather Tote Bags (Pcs)</option>
+          <option value="briefcase">Leather Briefcases (Pcs)</option>
+          <option value="wallets">Leather Wallets &amp; Small Goods (Pcs)</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Order Volume (Units)</label>
+          <select class="form-select" id="calcQuantity" onchange="recalculateLandedCost()">
+            <option value="200">200 units (Sample / Pilot)</option>
+            <option value="500" selected>500 units (Standard Batch)</option>
+            <option value="1000">1,000 units (Volume Tier 1)</option>
+            <option value="2500">2,500 units (Volume Tier 2)</option>
+            <option value="5000">5,000+ units (Full Container / FCL)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Destination EU Port</label>
+          <select class="form-select" id="calcPort" onchange="recalculateLandedCost()">
+            <option value="rotterdam" selected>Rotterdam, Netherlands 🇳🇱 (~22 days)</option>
+            <option value="hamburg">Hamburg, Germany 🇩🇪 (~24 days)</option>
+            <option value="felixstowe">Felixstowe, UK 🇬🇧 (~23 days)</option>
+            <option value="valencia">Valencia, Spain 🇪🇸 (~20 days)</option>
+            <option value="antwerp">Antwerp, Belgium 🇧🇪 (~22 days)</option>
+            <option value="air">Air Express DHL (Europe All · 5–7 days)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Material Grade</label>
+        <select class="form-select" id="calcMaterialGrade" onchange="recalculateLandedCost()">
+          <option value="standard">Premium Top Grain Leather (Standard OEM)</option>
+          <option value="fullgrain" selected>French Full-Grain Box Calfskin (+12%)</option>
+          <option value="vegtan">Italian Vegetable-Tanned Artisan Leather (+20%)</option>
+        </select>
+      </div>
+
+      <div class="calc-gsp-note">
+        <strong>★ EU GSP+ BENEFIT:</strong> Bangladesh manufactured leather goods enter the European Union at <strong>0% customs duty</strong> under the Everything But Arms (EBA) preference system, saving you 8% to 17% compared to imports from non-GSP nations.
+      </div>
+    </div>
+
+    <!-- Calculator Output Summary -->
+    <div class="calc-results-card">
+      <div class="calc-results-header">ESTIMATED LANDED COST BREAKDOWN</div>
+      <div class="calc-hero-price">
+        <div class="calc-main-num" id="landedUnitCostEUR">€24.80</div>
+        <div class="calc-main-sub">Total Landed Cost / Unit (FOB + Freight + Port Fees)</div>
+      </div>
+
+      <div class="calc-breakdown-list">
+        <div class="calc-row">
+          <span>Base FOB Chittagong Unit:</span>
+          <strong id="breakdownFob">$23.50 USD</strong>
+        </div>
+        <div class="calc-row">
+          <span>Estimated Freight per Unit:</span>
+          <strong id="breakdownFreight">€1.20 EUR</strong>
+        </div>
+        <div class="calc-row">
+          <span>EU Import Duty (GSP 0%):</span>
+          <strong style="color:var(--green)">€0.00 (Saved 17%)</strong>
+        </div>
+        <div class="calc-row">
+          <span>Total Shipment CBM / Cartons:</span>
+          <strong id="breakdownCbm">4.8 CBM · 25 Master Cartons</strong>
+        </div>
+        <div class="calc-row">
+          <span>Transit Timeline:</span>
+          <strong id="breakdownTransit">20–24 Ocean Days to Port</strong>
+        </div>
+      </div>
+
+      <div class="calc-action-wrap">
+        <button class="btn-primary" onclick="transferCalculatorToRFQ()" style="width:100%;">Apply This Volume to My RFQ →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CRAFT GALLERY -->
 <section class="section" id="craft" style="padding-bottom:0;">
-  <div class="section-eyebrow">Craftsmanship</div>
+  <div class="section-eyebrow">Craftsmanship Atelier</div>
   <div class="section-title reveal"><span>MADE WITH <span class="accent">PRECISION</span><br>NOT PROMISES</span></div>
-  <div class="section-sub reveal">Every stitch, every rivet, every edge — documented. This is what Bangladesh leather manufacturing looks like when done right.</div>
-  <div class="photo-gallery reveal" id="photoGallery"><!-- Populated with 70 photos from images/gallery/ by script.js (galleryPhotos array) --></div>
+  <div class="section-sub reveal">Every stitch, every rivet, every edge — documented. This is what authentic Bangladesh leather manufacturing looks like when done right.</div>
+  
+  <div class="gallery-category-nav reveal">
+    <button class="gallery-pill-btn active" onclick="switchGalleryView('all', this)">All Factory &amp; Craft (70+ Shots)</button>
+    <button class="gallery-pill-btn" onclick="switchGalleryView('loafers', this)">👞 Loafers Lookbook</button>
+    <button class="gallery-pill-btn" onclick="switchGalleryView('sneakers', this)">👟 Sneakers Lookbook</button>
+  </div>
+
+  <div class="photo-gallery reveal" id="photoGallery"></div>
+  <div class="photo-gallery reveal" id="loaferGallery" style="display:none;margin-top:1.5rem;"></div>
+  <div class="photo-gallery reveal" id="sneakerGallery" style="display:none;margin-top:1.5rem;"></div>
 </section>
 
 <!-- LIGHTBOX (shared, populated by JS) -->
@@ -762,83 +1292,96 @@
     <span data-lang="ja">全バイヤーが生産ポータルにアクセス可能。原材料から出荷まで追跡できます。完全な透明性。</span>
   </div>
 
-  <div class="tracker-wrap reveal">
-    <div class="tracker-header">
-      <div class="tracker-title">NEXUS PRODUCTION PORTAL — DEMO VIEW</div>
-      <div class="tracker-live">LIVE SYSTEM</div>
+  <div class="tracker-search-bar reveal">
+    <div class="tracker-search-input-wrap">
+      <input type="text" id="trackerSearchInput" class="form-input tracker-input" placeholder="Enter Order ID (e.g. SNK-2026-NL-012)..." value="SNK-2026-NL-012">
+      <button class="btn-primary" onclick="lookupOrder()" style="padding:0.75rem 1.5rem;white-space:nowrap;">Track Order 🔍</button>
     </div>
-    <div class="tracker-order">
+    <div class="tracker-sample-pills">
+      <span style="font-size:11px;color:var(--muted);font-family:var(--font-mono);">Demo Sourcing Orders:</span>
+      <button class="sample-tag-btn" onclick="setTrackerOrder('SNK-2026-NL-012')">👟 SNK-2026-NL-012 (Sneakers)</button>
+      <button class="sample-tag-btn" onclick="setTrackerOrder('LOA-2026-DE-088')">👞 LOA-2026-DE-088 (Loafers)</button>
+      <button class="sample-tag-btn" onclick="setTrackerOrder('ORD-2026-EU-047')">👜 ORD-2026-EU-047 (Tote Bags)</button>
+    </div>
+  </div>
+
+  <div class="tracker-wrap reveal" id="trackerDetailsWrap">
+    <div class="tracker-header">
+      <div class="tracker-title">ARUTEMIKA BUYER PORTAL · SECURE PRODUCTION TELEMETRY</div>
+      <div class="tracker-live">● LIVE FACTORY FEED</div>
+    </div>
+    <div class="tracker-order" id="trackerOrderHeader">
       <div class="order-field">
         <div class="order-key">Order ID</div>
-        <div class="order-val">ORD-2026-EU-047</div>
+        <div class="order-val" id="trackIdVal">SNK-2026-NL-012</div>
       </div>
       <div class="order-field">
-        <div class="order-key">Product</div>
-        <div class="order-val">Leather Tote Bag</div>
+        <div class="order-key">Product Model</div>
+        <div class="order-val" id="trackProductVal">Minimalist Box Calf Sneaker</div>
       </div>
       <div class="order-field">
         <div class="order-key">Quantity</div>
-        <div class="order-val gold">500 pcs</div>
+        <div class="order-val gold" id="trackQtyVal">600 pairs</div>
       </div>
       <div class="order-field">
-        <div class="order-key">Buyer</div>
-        <div class="order-val">NL Import Co.</div>
+        <div class="order-key">Destination Port</div>
+        <div class="order-val" id="trackBuyerVal">Rotterdam, NL (Ocean Freight)</div>
       </div>
       <div class="order-field">
         <div class="order-key">Status</div>
-        <div class="order-val green">IN PRODUCTION</div>
+        <div class="order-val green" id="trackStatusVal">IN PRODUCTION · 75%</div>
       </div>
       <div class="order-field">
-        <div class="order-key">ETA Shipment</div>
-        <div class="order-val">15 Jul 2026</div>
+        <div class="order-key">Target Departure</div>
+        <div class="order-val" id="trackEtaVal">24 Aug 2026</div>
       </div>
     </div>
-    <div class="tracker-stages">
+    <div class="tracker-stages" id="trackerStagesList">
       <div class="stage-row">
         <div class="stage-dot done"></div>
         <div class="stage-info">
-          <div class="stage-name">Raw Material Received</div>
-          <div class="stage-date">2026-06-01 — Full grain leather, 450 sq ft</div>
+          <div class="stage-name">French Box Calf Hide Grading &amp; REACH Compliance Test</div>
+          <div class="stage-date">100% Passed · Certified Azo &amp; Chrome VI free</div>
         </div>
         <div class="stage-pct">100%</div>
       </div>
       <div class="stage-row">
         <div class="stage-dot done"></div>
         <div class="stage-info">
-          <div class="stage-name">Pattern Cutting</div>
-          <div class="stage-date">2026-06-05 — All panels cut, QC checked</div>
+          <div class="stage-name">Precision Computerized Pattern Clicker Cutting</div>
+          <div class="stage-date">All 600 pairs cut with zero waste optimization</div>
+        </div>
+        <div class="stage-pct">100%</div>
+      </div>
+      <div class="stage-row">
+        <div class="stage-dot done"></div>
+        <div class="stage-info">
+          <div class="stage-name">Upper Skiving, Leather Lining &amp; Precision Stitching</div>
+          <div class="stage-date">Waxed Italian nylon thread · 600/600 uppers completed</div>
         </div>
         <div class="stage-pct">100%</div>
       </div>
       <div class="stage-row">
         <div class="stage-dot active"></div>
         <div class="stage-info">
-          <div class="stage-name">Stitching & Assembly</div>
-          <div class="stage-date">2026-06-10 — 340/500 pcs completed</div>
+          <div class="stage-name">Lasting on Italian Last #208 &amp; 360° Sidewall Sole Stitching</div>
+          <div class="stage-date">450/600 pairs completed · Blake-stitched rubber cupsole</div>
         </div>
-        <div class="stage-pct" style="color:var(--green)">68%</div>
+        <div class="stage-pct" style="color:var(--green)">75%</div>
       </div>
       <div class="stage-row">
         <div class="stage-dot"></div>
         <div class="stage-info">
-          <div class="stage-name muted">Hardware & Finishing</div>
-          <div class="stage-date">Scheduled: 2026-06-20</div>
-        </div>
-        <div class="stage-pct muted">—</div>
-      </div>
-      <div class="stage-row">
-        <div class="stage-dot"></div>
-        <div class="stage-info">
-          <div class="stage-name muted">Final QC & Packing</div>
-          <div class="stage-date">Scheduled: 2026-06-28</div>
+          <div class="stage-name muted">Aniline Wax Hand Burnishing &amp; Lacing</div>
+          <div class="stage-date">Scheduled: in 4 days</div>
         </div>
         <div class="stage-pct muted">—</div>
       </div>
       <div class="stage-row">
         <div class="stage-dot"></div>
         <div class="stage-info">
-          <div class="stage-name muted">FOB Chittagong — Shipped</div>
-          <div class="stage-date">Target: 2026-07-05</div>
+          <div class="stage-name muted">AQL 1.5 Final Inspection &amp; Custom Box Palletizing</div>
+          <div class="stage-date">Scheduled: in 8 days</div>
         </div>
         <div class="stage-pct muted">—</div>
       </div>
@@ -846,10 +1389,10 @@
     <div class="progress-bar-wrap">
       <div class="progress-label">
         <span>Overall Production Progress</span>
-        <span style="color:var(--gold)">68%</span>
+        <span style="color:var(--gold)" id="trackProgressPct">75%</span>
       </div>
       <div class="progress-bar">
-        <div class="progress-fill" style="width:68%"></div>
+        <div class="progress-fill" id="trackProgressBar" style="width:75%"></div>
       </div>
     </div>
   </div>
@@ -1096,6 +1639,90 @@
     <div class="footer-coords">23.8103°N · 90.4125°E · DHAKA, BANGLADESH</div>
   </div>
 </footer>
+
+<!-- PRODUCT SPEC SHEET MODAL -->
+<div class="spec-modal" id="specModal" role="dialog" aria-modal="true" style="display:none;">
+  <div class="spec-modal-backdrop" onclick="closeSpecModal()"></div>
+  <div class="spec-modal-card">
+    <button class="spec-modal-close" onclick="closeSpecModal()" aria-label="Close modal">✕</button>
+    <div class="spec-modal-header">
+      <div class="spec-modal-badge" id="specCategoryBadge">FOOTWEAR ATELIER</div>
+      <h3 class="spec-modal-title" id="specProductTitle">Minimalist Low-Top Calfskin Sneaker</h3>
+      <div class="spec-modal-ref" id="specProductRef">REF: SNK-2026-01 · FOB Chittagong</div>
+    </div>
+    
+    <div class="spec-modal-body">
+      <div class="spec-modal-img-col">
+        <img id="specModalImg" src="images/gallery/1787550810891.jpg" alt="Product Spec Preview" class="spec-modal-hero-img">
+        <div class="spec-pricing-card">
+          <div class="spec-price-title">OEM / PRIVATE LABEL FOB</div>
+          <div class="spec-price-val" id="specPriceDisplay">$24.50 – $28.00 / pair</div>
+          <div class="spec-moq-val" id="specMoqDisplay">MOQ: 200 pairs · Sample: 10 days</div>
+        </div>
+      </div>
+      
+      <div class="spec-modal-details-col">
+        <div class="spec-tabs">
+          <button class="spec-tab-btn active" onclick="switchSpecTab('specs', this)">Technical Specs</button>
+          <button class="spec-tab-btn" onclick="switchSpecTab('customization', this)">Private Label Options</button>
+          <button class="spec-tab-btn" onclick="switchSpecTab('logistics', this)">Packaging &amp; Freight</button>
+        </div>
+        
+        <div class="spec-tab-pane" id="specPane-specs">
+          <table class="spec-table">
+            <tbody id="specTableBody">
+              <tr><td>Upper Material</td><td>100% French Full-Grain Box Calf Leather (1.3–1.5mm)</td></tr>
+              <tr><td>Lining</td><td>Ultra-soft Full Cowhide Leather Lining + Antibacterial Insole</td></tr>
+              <tr><td>Sole Construction</td><td>Italian Margom-Profile Stitched Cupsole (Blake 360°)</td></tr>
+              <tr><td>Hardware / Eyelets</td><td>Solid Polished Brass / Blind Eyelets</td></tr>
+              <tr><td>Available Sizes</td><td>EU 38 to EU 47 / UK 5 to 13 / US 6 to 14</td></tr>
+              <tr><td>Certifications</td><td>REACH Compliant, Azo-Free, BSCI Audited Factory</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="spec-tab-pane" id="specPane-customization" style="display:none;">
+          <div class="spec-feature-list">
+            <div class="spec-feat-item">
+              <span class="feat-icon">🏷️</span>
+              <div><strong>Branding Methods:</strong> Hot foil stamp (gold/silver), blind deboss, custom woven tongue label, laser engraving.</div>
+            </div>
+            <div class="spec-feat-item">
+              <span class="feat-icon">🎨</span>
+              <div><strong>Colorways &amp; Leathers:</strong> Custom Pantone color dyeing available from 300 pairs; Italian Suede, Pebble Grain, Buttero Calf available.</div>
+            </div>
+            <div class="spec-feat-item">
+              <span class="feat-icon">📦</span>
+              <div><strong>Custom Box &amp; Dust Bag:</strong> Embossed rigid shoe box, custom organic cotton dust bags, spare waxed laces included.</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="spec-tab-pane" id="specPane-logistics" style="display:none;">
+          <div class="spec-feature-list">
+            <div class="spec-feat-item">
+              <span class="feat-icon">🚢</span>
+              <div><strong>Transit Time to EU:</strong> 20–24 days ocean freight (Rotterdam/Hamburg). 5–7 days Air Express via DHL.</div>
+            </div>
+            <div class="spec-feat-item">
+              <span class="feat-icon">🇪🇺</span>
+              <div><strong>EU Import Tariff:</strong> 0% Customs Duty under Bangladesh GSP+ preferential status.</div>
+            </div>
+            <div class="spec-feat-item">
+              <span class="feat-icon">⏱️</span>
+              <div><strong>Production Lead Time:</strong> 35–40 days after tech pack / pre-production sample sign-off.</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="spec-modal-actions">
+          <button class="btn-primary" onclick="requestQuoteFromSpec()" style="width:100%;">Request Quotation / Tech Pack for This Model →</button>
+          <button class="btn-secondary" onclick="open3DCustomizerForSpec()" style="width:100%;margin-top:0.5rem;">Configure in 3D Studio Studio ⚡</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/8801974518600?text=Hi%20Arutemika%2C%20I%20am%20interested%20in%20your%20leather%20goods." class="wa-float" target="_blank" title="WhatsApp Us">💬</a>

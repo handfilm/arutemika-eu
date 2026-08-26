@@ -1,0 +1,8 @@
+{
+  "name": "Arutemika",
+  "description": "Bangladesh genuine leather goods manufacturer & EU export partner showcase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
