@@ -1354,10 +1354,13 @@ footer {
 .lang-de [data-lang="de"] { display: inherit; }
 .lang-bn [data-lang="bn"] { display: inherit; }
 .lang-ja [data-lang="ja"] { display: inherit; }
+.lang-zh [data-lang="zh"] { display: inherit; }
 .lang-bn .hero-headline, .lang-bn .section-title { font-family: 'Hind Siliguri', sans-serif; font-size: clamp(36px,7vw,90px); letter-spacing:0; line-height:1.1; }
 .lang-ja .hero-headline, .lang-ja .section-title { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(32px,6vw,80px); letter-spacing:.02em; line-height:1.2; }
+.lang-zh .hero-headline, .lang-zh .section-title { font-family: 'Noto Sans SC', 'PingFang SC', sans-serif; font-size: clamp(32px,6vw,80px); letter-spacing:.02em; line-height:1.2; }
 .lang-bn .stat-label, .lang-bn .section-sub, .lang-bn .hero-sub { font-family: 'Hind Siliguri', sans-serif; letter-spacing:0; }
 .lang-ja .stat-label, .lang-ja .section-sub, .lang-ja .hero-sub { font-family: 'Noto Sans JP', sans-serif; }
+.lang-zh .stat-label, .lang-zh .section-sub, .lang-zh .hero-sub { font-family: 'Noto Sans SC', 'PingFang SC', sans-serif; }
 
 /* ============================================================
    NEOMORPHISM REDESIGN — SUPER COLORED
@@ -1859,3 +1862,530 @@ footer .muted, footer .footer-tagline, footer .footer-copy { color: #D9AEB2 !imp
   .sakura-layer { display: none; }
   .section::before { animation: none; }
 }
+
+/* ============================================================
+   BIG COLLECTIONS & WEEKLY 30-STYLE PRODUCTION DROPS
+   Continuous Section-by-Section Infinite Showroom + B2B Portal
+   ============================================================ */
+
+.weekly-production-ticker {
+  background: linear-gradient(135deg, rgba(190,30,45,0.08), rgba(226,55,68,0.04));
+  border: 1px solid rgba(190,30,45,0.25);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  box-shadow: 6px 6px 14px var(--shadow-d), -6px -6px 14px var(--shadow-l);
+}
+
+.wpt-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wpt-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  background: rgba(190,30,45,0.12);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.wpt-pulse::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(190,30,45, 0.7);
+  animation: wptPulseAnim 1.8s infinite;
+}
+
+@keyframes wptPulseAnim {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(190,30,45, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(190,30,45, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(190,30,45, 0); }
+}
+
+.wpt-text {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.wpt-stats {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.wpt-stat strong {
+  color: var(--accent);
+  font-size: 13px;
+}
+
+/* Collections Nav Pill Bar */
+.collections-nav-bar {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.2rem 1.25rem;
+  margin-bottom: 2.5rem;
+  scrollbar-width: thin;
+  position: sticky;
+  top: 70px;
+  z-index: 20;
+  background: var(--surf);
+  backdrop-filter: blur(10px);
+}
+
+.col-nav-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(190,30,45,0.2);
+  background: var(--surf);
+  color: var(--ink);
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px var(--shadow-d), -4px -4px 10px var(--shadow-l);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.col-nav-pill:hover, .col-nav-pill.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 14px rgba(190,30,45,0.3);
+}
+
+.col-nav-pill .badge-count {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.15);
+  color: inherit;
+}
+
+/* Collection Category Block (Section-by-Section) */
+.collection-section-block {
+  margin-bottom: 4.5rem;
+  scroll-margin-top: 130px;
+}
+
+.col-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(190,30,45,0.15);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.col-block-title-wrap h3 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 36px);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.col-block-title-wrap h3 .col-tag-accent {
+  color: var(--accent);
+}
+
+.col-block-desc {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 0.25rem;
+}
+
+.col-block-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(190,30,45,0.08);
+  color: var(--accent);
+  border: 1px solid rgba(190,30,45,0.2);
+}
+
+/* Dense Big Collection Grid */
+.big-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+
+.big-product-card {
+  background: var(--surf);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 8px 8px 18px var(--shadow-d), -8px -8px 18px var(--shadow-l);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid rgba(190,30,45,0.08);
+}
+
+.big-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 12px 12px 24px var(--shadow-d), -12px -12px 24px var(--shadow-l), 0 0 0 2px var(--accent);
+}
+
+.big-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #f0e6e7;
+  cursor: pointer;
+}
+
+.big-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  filter: brightness(0.95);
+}
+
+.big-product-card:hover .big-card-img-wrap img {
+  transform: scale(1.06);
+  filter: brightness(1.02);
+}
+
+.big-card-drop-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(190,30,45,0.9);
+  color: #fff;
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+}
+
+.big-card-fob-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(42,20,22,0.85);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+
+.big-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.big-card-cat {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.big-card-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  line-height: 1.15;
+}
+
+.big-card-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+}
+
+.big-spec-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(190,30,45,0.12);
+  padding-bottom: 0.2rem;
+}
+
+.big-spec-k { color: var(--ink-muted); }
+.big-spec-v { color: var(--ink); font-weight: 500; }
+
+.big-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.big-btn-sample {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.2s;
+  text-transform: uppercase;
+}
+
+.big-btn-sample:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.big-btn-spec {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(190,30,45,0.25);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.big-btn-spec:hover {
+  background: rgba(190,30,45,0.08);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Infinite Loading Trigger & Stream Feed */
+.infinite-stream-footer {
+  text-align: center;
+  padding: 3rem 1rem 1rem;
+}
+
+.infinite-load-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  box-shadow: 8px 8px 20px var(--shadow-d), -8px -8px 20px var(--shadow-l);
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.infinite-load-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 10px 10px 24px rgba(190,30,45,0.4);
+}
+
+.infinite-progress-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin-top: 0.75rem;
+}
+
+/* CHINESE B2B SOURCING GATEWAY & WECHAT MODAL */
+.chinese-b2b-gateway {
+  background: linear-gradient(135deg, #FFF0F2 0%, #FFE5E8 100%);
+  border: 2px solid rgba(190,30,45,0.2);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  margin: 3rem 0;
+  box-shadow: 10px 10px 24px var(--shadow-d), -10px -10px 24px var(--shadow-l);
+}
+
+.cn-b2b-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .cn-b2b-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+.cn-b2b-header h4 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.cn-b2b-desc {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.cn-b2b-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.cn-feat-chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink);
+  background: rgba(255,255,255,0.8);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+}
+
+.cn-wechat-box {
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(190,30,45,0.2);
+  box-shadow: 6px 6px 16px rgba(190,30,45,0.1);
+}
+
+.cn-qr-placeholder {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1rem;
+  background: #fbfbfb;
+  border: 2px dashed rgba(190,30,45,0.3);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.cn-wechat-id-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  background: #f5f5f5;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+/* BATCH SAMPLE SELECTION FLOATING DRAWER */
+.batch-rfq-drawer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(42,20,22,0.96);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 0 2px var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  z-index: 95;
+  backdrop-filter: blur(12px);
+  transform: translateY(120px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.batch-rfq-drawer.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.batch-drawer-info {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.batch-drawer-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 8px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+.batch-drawer-btn:hover {
+  background: var(--accent2);
+}
+
