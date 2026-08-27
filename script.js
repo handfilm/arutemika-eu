@@ -853,7 +853,7 @@ const bigCollectionsData = {
   }
 })();
 
-// Helper to build a clean, unified, responsive product card HTML (Maximum Photo Dominance)
+// Helper to build a clean, unified, responsive product card HTML (Maximum Photo Dominance & Mouse-Over Description Reveal)
 function buildProductCardHTML(item) {
   let specsList = [];
   if (typeof item.specs === 'string') {
@@ -861,9 +861,9 @@ function buildProductCardHTML(item) {
   } else if (Array.isArray(item.specs)) {
     specsList = item.specs;
   }
-  if (specsList.length === 0) specsList = ["Full-Grain Leather", "Export Quality"];
+  if (specsList.length === 0) specsList = ["Full-Grain Box Calf", "Export Quality Finishing"];
 
-  const chipsHtml = specsList.slice(0, 2).map(spec => `<span class="product-spec-chip" title="${spec}">${spec}</span>`).join('');
+  const fullSpecsStr = typeof item.specs === 'string' ? item.specs : specsList.join(' · ');
   const badgeLabel = item.badge || 'ODM READY';
   const priceDisplay = item.price || '$24.00 – $28.00';
   const moqDisplay = item.moq || '200 pcs';
@@ -873,50 +873,81 @@ function buildProductCardHTML(item) {
   const sanitizedTitle = titleDisplay.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
   return `
-    <div class="product-card" data-category="${categoryDisplay}" id="card-${item.id}">
-      <div class="product-img-wrap" onclick="openSpecModal('${item.id}')" title="Click to inspect photo & technical specs">
+    <div class="product-card" data-category="${categoryDisplay}" id="card-${item.id}" tabindex="0" onclick="toggleCardHover(this, event)">
+      <!-- Main Photo Viewport -->
+      <div class="product-img-wrap">
         <span class="product-badge ${item.badgeClass || ''}">${badgeLabel}</span>
         <span class="product-fob-tag">${priceDisplay}</span>
         <img src="${item.img}" alt="${titleDisplay}" loading="lazy" onerror="this.onerror=null;this.src='1000022131.jpeg';">
-        <div class="product-overlay-cue">
-          <span class="cue-btn">🔍 View Tech Blueprint</span>
+        
+        <!-- MOUSE OVER HOVER REVEAL OVERLAY (Less initial text, shows on hover/touch) -->
+        <div class="product-hover-overlay">
+          <div class="hover-top-row">
+            <span class="hover-cat-badge">${categoryDisplay}</span>
+            <span class="hover-ref-pill">${refDisplay}</span>
+          </div>
+
+          <div class="hover-middle-body">
+            <h4 class="hover-product-title">${titleDisplay}</h4>
+            <div class="hover-specs-container">
+              <div class="hover-spec-heading">LEATHER &amp; CRAFTSMANSHIP:</div>
+              <div class="hover-spec-desc">${fullSpecsStr}</div>
+            </div>
+            
+            <div class="hover-pricing-grid">
+              <div class="hover-price-box">
+                <span class="hp-label">FOB DHAKA</span>
+                <span class="hp-val">${priceDisplay}</span>
+              </div>
+              <div class="hover-moq-box">
+                <span class="hp-label">MIN ORDER</span>
+                <span class="hp-val">${moqDisplay}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hover-bottom-actions">
+            <div class="hover-tools-bar">
+              <button type="button" class="hover-tool-btn" onclick="event.stopPropagation(); openSpecModal('${item.id}')" title="Technical Specs Sheet">
+                <span>🔍 Tech Specs</span>
+              </button>
+              <button type="button" class="hover-tool-btn" onclick="event.stopPropagation(); open3DCustomizer('${item.id}')" title="Configure in 3D Studio">
+                <span>⚡ 3D Studio</span>
+              </button>
+            </div>
+            <button type="button" class="hover-rfq-btn" id="rfqBtn-${item.id}" onclick="event.stopPropagation(); addToBatchRFQ('${item.id}', '${sanitizedTitle}', '${priceDisplay}')" title="Add to Batch RFQ">
+              <span>+ Add to Batch RFQ</span>
+            </button>
+          </div>
         </div>
       </div>
-      <div class="product-info">
-        <div class="product-header-row">
-          <span class="product-cat">${categoryDisplay}</span>
-          <span class="product-ref-pill">${refDisplay}</span>
+
+      <!-- Minimal Bottom Bar (Default visible state: Clean Title & Price) -->
+      <div class="product-minimal-footer">
+        <div class="p-min-left">
+          <h4 class="p-min-name" title="${titleDisplay}">${titleDisplay}</h4>
+          <span class="p-min-cat">${categoryDisplay}</span>
         </div>
-        <h4 class="product-name" title="${titleDisplay}">${titleDisplay}</h4>
-        <div class="product-specs-chips">
-          ${chipsHtml}
-        </div>
-        <div class="product-price-row">
-          <div class="product-price-col">
-            <span class="price-tier-label">EST. FOB DHAKA</span>
-            <span class="price-tier-val">${priceDisplay}</span>
-          </div>
-          <div class="product-moq-col">
-            <span class="moq-tier-label">MOQ</span>
-            <span class="moq-tier-val">${moqDisplay}</span>
-          </div>
-        </div>
-        <div class="product-actions-bar">
-          <div class="product-tools-row">
-            <button type="button" class="card-tool-btn" onclick="openSpecModal('${item.id}')" title="Specs Blueprint">
-              <span>🔍 Specs</span>
-            </button>
-            <button type="button" class="card-tool-btn" onclick="open3DCustomizer('${item.id}')" title="3D Customizer">
-              <span>⚡ 3D Studio</span>
-            </button>
-          </div>
-          <button type="button" class="card-rfq-btn" id="rfqBtn-${item.id}" onclick="addToBatchRFQ('${item.id}', '${sanitizedTitle}', '${priceDisplay}')" title="Add to Batch Sample RFQ">
-            <span>+ Add to Batch RFQ</span>
-          </button>
+        <div class="p-min-right">
+          <span class="p-min-price">${priceDisplay}</span>
+          <span class="p-min-moq">MOQ ${moqDisplay}</span>
         </div>
       </div>
     </div>
   `;
+}
+
+// Toggle mobile hover reveal state
+function toggleCardHover(cardEl, e) {
+  if (window.innerWidth <= 1024) {
+    // If clicking on an action button, don't close
+    if (e.target.closest('button') || e.target.closest('a')) return;
+    const isAlreadyActive = cardEl.classList.contains('active-hover');
+    document.querySelectorAll('.product-card.active-hover').forEach(c => c.classList.remove('active-hover'));
+    if (!isAlreadyActive) {
+      cardEl.classList.add('active-hover');
+    }
+  }
 }
 
 // Helper to render product cards into a container

@@ -13,62 +13,85 @@
 </head>
 <body class="lang-en">
 
-<!-- TICKER -->
+<!-- AMBIENT LUMINOUS MESH (BLACK, BLUE, CHERISH PINK & HARD WHITE) -->
+<div class="ambient-glass-mesh" aria-hidden="true">
+  <div class="glass-orb orb-1"></div>
+  <div class="glass-orb orb-2"></div>
+  <div class="glass-orb orb-3"></div>
+  <div class="glass-orb orb-4"></div>
+  <div class="glass-orb orb-5"></div>
+</div>
+
+<!-- MINIMALIST SLEEK TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track" id="tickerTrack">
     <span>EST. 1998</span>
     <span>BSCI AUDITED FACTORY</span>
     <span>30 NEW STYLES WEEKLY</span>
-    <span>MOQ FROM 200 PCS / STYLE</span>
+    <span>MOQ 200 PCS / STYLE</span>
     <span>FOB CHITTAGONG / CIF GLOBAL</span>
     <span>FULL GRAIN &amp; LUXURY SUEDE</span>
     <span>30–45 DAY LEAD TIME</span>
     <span>SAMPLE IN 7–10 DAYS</span>
-    <span>EU &amp; GLOBAL COMPLIANT</span>
-    <span>NETHERLANDS · GERMANY · UK · SPAIN · CHINA</span>
-    <span>T/T · L/C · DP PAYMENT · WECHAT SUPPORT</span>
+    <span>EU &amp; JAPAN COMPLIANT</span>
+    <span>NETHERLANDS · GERMANY · UK · JAPAN · CHINA</span>
     <span>24H RESPONSE TIME</span>
     <span>EST. 1998</span>
     <span>BSCI AUDITED FACTORY</span>
     <span>30 NEW STYLES WEEKLY</span>
-    <span>MOQ FROM 200 PCS / STYLE</span>
-    <span>FOB CHITTAGONG / CIF GLOBAL</span>
+    <span>MOQ 200 PCS / STYLE</span>
+  </div>
+</div>
+
+<!-- MINIMALIST JAPAN D2C & GLOBAL B2B BRIDGE BAR -->
+<div class="jp-d2c-bridge-bar">
+  <div class="jp-bridge-inner">
+    <div class="jp-bridge-left">
+      <span class="jp-hanko-mini">アルテミカ</span>
+      <span class="jp-bridge-tag">🇯🇵 TOKYO D2C</span>
+      <a href="https://arutemika.official.ec" target="_blank" rel="noopener" class="jp-bridge-link" id="bridgeBaseLink">
+        <strong>arutemika.official.ec</strong> <span>(BASE) ↗</span>
+      </a>
+    </div>
+    <div class="jp-bridge-right">
+      <span class="jp-bridge-b2b-badge">🌐 GLOBAL B2B FACTORY: arutemika.com</span>
+    </div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">ARUTE<span>MIKA</span></a>
+  <div class="nav-left">
+    <a href="#" class="nav-logo">ARUTE<span>MIKA</span></a>
+    <span class="jp-hanko-seal" title="アルテミカ 職人本革">本革</span>
+  </div>
   <ul class="nav-links">
-    <li><a href="#craft" style="color:var(--accent);font-weight:700;">📸 70+ Photos</a></li>
+    <li><a href="#craft" class="nav-active-link">📸 Atelier Photos</a></li>
     <li><a href="#collections">30 Styles/Wk</a></li>
     <li><a href="#footwear">Footwear</a></li>
     <li><a href="#products">Catalogue</a></li>
     <li><a href="#customizer">3D Studio</a></li>
-    <li><a href="#calculator">Cost Calc</a></li>
+    <li><a href="#calculator">Landed Cost</a></li>
+    <li><a href="#japan-d2c">東京×D2C</a></li>
     <li><a href="#chinese-b2b">中文B2B</a></li>
     <li><a href="#story">Story</a></li>
-    <li><a href="#compliance">Compliance</a></li>
     <li><a href="#tracker">Tracker</a></li>
     <li><a href="#rfq">RFQ</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:0.75rem;">
+  <div class="nav-right">
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
+      <button class="lang-btn" onclick="setLang('ja',this)">日本</button>
+      <button class="lang-btn" onclick="setLang('zh',this)">中文</button>
       <button class="lang-btn" onclick="setLang('nl',this)">NL</button>
       <button class="lang-btn" onclick="setLang('de',this)">DE</button>
-      <button class="lang-btn" onclick="setLang('zh',this)">中文</button>
-      <button class="lang-btn" onclick="setLang('bn',this)">বাং</button>
-      <button class="lang-btn" onclick="setLang('ja',this)">日本</button>
     </div>
     <a href="#rfq" class="nav-cta">
       <span data-lang="en">Request Quote</span>
+      <span data-lang="ja">見積もり</span>
+      <span data-lang="zh">询价出样</span>
       <span data-lang="nl">Offerte</span>
       <span data-lang="de">Angebot</span>
-      <span data-lang="zh">询价出样</span>
-      <span data-lang="bn">মূল্য জানুন</span>
-      <span data-lang="ja">見積もり</span>
     </a>
     <div class="hamburger" onclick="toggleMobileNav()">
       <span></span><span></span><span></span>
@@ -78,12 +101,16 @@
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
+  <a href="https://arutemika.official.ec" target="_blank" rel="noopener" class="mobile-d2c-pill">
+    <span>🇯🇵 日本公式 D2C ストア (arutemika.official.ec) ↗</span>
+  </a>
   <a href="#craft" onclick="toggleMobileNav()" style="color:var(--accent);font-weight:700;">📸 70+ Authentic Factory &amp; Craft Album</a>
   <a href="#collections" onclick="toggleMobileNav()">Weekly 30 Styles &amp; Big Collections</a>
   <a href="#footwear" onclick="toggleMobileNav()">Sneakers &amp; Loafers Showroom</a>
   <a href="#products" onclick="toggleMobileNav()">Full Product Catalogue</a>
   <a href="#customizer" onclick="toggleMobileNav()">3D Studio Customizer</a>
   <a href="#calculator" onclick="toggleMobileNav()">EU Landed Cost Calculator</a>
+  <a href="#japan-d2c" onclick="toggleMobileNav()">🇯🇵 Tokyo × Dhaka B2B &amp; D2C Hub</a>
   <a href="#chinese-b2b" onclick="toggleMobileNav()">中文B2B采购通道 · 微信对接</a>
   <a href="#story" onclick="toggleMobileNav()">Heritage &amp; Story</a>
   <a href="#compliance" onclick="toggleMobileNav()">Compliance &amp; BSCI Audit</a>
@@ -347,6 +374,96 @@
           <span data-lang="bn">আর্তে (শিল্প/কারুকাজ, ইউরোপে পরিচিত) + মিকা (জাপানি ভাষায় পরিচিত ও উষ্ণ শোনায়)। একসাথে পড়লে, এমন একটি নাম যা EU ক্রেতার ইনবক্সে এবং জাপানি সোর্সিং মিটিং উভয় জায়গাতেই স্বচ্ছন্দে মানানসই, কোনো পক্ষকে না হারিয়ে।</span>
           <span data-lang="ja">ARTE（技巧・芸術、欧州で馴染みのある語）＋ MIKA（日本語で親しみのある響き）。合わせて読むと、EUバイヤーの受信箱にも日本のソーシングの场にも、どちらの文化も薄めることなく馴染む名前です。</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JAPAN D2C FLAGSHIP & GLOBAL B2B DUAL ARCHITECTURE -->
+<section class="section" id="japan-d2c">
+  <div class="section-eyebrow">Tokyo × Dhaka Collaboration · 日本企画 × 本革工房</div>
+  <div class="section-title reveal">
+    <span data-lang="en">JAPAN D2C FLAGSHIP &amp; <span class="accent">GLOBAL B2B</span><br>DUAL MODEL ARCHITECTURE</span>
+    <span data-lang="nl">JAPAN D2C FLAGSHIP &amp; <span class="accent">GLOBALE B2B</span><br>DUAL MODEL STRUCTUUR</span>
+    <span data-lang="de">JAPAN D2C FLAGSHIP &amp; <span class="accent">GLOBALE B2B</span><br>DUALES MODELL SYSTEM</span>
+    <span data-lang="zh">日本D2C品牌独立站与 <span class="accent">全球B2B工贸一体</span><br>双轨直通架构</span>
+    <span data-lang="bn">জাপান D2C ফ্ল্যাগশিপ ও <span class="accent">গ্লোবাল B2B</span><br>দ্বিমুখী মডেল সংযোগ</span>
+    <span data-lang="ja">日本公式 D2C ストア ＆ <span class="accent">グローバル B2B</span><br>デュアルモデル連携</span>
+  </div>
+  <div class="section-sub reveal">
+    <span data-lang="en">Under the unified <strong>Arutemika</strong> name, we bridge Japanese retail consumers through our dedicated Tokyo D2C boutique on BASE (<strong>arutemika.official.ec</strong>), while empowering global brands and European distributors with direct factory OEM/ODM manufacturing (<strong>arutemika.com</strong>).</span>
+    <span data-lang="ja"><strong>アルテミカ（Arutemika）</strong>の統一ブランドのもと、日本の個人のお客様にはBASE公式オンラインブティック（<strong>arutemika.official.ec</strong>）を通じて最高峰の手仕事革製品を1点から国内直送。同時に世界各国のブランド・バイヤー様へは<strong>arutemika.com</strong>を通じてダッカ自社工房直結のB2B受託製造（OEM/ODM）を提供します。</span>
+    <span data-lang="zh">在统一的 <strong>Arutemika</strong> 品牌下，日本零售消费者可通过 BASE 官方旗舰店（<strong>arutemika.official.ec</strong>）直接购买东京现货；同时全球批发买家与品牌方可通过 <strong>arutemika.com</strong> 直连孟加拉达卡自营工厂进行大宗 OEM/ODM 定制。</span>
+    <span data-lang="nl">Onder één merknaam verbinden we de Japanse D2C-boetiek op BASE (<strong>arutemika.official.ec</strong>) met onze wereldwijde B2B-productielijnen (<strong>arutemika.com</strong>).</span>
+    <span data-lang="de">Unter einer gemeinsamen Marke verbinden wir die japanische D2C-Boutique auf BASE (<strong>arutemika.official.ec</strong>) mit unserem weltweiten B2B-Produktionshub (<strong>arutemika.com</strong>).</span>
+    <span data-lang="bn">একই ব্র্যান্ড নামের অধীনে আমরা জাপানের রিটেইল ক্রেতাদের জন্য BASE স্টোর (<strong>arutemika.official.ec</strong>) এবং আন্তর্জাতিক পাইকারি বায়ারদের জন্য <strong>arutemika.com</strong> কারখানার সেবা নিশ্চিত করি।</span>
+  </div>
+
+  <div class="jp-dual-grid reveal">
+    <!-- D2C JAPAN CARD -->
+    <div class="jp-dual-card d2c-card">
+      <div class="jp-card-stamp">
+        <span class="hanko-box">日本<br>企画</span>
+      </div>
+      <div class="jp-card-badge">🇯🇵 D2C RETAIL &amp; TOKYO SHOWROOM</div>
+      <h3 class="jp-card-title">arutemika.official.ec</h3>
+      <div class="jp-card-subtitle">Official Japan Flagship Online Boutique (BASE Platform)</div>
+      
+      <div class="jp-card-desc">
+        Dedicated for Japanese individual shoppers, boutique stores, and immediate stock sampling across Japan.
+      </div>
+
+      <ul class="jp-features-list">
+        <li><span>✦</span> <strong>Single-Piece Orders:</strong> Buy individual wallets, bags, and luxury sneakers with zero MOQ.</li>
+        <li><span>✦</span> <strong>Domestic Japanese Shipping:</strong> Fast nationwide delivery from Tokyo inventory.</li>
+        <li><span>✦</span> <strong>Seamless Japan Payments:</strong> PayPay, JCB, carrier billing, and credit card checkout on BASE.</li>
+        <li><span>✦</span> <strong>Tokyo Showroom Visits:</strong> Touch leather swatches &amp; sample prototypes with Oishi-san.</li>
+      </ul>
+
+      <div class="jp-card-action">
+        <a href="https://arutemika.official.ec" target="_blank" rel="noopener" class="btn-jp-d2c">
+          <span>Open BASE Japan Store (arutemika.official.ec) ↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- B2B GLOBAL FACTORY CARD -->
+    <div class="jp-dual-card b2b-card">
+      <div class="jp-card-stamp">
+        <span class="hanko-box">自営<br>工房</span>
+      </div>
+      <div class="jp-card-badge">🌐 GLOBAL B2B OEM / ODM FACTORY</div>
+      <h3 class="jp-card-title">arutemika.com</h3>
+      <div class="jp-card-subtitle">Direct Leather Goods Manufacturing &amp; Global Sourcing Hub</div>
+
+      <div class="jp-card-desc">
+        Dedicated for European brands, international wholesalers, department stores, and private label importers.
+      </div>
+
+      <ul class="jp-features-list">
+        <li><span>✦</span> <strong>Factory Direct Pricing:</strong> Low MOQ (200 pcs/style) with direct FOB Chittagong export.</li>
+        <li><span>✦</span> <strong>Weekly 30 Styles ODM Drops:</strong> Continuous fresh collections &amp; customized tech packs.</li>
+        <li><span>✦</span> <strong>Duty-Free Advantages:</strong> 0% EU GSP+ tariff &amp; certified BSCI social compliance.</li>
+        <li><span>✦</span> <strong>Interactive 3D Studio &amp; RFQ:</strong> 3D shoe configuration and fast 7–10 day physical sampling.</li>
+      </ul>
+
+      <div class="jp-card-action">
+        <a href="#rfq" class="btn-jp-b2b">
+          <span>Request B2B Tech Pack / Custom Quote ↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAPAN CRAFTSMANSHIP ESSENCE BANNER -->
+  <div class="jp-philosophy-banner reveal">
+    <div class="jp-phil-content">
+      <div class="jp-phil-hanko">アルテミカ · 職人技</div>
+      <blockquote class="jp-phil-quote">
+        「ものづくりの原点は、手に触れたときの温もりと、時を重ねるごとに深まる革の味わいにあります。ダッカの熟練職人の手仕事と、日本の美意識・品質基準が出逢い、新しい革具のスタンダードを創り出します。」
+      </blockquote>
+      <div class="jp-phil-sub">
+        Craftsmanship Philosophy · Tokyo Brand Office &amp; Dhaka Production Atelier
       </div>
     </div>
   </div>
@@ -1876,6 +1993,16 @@
         <li><a href="#markets">🇬🇧 United Kingdom</a></li>
         <li><a href="#markets">🇪🇸 Spain</a></li>
         <li><a href="#rfq">Other EU Countries</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <div class="footer-links-title">🇯🇵 Japan Store &amp; D2C</div>
+      <ul class="footer-links">
+        <li><a href="https://arutemika.official.ec" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700;">BASE Store (arutemika.official.ec) ↗</a></li>
+        <li><a href="#japan-d2c">Tokyo × Dhaka Architecture</a></li>
+        <li><a href="#japan-d2c">Retail &amp; Single-Piece Orders</a></li>
+        <li><a href="#story">Oishi-san &amp; Sourcing Partners</a></li>
+        <li><a href="#rfq">B2B Custom Samples</a></li>
       </ul>
     </div>
   </div>
